@@ -1,0 +1,77 @@
+.item > p {
+    font-family: "Poppins", sans-serif;
+}
+
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    background-color: #D4E9F9;
+    align-items: center;
+    padding: 11px 135px;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.sliderButton {
+    background: none;
+    color: rgba(41, 41, 41, 0.8);
+    border: none;
+    transition: all .3s;
+}
+
+.sliderButton:hover {
+    color: #E7426A;
+}
+
+.sliderButton:active {
+    color: rgba(41, 41, 41, 0.8);
+}
+
+.item > img {
+    margin-right: 12px;
+}
+
+
+/* Анимация вправо */
+.fadeEnterRight {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.fadeExitRight {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Анимация влево */
+.fadeEnterLeft {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.fadeExitLeft {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Общие стили для плавного перехода */
+.fadeEnterActive {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.fadeExitActive {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
