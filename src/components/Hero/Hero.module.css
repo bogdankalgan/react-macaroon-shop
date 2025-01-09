@@ -1,0 +1,41 @@
+.Hero {
+    display: flex;
+    justify-content: space-between;
+    background: #F7F7F7;
+    position: relative;
+    height: 475px;
+}
+
+.whiteRound {
+    position: absolute;
+    width: 479px;
+    height: 479px;
+    border-radius: 50%;
+    background: rgba(200, 222, 255, .37);
+    filter: blur(40px);
+    left: 428px;
+    top: 39px;
+}
+
+.roseRound {
+    position: absolute;
+    width: 276px;
+    height: 276px;
+    border-radius: 50%;
+    background: rgba(255, 168, 241, .37);
+    filter: blur(40px);
+    left: 148px;
+    top: 136px;
+}
+
+.blueRound {
+    position: absolute;
+    width: 268px;
+    height: 264px;
+    border-radius: 50%;
+    background: rgba(111, 217, 251, .6);
+    filter: blur(40px);
+    left: 391px;
+    top: 39px;
+}
+

@@ -1,0 +1,59 @@
+.headerBottom {
+    background: #FFFFFF;
+    padding: 19px 229px 16px 160px;
+}
+
+.headerBottomList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.headerBottomList li, select {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: #2B1414;
+}
+
+.headerBottomList select {
+    background: none;
+    border: none;
+}
+
+.headerBottomList select:focus {
+    outline: none;
+    color: #E7426A;
+}
+
+.headerBottomList li a {
+    transition: all .3s;
+}
+
+.headerBottomList li a:hover {
+    color: #E7426A;
+}
+
+.headerBottomList li a:active {
+    color: #2B1414;
+}
+
+.headerBottomList li:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+.headerBottomList li:nth-child(1)::after {
+    content: "%";
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E7426A;
+    padding: 3px 4px;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
