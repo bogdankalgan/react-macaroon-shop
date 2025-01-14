@@ -12,10 +12,10 @@ function Hero() {
             <div className={styles.whiteRound}></div>
             <div className={styles.roseRound}></div>
             <div className={styles.blueRound}></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className={styles.greyRound}></div>
+            <div className={styles.greenRound}></div>
+            <div className={styles.yellowRound}></div>
+            <div className={styles.orangeRound}></div>
         </section>
     )
 }

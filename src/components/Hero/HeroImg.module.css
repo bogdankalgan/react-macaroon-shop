@@ -1,0 +1,79 @@
+.HeroImg {
+    position: relative;
+    z-index: 123;
+}
+
+
+.HeroImg div {
+    position: absolute;
+}
+
+.mainImg {
+    position: absolute;
+    left: 186px;
+    top: 39px;
+}
+
+.HeroImg img {
+    position: absolute;
+}
+
+.HeroImg div:nth-child(2) {
+    left: 333px;
+    top: 47px;
+}
+
+.HeroImg div:nth-child(3) {
+    left: 605px;
+    top: 72px;
+}
+
+.HeroImg div:nth-child(4) {
+    left: 659px;
+    top: 194px;
+}
+
+.HeroImg div:nth-child(5) {
+    left: 606px;
+    top: 282px;
+}
+
+.HeroImg div:nth-child(6) {
+    left: 609px;
+    top: 344px;
+}
+
+.HeroImg div:nth-child(7) {
+    left: 565px;
+    bottom: 401px;
+}
+
+.HeroImg div:nth-child(8) {
+    left: 320px;
+    top: 417px;
+}
+
+.HeroImg div:nth-child(9) {
+    left: 211px;
+    top: 409px;
+}
+
+.HeroImg div:nth-child(10) {
+    left: 150px;
+    top: 319px;
+}
+
+.HeroImg div:nth-child(11) {
+    left: 39px;
+    top: 234px;
+}
+
+.HeroImg div:nth-child(12) {
+    left: 130px;
+    top: 201px;
+}
+
+.HeroImg div:nth-child(13) {
+    left: 153px;
+    top: 65px;
+}

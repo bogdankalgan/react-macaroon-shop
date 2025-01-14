@@ -1,0 +1,9 @@
+.HeroText {
+    position: relative;
+    z-index: 1111;
+    padding: 135px 221px 160px 0;
+}
+
+.HeroText h1 {
+    margin-bottom: 13px;
+}

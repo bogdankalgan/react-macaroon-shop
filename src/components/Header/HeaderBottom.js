@@ -1,12 +1,17 @@
 import styles from "./HeaderBottom.module.css"
 
 function HeaderBottom() {
-    const hrefs = {}
+    const hrefs = {
+        sales: "#sales",
+        gifts: "#gifts",
+        choice: "#choice",
+        createDesign: "#createDesign",
+    }
     return (
         <div className={styles.headerBottom}>
             <ul className={styles.headerBottomList}>
                 <li>
-                    <a>
+                    <a href={hrefs.sales}>
                         СЛАДКИЕ ДНИ
                     </a>
                 </li>
@@ -18,7 +23,7 @@ function HeaderBottom() {
                 </select>
 
                 <li>
-                    <a>
+                    <a href={hrefs.choice}>
                         Собрать набор
                     </a>
                 </li>
@@ -26,7 +31,7 @@ function HeaderBottom() {
                 <img src="icons/siteIcon/logoHeader.svg" alt="header site logo"></img>
 
                 <li>
-                    <a>
+                    <a href={hrefs.createDesign}>
                         Создать дизайн
                     </a>
                 </li>

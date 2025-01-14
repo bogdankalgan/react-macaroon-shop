@@ -44,7 +44,7 @@ function HeaderTop() {
                     <a href={hrefs.fresh}>Гарантия свежести</a>
                 </li>
 
-                <li>f
+                <li>
                     <a href={hrefs.delivery}>Доставка и оплата</a>
                 </li>
 

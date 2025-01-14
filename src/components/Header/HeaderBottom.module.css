@@ -29,6 +29,8 @@
 
 .headerBottomList li a {
     transition: all .3s;
+    color: #2B1414;
+    text-decoration: none;
 }
 
 .headerBottomList li a:hover {

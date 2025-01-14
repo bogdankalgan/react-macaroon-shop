@@ -39,3 +39,47 @@
     top: 39px;
 }
 
+.greyRound {
+    position: absolute;
+    width: 282px;
+    height: 282px;
+    border-radius: 50%;
+    background: rgba(194, 226, 255, .36);
+    filter: blur(40px);
+    left: 390px;
+    top: 215px;
+}
+
+
+.greenRound {
+    position: absolute;
+    width: 231px;
+    height: 231px;
+    border-radius: 50%;
+    background: rgba(152, 224, 194, .6);
+    filter: blur(40px);
+    top: 65px;
+    right: 121px;
+}
+
+.yellowRound {
+    position: absolute;
+    width: 264px;
+    height: 264px;
+    border-radius: 50%;
+    background: rgba(255, 252, 189, .45);
+    filter: blur(40px);
+    right: 3px;
+    top: 172px;
+}
+
+.orangeRound {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255, 217, 195, .61);
+    filter: blur(40px);
+    top: 321px;
+    right: 121px;
+}
