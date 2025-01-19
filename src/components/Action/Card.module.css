@@ -1,0 +1,29 @@
+.ActionItem {
+    position: relative;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    height: 380px;
+    font-weight: 600;
+}
+
+.ActionItem img {
+    margin-bottom: -4px;
+    width: 100%;
+}
+
+.ActionItemBanner {
+    padding: 5px 16px 5px 10px;
+    clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%, 0% 50%);
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+
+.ActionItemTitle {
+    padding: 20px 20px 30px 20px;
+}
+
+.ActionItemTitle p {
+    width: 220px;
+}

@@ -1,0 +1,19 @@
+.ActionButton {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #E5E5E5;
+    transition: all .3s;
+}
+
+.ActionButton:hover {
+    background: #E7426A;
+}
+
+.ActionButton:active {
+    background: white;
+}
+
+.isActive {
+    background: #E7426A;
+    border: none;
+}
