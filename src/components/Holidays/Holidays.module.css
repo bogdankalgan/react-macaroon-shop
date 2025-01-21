@@ -1,0 +1,24 @@
+.Holidays {
+    padding: 142px 135px 0 135px;
+    position: relative;
+}
+
+.Holidays > h2 {
+    margin-bottom: 40px;
+}
+
+.HolidaysDivider {
+    position: absolute;
+    right: 200px;
+    top: 270px;
+    width: 1001px;
+    border: 2px dashed #D2D2D2;
+    z-index: -1;
+}
+
+.HolidaysItems {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+

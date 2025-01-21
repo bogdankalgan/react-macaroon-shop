@@ -1,0 +1,30 @@
+.HolidaysItem {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    width: 170px;
+    color: #292929;
+    animation: grow 6s ease-in-out infinite;
+}
+
+
+.isActive {
+    font-weight: bold;
+    transform: scale(50%);
+}
+
+
+@keyframes grow {
+    0%, 16.66% {
+        transform: scale(1);
+    }
+    8.33% {
+        transform: scale(1.2);
+    }
+    16.66% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Nabery from './components/Nabery/Nabery';
 import Action from './components/Action/Action';
+import Holidays from "./components/Holidays/Holidays";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <Hero/>
             <Nabery/>
             <Action/>
+            <Holidays/>
         </div>
     );
 }
