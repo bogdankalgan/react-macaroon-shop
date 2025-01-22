@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero';
 import Nabery from './components/Nabery/Nabery';
 import Action from './components/Action/Action';
 import Holidays from "./components/Holidays/Holidays";
+import Popular from './components/Popular/Popular';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <Nabery/>
             <Action/>
             <Holidays/>
+            <Popular/>
         </div>
     );
 }

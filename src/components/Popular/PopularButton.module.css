@@ -1,0 +1,22 @@
+.PopularButton {
+    background: none;
+    border: 1px solid #4E9DD3;
+    border-radius: 3px;
+    padding: 17px 49px;
+    color: #000000;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.PopularButton:hover {
+    background: #4E9DD3;
+    color: white;
+}
+
+.PopularButton:active {
+    background: none;
+    color: #000000;
+}

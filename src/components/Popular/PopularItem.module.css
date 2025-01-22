@@ -1,0 +1,88 @@
+.PopularItem {
+    background: #FFFFFF;
+    border: 1px solid #EDEDF0;
+    display: inline-block;
+    text-align: left;
+    width: 370px;
+}
+
+.PopularItemTitle {
+    font-size: 18px;
+    color: #292929;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.PopularItemContent {
+    height: 156px;
+    padding: 21px 22px 10px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.PopularItemDescr {
+    width: 327px;
+    font-size: 14px;
+    color: #292929;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 35px;
+    white-space: pre-wrap;
+}
+
+.PopularItemPriceContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.PopularItemPriceContainer::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 370px;
+    border: 1px solid #CCCCCC;
+    left: -23px;
+    top: -14px;
+}
+
+.PopularItemPriceContainer::after {
+    content: "";
+    position: absolute;
+    height: 43px;
+    border: 1px solid #EDEDF0;
+    right: 125px;
+    top: -12px;
+}
+
+.PopularItemPrice {
+    color: #E7426A;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.PopularItemButton {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.PopularItemButton:hover {
+    color: #E7426A;
+}
+
+.PopularItemButton:active {
+    color: #000000;
+}
+
+.PopularItemButton svg {
+    margin-right: 11px;
+}
