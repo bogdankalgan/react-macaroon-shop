@@ -1,0 +1,21 @@
+.CareItem {
+    text-align: left;
+}
+
+.CareItem img {
+    margin-bottom: 29px;
+}
+
+.CareItemTitle {
+    color: #292929;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 11px;
+}
+
+.CareItemDescr {
+    color: #292929;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}

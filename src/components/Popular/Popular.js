@@ -42,7 +42,7 @@ function Popular() {
         <section className={styles.Popular}>
             <h2 className="titleSecond">Популярные наборы</h2>
             <PopularItemContainer items={items}/>
-            {hasMore && <PopularButton onClick={handleLoadMore}/>}
+            {hasMore && <PopularButton text="Все праздничные наборы" onClick={handleLoadMore}/>}
         </section>
     )
 }

@@ -6,6 +6,8 @@ import Nabery from './components/Nabery/Nabery';
 import Action from './components/Action/Action';
 import Holidays from "./components/Holidays/Holidays";
 import Popular from './components/Popular/Popular';
+import News from './components/News/News';
+import Care from './components/Care/Care';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
             <Action/>
             <Holidays/>
             <Popular/>
+            <News/>
+            <Care/>
         </div>
     );
 }

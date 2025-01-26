@@ -1,0 +1,11 @@
+.NewsItemContainer {
+    display: flex;
+    gap: 29px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    scroll-behavior: smooth;
+}
+
+.NewsItemContainer::-webkit-scrollbar {
+    display: none;
+}
