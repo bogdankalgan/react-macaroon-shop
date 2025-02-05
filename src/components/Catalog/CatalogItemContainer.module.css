@@ -1,0 +1,10 @@
+.CatalogItemContainer {
+    padding: 0 135px 0 135px;
+    margin-bottom: 74px;
+}
+
+.CatalogItemContainerBottom {
+    display: flex;
+    gap: 29px;
+    justify-content: center;
+}

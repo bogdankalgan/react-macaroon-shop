@@ -1,0 +1,13 @@
+.FooterLinkContainerHead {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.FooterLinkContainerInfo, .FooterLinkContainerBuis, .FooterLinkContainerCatalog {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 13px;
+}

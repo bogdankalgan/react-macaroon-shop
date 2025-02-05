@@ -1,0 +1,4 @@
+.footerLeftItemContainer {
+    display: flex;
+    align-items: start;
+}

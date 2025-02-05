@@ -1,0 +1,33 @@
+.catalogItemHead {
+    display: flex;
+    align-items: center;
+    background: #FEB0E1;
+    border-radius: 5px;
+    margin-bottom: 35px;
+}
+
+.catalogItemHead img {
+    border-radius: 5px;
+}
+
+.catalogItemHeadRight {
+    padding: 95px 90px 94px 77px;
+    text-align: center;
+}
+
+.catalogItemHeadRight h2 {
+    margin-bottom: 17px;
+}
+
+.catalogItemHeadRight p {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #292929;
+}
+
+.catalogItemHeadButtons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 42px;
+}

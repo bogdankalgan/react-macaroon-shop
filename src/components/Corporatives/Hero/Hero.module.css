@@ -1,0 +1,33 @@
+.Hero {
+    padding: 0 135px;
+    height: 475px;
+}
+
+
+.HeroImg {
+    position: relative;
+}
+
+.HeroImg img {
+    position: absolute;
+    z-index: 1;
+}
+
+.HeroImg img:nth-child(1) {
+    left: 175px;
+    top: 54px;
+}
+
+.HeroImg img:nth-child(2) {
+    left: 478px;
+    top: 50px;
+}
+
+.HeroImg img:nth-child(3) {
+    left: 507px;
+    top: 244px;
+}
+
+.HeroText {
+}
+

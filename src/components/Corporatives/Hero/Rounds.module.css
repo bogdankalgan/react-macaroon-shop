@@ -1,0 +1,54 @@
+.greyRound {
+    position: absolute;
+    background: rgba(78, 93, 100, .37);
+    width: 404px;
+    height: 403px;
+    border-radius: 50%;
+    filter: blur(100px);
+    left: 371px;
+    top: 105px;
+}
+
+.greenRound {
+    position: absolute;
+    background: #9BFF9F;
+    width: 113px;
+    height: 111px;
+    border-radius: 50%;
+    filter: blur(100px);
+    left: 451px;
+    top: 99px;
+}
+
+.blueRound {
+    position: absolute;
+    background: #7FCDEE;
+    width: 156px;
+    height: 154px;
+    border-radius: 50%;
+    filter: blur(100px);
+    left: 130px;
+    top: 187px;
+}
+
+.round98 {
+    position: absolute;
+    background: rgba(60, 88, 76, .27);
+    width: 276px;
+    height: 276px;
+    border-radius: 50%;
+    filter: blur(100px);
+    right: 67px;
+    top: 35px;
+}
+
+.round98Two {
+    position: absolute;
+    background: rgba(60, 88, 76, .38);
+    width: 239px;
+    height: 239px;
+    border-radius: 50%;
+    filter: blur(100px);
+    left: 330px;
+    top: 247px;
+}

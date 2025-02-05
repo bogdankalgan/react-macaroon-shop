@@ -1,0 +1,19 @@
+.catalogCardsButton {
+    background: rgba(51, 51, 51, .39);
+    color: #fff;
+    cursor: pointer;
+    padding: 19px 14px;
+    border: none;
+    font-size: 13px;
+    height: 50px;
+    position: absolute;
+    transition: all .3s;
+}
+
+.catalogCardsButton:hover {
+    background: #333;
+}
+
+.catalogCardsButton:active {
+    background: rgba(51, 51, 51, .39);
+}

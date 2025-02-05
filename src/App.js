@@ -1,27 +1,27 @@
-import './App.css';
-import Banner from './components/Banner/Banner';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Nabery from './components/Nabery/Nabery';
-import Action from './components/Action/Action';
-import Holidays from "./components/Holidays/Holidays";
-import Popular from './components/Popular/Popular';
-import News from './components/News/News';
-import Care from './components/Care/Care';
+import {Routes, Route, BrowserRouter} from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home";
+import Cart from "./Cart";
+import Catalog from "./components/Catalog/Catalog";
+import ReadyNabery from "./components/ReadyNabery/ReadyNabery";
+import {CartProvider} from "./components/CartContext";
+import Corporatives from "./components/Corporatives/Corporatives";
 
 function App() {
     return (
-        <div className="App">
-            <Banner/>
-            <Header/>
-            <Hero/>
-            <Nabery/>
-            <Action/>
-            <Holidays/>
-            <Popular/>
-            <News/>
-            <Care/>
-        </div>
+        <CartProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout/>}>
+                        <Route index element={<Home/>}/>
+                        <Route path="cart" element={<Cart/>}/>
+                        <Route path="readyNabery" element={<ReadyNabery/>}/>
+                        <Route path="catalog" element={<Catalog/>}/>
+                        <Route path="corporatives" element={<Corporatives/>}/>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </CartProvider>
     );
 }
 

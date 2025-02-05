@@ -1,0 +1,54 @@
+.catalogItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.catalogItem::after {
+    content: "";
+    display: block;
+    width: 369px;
+    height: 168px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+}
+
+
+.catalogItem:nth-child(1) {
+    background: #FFB84E;
+    padding: 41px 69px 45px 69px;
+}
+
+.catalogItem:nth-child(1)::after {
+    background: linear-gradient(180deg, rgba(242, 155, 53, 0) 10%, #F29B35 42%);
+}
+
+.catalogItem:nth-child(2) {
+    background: #FEB0E1;
+    padding: 10px 32px 45px 33px;
+}
+
+.catalogItem:nth-child(2)::after {
+    background: linear-gradient(180deg, rgba(227, 126, 183, 0) 10%, #E37EB7 70%);
+}
+
+
+.catalogItem:nth-child(3) {
+    background: #FDCD94;
+    padding: 22px 72px 45px 72px;
+}
+
+.catalogItem:nth-child(3)::after {
+    background: linear-gradient(180deg, rgba(243, 214, 179, 0) 10%, #EEB776 75%);
+}
+
+.catalogItemText {
+    color: #FFF;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    z-index: 1;
+}

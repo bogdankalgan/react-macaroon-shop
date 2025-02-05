@@ -1,0 +1,28 @@
+.BreadCrumbs {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 41px;
+    margin-bottom: 21px;
+    color: rgba(41, 41, 41, .44);
+}
+
+.BreadCrumbs a {
+    color: rgba(41, 41, 41, .44);
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.BreadCrumbs a:hover {
+    color: #4E9DD3;
+}
+
+.BreadCrumbs a:active {
+    color: rgba(41, 41, 41, .44);
+}
+
+.active {
+    color: #4E9DD3;
+}
+

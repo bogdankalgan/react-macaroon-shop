@@ -21,10 +21,15 @@ body {
     font-size: 30px;
     font-weight: 600;
     color: #292929;
+    text-align: center;
 }
 
 .descr {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     color: #292929;
+}
+
+.active {
+    color: #4E9DD3;
 }

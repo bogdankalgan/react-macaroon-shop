@@ -1,0 +1,42 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 56px 134px 69px 134px;
+    background: #EBEDEE;
+}
+
+.FooterLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.FooterLeftText {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.FooterMid {
+}
+
+.FooterRight {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.FooterRightLink {
+    text-decoration: none;
+    color: #292929;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.FooterRightHours {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    text-align: right;
+}
