@@ -8,7 +8,7 @@ function Nabery() {
             href: "#readyNabery",
             iconPath: "icons/nabery/1.svg",
             title: "Готовые наборы",
-            descr: "Готовые наборы со скидкой.  Вы можете подобрать набор на подходящий случай.",
+            descr: "Готовые наборы со скидкой. Вы можете подобрать набор на подходящий случай.",
             backgroundBefore: "rgba(255, 255, 255, 0.3)",
             clipPath: "polygon(100% 100%, 100% 0, 51% 50%, 0% 100%)",
             styles: {
@@ -56,7 +56,7 @@ function Nabery() {
             href: "#corporativeGifts",
             iconPath: "icons/nabery/5.svg",
             title: "Корпоративные подарки",
-            descr: "От 85 руб за шт. С уникальным дизайном.  Приятный комплимент для коллег и партнеров",
+            descr: "От 85 руб за шт. С уникальным дизайном. Приятный комплимент для коллег и партнеров",
             backgroundBefore: "rgba(255, 255, 255, 0.3)",
             clipPath: "polygon(100% 0, 0 100%, 100% 100%)",
             styles: {

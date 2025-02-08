@@ -6,7 +6,7 @@ import styles from "./CardContainer.module.css";
 function CardContainer() {
     const items = [
         {
-            title: "По СПб в районе КАД –  от 3000₽ По МСК – от 5000₽",
+            title: "По СПб в районе КАД –  от 3000₽ По МСК – от 5000₽",
             bannerText: "БЕСПЛАТНАЯ ДОСТАВКА",
             imgUrl: "img/actions/1.png"
         },
@@ -16,19 +16,19 @@ function CardContainer() {
             imgUrl: "img/actions/2.png"
         },
         {
-            title: "Аппетитные конфеты  на основе миндального печенья и крема",
+            title: "Аппетитные конфеты на основе миндального печенья и крема",
             bannerText: "НОВИНКА",
             imgUrl: "img/actions/3.png"
         },
         {
-            title: "Карамель на палочке из натуральных ингредиентов",
+            title: "Карамель на палочке из натуральных ингредиентов",
             bannerText: "СЛАДКАЯ НОВИНКА",
             imgUrl: "img/actions/4.png"
         },
 
 
         {
-            title: "По СПб в районе КАД –  от 3000₽ По МСК – от 5000₽",
+            title: "По СПб в районе КАД –  от 3000₽ По МСК – от 5000₽",
             bannerText: "БЕСПЛАТНАЯ ДОСТАВКА",
             imgUrl: "img/actions/1.png"
         },
@@ -38,18 +38,18 @@ function CardContainer() {
             imgUrl: "img/actions/2.png"
         },
         {
-            title: "Аппетитные конфеты  на основе миндального печенья и крема",
+            title: "Аппетитные конфеты на основе миндального печенья и крема",
             bannerText: "НОВИНКА",
             imgUrl: "img/actions/3.png"
         },
         {
-            title: "Карамель на палочке из натуральных ингредиентов",
+            title: "Карамель на палочке из натуральных ингредиентов",
             bannerText: "СЛАДКАЯ НОВИНКА",
             imgUrl: "img/actions/4.png"
         },
 
         {
-            title: "По СПб в районе КАД –  от 3000₽ По МСК – от 5000₽",
+            title: "По СПб в районе КАД –  от 3000₽ По МСК – от 5000₽",
             bannerText: "БЕСПЛАТНАЯ ДОСТАВКА",
             imgUrl: "img/actions/1.png"
         },
@@ -59,12 +59,12 @@ function CardContainer() {
             imgUrl: "img/actions/2.png"
         },
         {
-            title: "Аппетитные конфеты  на основе миндального печенья и крема",
+            title: "Аппетитные конфеты на основе миндального печенья и крема",
             bannerText: "НОВИНКА",
             imgUrl: "img/actions/3.png"
         },
         {
-            title: "Карамель на палочке из натуральных ингредиентов",
+            title: "Карамель на палочке из натуральных ингредиентов",
             bannerText: "СЛАДКАЯ НОВИНКА",
             imgUrl: "img/actions/4.png"
         },

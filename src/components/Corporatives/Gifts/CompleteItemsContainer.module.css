@@ -1,0 +1,10 @@
+.completeItemContainer {
+    display: flex;
+    gap: 30px;
+    padding: 0 135px 24px 134px;
+    overflow-x: auto;
+}
+
+.completeItemContainer::-webkit-scrollbar {
+    display: none;
+}

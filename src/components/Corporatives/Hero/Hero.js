@@ -1,13 +1,14 @@
 import Breadcrumbs from "../../BreadCrumbs";
 import styles from "./Hero.module.css";
 import roundStyles from "./Rounds.module.css";
+import PinkButton from "../PinkButton";
 
 function Hero() {
     return (
         <section className={styles.Hero}>
             <Breadcrumbs/>
 
-            <div>
+            <div className={styles.HeroBottom}>
                 <div className={styles.HeroImg}>
                     <img src='img/corporativesHero/1.png' alt='1'/>
 
@@ -34,7 +35,26 @@ function Hero() {
                     <div className={roundStyles.round98Two}></div>
                 </div>
 
-                <div className={styles.HeroText}></div>
+                <div className={styles.HeroText}>
+                    <h2 className="titleSecond" style={{marginBottom: "13px"}}>Корпоративные подарки</h2>
+                    <p className="descr" style={{textAlign: "center", marginBottom: "63px"}}>Брендированные пирожные
+                        макарон, которые
+                        поднимут <br/> аппетит ваших клиентов
+                        или порадуют коллектив</p>
+
+
+                    <p className="descr" style={{fontSize: "16px", marginBottom: "32px"}}>
+                        Поднять мотивацию сотрудников? Увеличить лояльность клиентов или расположить их к <br/> себе
+                        перед
+                        большой сделкой? <br/>
+                        Мы приготовим наборы пирожных от 200 руб за шт, сделаем индивидуальный дизайн и <br/> нанесём
+                        ваши
+                        лого. Обычно готовим за 2-3 дня.
+                    </p>
+                    <div style={{textAlign: "center"}}>
+                        <PinkButton text="Скачать весь каталог подарков"/>
+                    </div>
+                </div>
             </div>
         </section>
     )

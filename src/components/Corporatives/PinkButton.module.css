@@ -1,0 +1,18 @@
+.pinkButton {
+    background: #E7426A;
+    padding: 17px 33px;
+    color: white;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+}
+
+.pinkButton:hover {
+    background: #4E9DD3;
+}
+
+.pinkButton:active {
+    background: #E7426A;
+}

@@ -1,0 +1,30 @@
+.GiftsItemsContainer {
+    padding: 0 135px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 33px;
+}
+
+.GiftsItemsContainer > div {
+    width: 271px;
+}
+
+.GiftsItemsContainer p {
+    width: 232px;
+}
+
+.GiftsItemsContainer img {
+    padding: 22px 14px 0 14px;
+}
+
+.GiftsItemsContainer div::after {
+    display: none;
+}
+
+.GiftsItemsContainer div::before {
+    width: 271px;
+}
+
+.GiftsItemsContainer button {
+    display: none;
+}

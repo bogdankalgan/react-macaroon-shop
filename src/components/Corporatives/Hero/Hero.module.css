@@ -1,8 +1,6 @@
 .Hero {
-    padding: 0 135px;
-    height: 475px;
+    margin-bottom: 117px;
 }
-
 
 .HeroImg {
     position: relative;
@@ -16,6 +14,7 @@
 .HeroImg img:nth-child(1) {
     left: 175px;
     top: 54px;
+    z-index: 12;
 }
 
 .HeroImg img:nth-child(2) {
@@ -28,6 +27,44 @@
     top: 244px;
 }
 
+.HeroImg img:nth-child(4) {
+    left: 490px;
+    top: 342px;
+}
+
+.HeroImg img:nth-child(5) {
+    left: 381px;
+    top: 427px;
+}
+
+.HeroImg img:nth-child(6) {
+    left: 155px;
+    top: 385px;
+}
+
+.HeroImg img:nth-child(7) {
+    left: 88px;
+    top: 322px;
+}
+
+.HeroImg img:nth-child(8) {
+    left: 96px;
+    top: 178px;
+    z-index: 11;
+}
+
+.HeroImg img:nth-child(9) {
+    left: 124px;
+    top: 53px;
+}
+
+.HeroBottom {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 135px;
+}
+
 .HeroText {
+    padding: 136px 0 2px 25px;
 }
 
