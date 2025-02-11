@@ -3,7 +3,7 @@ import Layout from "./Layout";
 import Home from "./Home";
 import Cart from "./Cart";
 import Catalog from "./components/Catalog/Catalog";
-import ReadyNabery from "./components/ReadyNabery/ReadyNabery";
+import ReadyNabery from "./components/Home/ReadyNabery/ReadyNabery";
 import {CartProvider} from "./components/CartContext";
 import Corporatives from "./components/Corporatives/Corporatives";
 

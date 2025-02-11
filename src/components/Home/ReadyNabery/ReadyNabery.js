@@ -1,11 +1,11 @@
 import {useState, useEffect} from "react";
-import Header from '../Home/Header/Header';
-import Breadcrumbs from "../BreadCrumbs";
-import PopularButton from "../Home/Popular/PopularButton";
-import PopularItemContainer from "../Home/Popular/PopularItemContainer";
+import Header from '../Header/Header';
+import Breadcrumbs from "../../BreadCrumbs";
+import PopularButton from "../Popular/PopularButton";
+import PopularItemContainer from "../Popular/PopularItemContainer";
 import FilterContainer from "./FilterContainer";
 import styles from "./ReadyNabery.module.css";
-import {dataBase} from "../dataBase";
+import {dataBase} from "../../dataBase";
 
 function ReadyNabery() {
     const [items, setItems] = useState([]);
