@@ -1,0 +1,37 @@
+.HeroText {
+}
+
+.HeroText > p {
+    width: 579px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.HeroTextButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 41px;
+}
+
+.HeroTextButtons > button:first-of-type {
+    margin-right: 10px;
+}
+
+.HeroTextListWrap {
+}
+
+.HeroTextListWrap > p {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    color: #292929;
+}
+
+.HeroTextList {
+    padding-left: 25px;
+}
+
+.HeroTextListItem {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    color: #292929;
+}

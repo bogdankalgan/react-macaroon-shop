@@ -6,6 +6,7 @@ import Catalog from "./components/Catalog/Catalog";
 import ReadyNabery from "./components/Home/ReadyNabery/ReadyNabery";
 import {CartProvider} from "./components/CartContext";
 import Corporatives from "./components/Corporatives/Corporatives";
+import Layer from "./components/Layer/Layer";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                         <Route path="readyNabery" element={<ReadyNabery/>}/>
                         <Route path="catalog" element={<Catalog/>}/>
                         <Route path="corporatives" element={<Corporatives/>}/>
+                        <Route path="layer" element={<Layer/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

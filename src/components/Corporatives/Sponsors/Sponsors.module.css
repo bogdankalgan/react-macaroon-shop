@@ -1,0 +1,16 @@
+.Sponsors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.SponsorsContainer {
+    display: flex;
+    gap: 67px;
+    margin-bottom: 42px;
+}
+
+.SponsorsContainer img {
+    mix-blend-mode: darken;
+}

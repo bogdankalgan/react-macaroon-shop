@@ -11,6 +11,7 @@ function Breadcrumbs() {
         "about": "О нас",
         "catalog": "Каталог десертов",
         "corporatives": "Корпоративные подарки",
+        "layer": " Предложения для юридических лиц",
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);

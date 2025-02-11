@@ -4,6 +4,7 @@ import React from "react";
 import Gifts from "./Gifts/Gifts";
 import Complete from "./Complete/Complete";
 import Sponsors from "./Sponsors/Sponsors";
+import Answers from "./Answers/Answers";
 
 function Corporatives() {
     return (
@@ -13,6 +14,7 @@ function Corporatives() {
             <Gifts/>
             <Complete/>
             <Sponsors/>
+            <Answers/>
         </React.Fragment>
     )
 }

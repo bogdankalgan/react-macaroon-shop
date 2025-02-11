@@ -1,0 +1,35 @@
+.orangeRound {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    background: rgba(100, 79, 64, .41);
+    filter: blur(100px);
+    position: absolute;
+    left: 55px;
+    top: 223px;
+    z-index: -1;
+}
+
+.whiteRound {
+    width: 248px;
+    height: 248px;
+    border-radius: 50%;
+    background: #FFF2E0;
+    filter: blur(100px);
+    position: absolute;
+    left: 410px;
+    top: 156px;
+    z-index: -1;
+}
+
+.greyRound {
+    width: 276px;
+    height: 276px;
+    border-radius: 50%;
+    background: rgba(71, 84, 100, .27);
+    filter: blur(100px);
+    position: absolute;
+    right: 67px;
+    top: 35px;
+    z-index: -1;
+}

@@ -1,0 +1,8 @@
+.Hero {
+    padding: 87px 135px 0 135px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 83px;
+}
+

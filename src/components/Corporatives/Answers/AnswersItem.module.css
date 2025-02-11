@@ -1,0 +1,32 @@
+.AnswersItem {
+    background: white;
+    border: 1px solid #EDEDF0;
+    border-radius: 5px;
+    width: 370px;
+    padding: 21px 22px 29px 22px;
+    position: relative;
+}
+
+.AnswerItemTitle {
+    margin-bottom: 62px;
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.AnswerItemDivider {
+    position: absolute;
+    top: 83px;
+    right: 0;
+    width: 414px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.AnswerItemDescr {
+    color: rgba(16, 16, 16, .8);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    
+}

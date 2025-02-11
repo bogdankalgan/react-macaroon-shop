@@ -1,0 +1,10 @@
+.Answer {
+    margin-bottom: 64px;
+}
+
+.AnswerItemsContainer {
+    padding: 0 66px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
