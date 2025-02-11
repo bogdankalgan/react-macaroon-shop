@@ -2,7 +2,7 @@ import Header from "../Home/Header/Header";
 import Hero from "./Hero/Hero";
 import React from "react";
 import Gifts from "./Gifts/Gifts";
-import Complete from "./Gifts/Complete";
+import Complete from "./Complete/Complete";
 
 function Corporatives() {
     return (

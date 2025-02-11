@@ -8,3 +8,8 @@
 .completeItemContainer::-webkit-scrollbar {
     display: none;
 }
+
+.completeItemContainerButtons {
+    display: flex;
+    justify-content: center;
+}
