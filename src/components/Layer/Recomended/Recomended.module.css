@@ -1,0 +1,12 @@
+.Recomended {
+    padding: 67px 135px 48px 135px;
+}
+
+.RecomendedItemContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 240px auto;
+    gap: 20px 30px;
+    align-items: start;
+}
+

@@ -1,0 +1,47 @@
+.RecomendedItem, .RecomendedItem > div {
+    background: white;
+}
+
+.RecomendedItem {
+    border: 1px solid #EDEDF0;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 30px 30px 21px 20px;
+    width: 339px;
+}
+
+.RecomendedItem > div {
+    border: none;
+    padding: 0;
+}
+
+.RecomendedItemText {
+    display: flex;
+    justify-content: end;
+}
+
+.RecomendedItem > div > div {
+    bottom: -20px;
+    top: auto;
+    width: 370px;
+}
+
+.RecomendedItem > div > p:not(:last-child) {
+    margin-bottom: 36px;
+}
+
+.RecomendedItem > div > p:last-child {
+    margin-bottom: 40px;
+}
+
+.RecomendedItem > div > p {
+    width: 330px;
+}
+
+.RecomendedItemTitle, .RecomendedItemDescr {
+    text-align: right;
+}
+
+.RecomendedItem img {
+    margin-left: 13px;
+}

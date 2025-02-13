@@ -1,8 +1,17 @@
 .OfferItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .OfferItemImg {
+    background: white;
+    border-radius: 50%;
+    padding: 19px;
+    margin-bottom: 13px;
 }
 
 .OfferItemTitle {
+    white-space: pre-line;
+    text-align: center;
 }

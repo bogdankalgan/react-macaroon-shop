@@ -2,5 +2,8 @@
 }
 
 .OfferItemContainer {
-    
+    padding: 51px 207px 113px 169px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 52px;
 }

@@ -1,0 +1,66 @@
+.Calculation {
+    background: #F7EBE5;
+    padding: 76px 136px;
+}
+
+.Calculation > p > a {
+    color: #4E9DD3;
+    transition: all .3s;
+}
+
+.Calculation > p > a:hover {
+    color: #292929;
+}
+
+.Calculation > p > a:active {
+    color: #4E9DD3;
+}
+
+.Calculation > p {
+    font-size: 11px;
+    color: #292929;
+    font-family: "Poppins", sans-serif;
+    opacity: .8;
+}
+
+.CalculationInputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) auto;
+    grid-template-rows: 72px 72px auto;
+    row-gap: 16px;
+    column-gap: 29px;
+    width: 100%;
+    margin-bottom: 23px;
+}
+
+.CalculationInputs > div:has(input) {
+    height: 73px;
+}
+
+.CalculationInputs > div:has(input) > input::placeholder {
+    opacity: .4;
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.CalculationInputs input:focus, textarea:focus {
+    outline: none;
+    border-color: #7FCDEE;
+}
+
+.CalculationInputs textarea {
+    border: 1px solid #EDEDF0;
+}
+
+.CalculationInputs textarea:focus {
+    border-color: #7FCDEE;
+}
+
+.CalculationInputs > div > p {
+    font-size: 14px;
+    color: #292929;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 6px;
+}
