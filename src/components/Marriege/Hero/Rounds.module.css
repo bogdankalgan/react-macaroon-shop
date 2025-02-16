@@ -1,0 +1,75 @@
+.whiteRound {
+    position: absolute;
+    width: 247px;
+    height: 247px;
+    border-radius: 50%;
+    background: #FFF2E0;
+    filter: blur(100px);
+    top: 4px;
+    left: 260px;
+    z-index: -1;
+}
+
+.FFround {
+    position: absolute;
+    width: 336px;
+    height: 336px;
+    border-radius: 50%;
+    background: #FFF9C8;
+    opacity: .37;
+    filter: blur(100px);
+    top: -12px;
+    right: 44px;
+    z-index: -1;
+}
+
+.FF3round {
+    position: absolute;
+    width: 276px;
+    height: 336px;
+    border-radius: 50%;
+    background: #FFF3B5;
+    opacity: .27;
+    filter: blur(100px);
+    top: 101px;
+    right: -19px;
+}
+
+.roseRound:nth-child(4) {
+    position: absolute;
+    width: 169px;
+    height: 169px;
+    border-radius: 50%;
+    background: #FFA8A8;
+    opacity: .56;
+    filter: blur(100px);
+    top: 277px;
+    left: 384px;
+    z-index: -1;
+}
+
+.roseRound:nth-child(5) {
+    position: absolute;
+    width: 169px;
+    height: 169px;
+    border-radius: 50%;
+    background: #FFA8A8;
+    opacity: .56;
+    filter: blur(100px);
+    top: 339px;
+    left: 310px;
+    z-index: -1;
+}
+
+.FF9round {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background: #FFF9C8;
+    opacity: .37;
+    filter: blur(100px);
+    top: 109px;
+    left: 109px;
+    z-index: -1;
+}

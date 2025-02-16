@@ -1,0 +1,14 @@
+.Questions {
+    padding: 81px 135px 69px 135px;
+}
+
+.QuestionsItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+
+.QuestionsItems > div > div {
+    width: 368px;
+}

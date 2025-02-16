@@ -1,0 +1,57 @@
+.Open {
+    display: flex;
+    align-items: center;
+}
+
+.OpenImg {
+}
+
+.OpenContent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.OpenContent > button {
+    margin-bottom: 16px;
+}
+
+.OpenInputs {
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 30px;
+}
+
+.OpenInputs input {
+    width: 270px;
+    border: none;
+    height: 50px;
+    padding-left: 14px;
+}
+
+.OpenInputs p {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 8px;
+}
+
+.OpenIdea {
+    width: 570px;
+}
+
+.OpenIdea > input {
+    width: 100%;
+    height: 60px;
+}
+
+.OpenPolicy {
+    color: #292929;
+    font-size: 11px;
+    font-family: "Poppins", sans-serif;
+}
+
+.OpenPolicy > a {
+    color: #4E9DD3;
+}

@@ -1,0 +1,6 @@
+.NabForMarriegeItem {
+    padding: 52px 135px 95px 135px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px;
+}
