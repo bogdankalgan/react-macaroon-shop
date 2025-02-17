@@ -1,0 +1,51 @@
+.Payment {
+    background: white;
+    position: relative;
+    padding: 104px 294px 92px 235px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.PaymentContent {
+    margin-right: 119px;
+}
+
+.PaymentImg {
+}
+
+.PaymentDivs {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+.PaymentDiv {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: white;
+    width: 30px;
+    height: 20px;
+}
+
+.PaymentTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.PaymentDescr {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.PaymentDescr:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.PaymentDescr:nth-child(4) {
+    margin-bottom: 34px;
+}

@@ -9,6 +9,7 @@ import Corporatives from "./components/Corporatives/Corporatives";
 import Layer from "./components/Layer/Layer";
 import Marriege from "./components/Marriege/Marriege";
 import Guarentee from "./components/Guarantee/Guarentee";
+import Delivery from "./components/Delivery/Delivery";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                         <Route path="layer" element={<Layer/>}/>
                         <Route path="marriege" element={<Marriege/>}/>
                         <Route path="guarantee" element={<Guarentee/>}/>
+                        <Route path="delivery" element={<Delivery/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

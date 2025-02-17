@@ -14,6 +14,7 @@ function Breadcrumbs() {
         "layer": " Предложения для юридических лиц",
         "marriege": "Предложение для свадеб",
         "guarantee": " Гарантии вкуса и качества",
+        "delivery": "Доставка и оплата",
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);

@@ -1,0 +1,24 @@
+.roseRound {
+    position: absolute;
+    width: 214px;
+    height: 214px;
+    background: #FFDAD4;
+    filter: blur(100px);
+    border-radius: 50%;
+    left: 34px;
+    top: 175px;
+    z-index: -1;
+}
+
+.yellowRound {
+    position: absolute;
+    width: 231px;
+    height: 231px;
+    border-radius: 50%;
+    background: #FAD4A7;
+    opacity: .38;
+    filter: blur(100px);
+    left: 258px;
+    top: 116px;
+    z-index: -1;
+}
