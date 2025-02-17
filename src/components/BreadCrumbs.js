@@ -13,6 +13,7 @@ function Breadcrumbs() {
         "corporatives": "Корпоративные подарки",
         "layer": " Предложения для юридических лиц",
         "marriege": "Предложение для свадеб",
+        "guarantee": " Гарантии вкуса и качества",
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);

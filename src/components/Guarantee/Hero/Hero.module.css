@@ -1,0 +1,9 @@
+.Hero {
+    padding: 22px 285px 41px 285px;
+}
+
+.HeroItems {
+    display: flex;
+    align-items: start;
+    gap: 30px;
+}

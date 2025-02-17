@@ -1,0 +1,10 @@
+.HeroItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HeroItemText {
+    white-space: pre-wrap;
+    text-align: center;
+}
