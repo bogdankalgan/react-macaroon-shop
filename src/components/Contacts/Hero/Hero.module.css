@@ -1,0 +1,33 @@
+.Hero {
+    display: flex;
+    padding: 24px 235px  82px 222px;
+}
+
+.HeroImg {
+    margin-right: 133px;
+}
+
+.HeroContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.HeroContent > h1 {
+    margin-bottom: 30px;
+}
+
+.HeroContent > div > p:nth-child(1) {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 13px;
+    color: #292929;
+}
+
+
+.HeroContent > div > p:not(:nth-child(1)) {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #292929;
+}

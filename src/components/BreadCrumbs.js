@@ -15,6 +15,7 @@ function Breadcrumbs() {
         "marriege": "Предложение для свадеб",
         "guarantee": " Гарантии вкуса и качества",
         "delivery": "Доставка и оплата",
+        "contacts": "Контакты",
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);

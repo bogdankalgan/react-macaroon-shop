@@ -10,6 +10,7 @@ import Layer from "./components/Layer/Layer";
 import Marriege from "./components/Marriege/Marriege";
 import Guarentee from "./components/Guarantee/Guarentee";
 import Delivery from "./components/Delivery/Delivery";
+import Contacts from "./components/Contacts/Contacts";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                         <Route path="marriege" element={<Marriege/>}/>
                         <Route path="guarantee" element={<Guarentee/>}/>
                         <Route path="delivery" element={<Delivery/>}/>
+                        <Route path="contacts" element={<Contacts/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
