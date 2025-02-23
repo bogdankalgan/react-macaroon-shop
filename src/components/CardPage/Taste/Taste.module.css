@@ -1,0 +1,52 @@
+.Taste {
+    background: white;
+    padding: 25px 27px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+}
+
+.TasteTitle {
+    color: #292929;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+.TasteContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.TasteText {
+    width: 59px;
+
+}
+
+.TasteText > p {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.TasteText > p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.TasteCount {
+    width: 45px;
+}
+
+.TasteCount > p {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.TasteCount > p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+

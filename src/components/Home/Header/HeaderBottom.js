@@ -28,7 +28,7 @@ function HeaderBottom() {
                     </a>
                 </li>
 
-                <img src="icons/siteIcon/logoHeader.svg" alt="header site logo"></img>
+                <img src="/icons/siteIcon/logoHeader.svg" alt="header site logo"></img>
 
                 <li>
                     <a href={hrefs.createDesign}>

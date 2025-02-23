@@ -1,7 +1,7 @@
 import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Home";
-import Cart from "./Cart";
+import Cart from "./components/Cart/Cart";
 import Catalog from "./components/Catalog/Catalog";
 import ReadyNabery from "./components/Home/ReadyNabery/ReadyNabery";
 import {CartProvider} from "./components/CartContext";
@@ -11,6 +11,7 @@ import Marriege from "./components/Marriege/Marriege";
 import Guarentee from "./components/Guarantee/Guarentee";
 import Delivery from "./components/Delivery/Delivery";
 import Contacts from "./components/Contacts/Contacts";
+import CardPage from "./components/CardPage/CardPage";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                         <Route path="guarantee" element={<Guarentee/>}/>
                         <Route path="delivery" element={<Delivery/>}/>
                         <Route path="contacts" element={<Contacts/>}/>
+                        <Route path='readyNabery/:id' element={<CardPage/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

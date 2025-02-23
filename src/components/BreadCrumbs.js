@@ -1,7 +1,7 @@
-import {Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./BreadCrumbs.module.css";
 
-function Breadcrumbs() {
+function Breadcrumbs({ title }) {
     const location = useLocation();
 
     const pathNamesMap = {
@@ -11,9 +11,9 @@ function Breadcrumbs() {
         "about": "О нас",
         "catalog": "Каталог десертов",
         "corporatives": "Корпоративные подарки",
-        "layer": " Предложения для юридических лиц",
+        "layer": "Предложения для юридических лиц",
         "marriege": "Предложение для свадеб",
-        "guarantee": " Гарантии вкуса и качества",
+        "guarantee": "Гарантии вкуса и качества",
         "delivery": "Доставка и оплата",
         "contacts": "Контакты",
     };
@@ -31,11 +31,11 @@ function Breadcrumbs() {
 
                 return isLast ? (
                     <span key={to} className={styles.active}>
-                        > {pathNamesMap[value] || value}
+                        > {title || pathNamesMap[value] || value}
                     </span>
                 ) : (
                     <span key={to}>
-                        {" / "}
+                        {" > "}
                         <Link to={to}>{pathNamesMap[value] || value}</Link>
                     </span>
                 );

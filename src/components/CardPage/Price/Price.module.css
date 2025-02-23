@@ -1,0 +1,26 @@
+.Price {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+    background: white;
+    padding: 15px 28px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.PriceText {
+    color: #E7426A;
+    font-size: 24px;
+    font-family: "Monserrat", sans-serif;
+    font-weight: 500;
+}
+
+.Price > button {
+    background: #E7426A;
+    color: white;
+    padding: 15px 38px;
+    font-size: 14px;
+    font-weight: 600;
+}
