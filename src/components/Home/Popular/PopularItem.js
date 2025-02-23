@@ -3,12 +3,13 @@ import styles from "./PopularItem.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShoppingBag} from "@fortawesome/free-solid-svg-icons";
 import {CartContext} from "../../CartContext";
+import {Link} from "react-router-dom";
 
 function PopularItem({imgPath, title, descr, price, id}) {
     const {addToCart} = useContext(CartContext);
 
     return (
-        <div className={styles.PopularItem} key={id}>
+        <Link to={`/readyNabery/${id}`} className={styles.PopularItem} key={id}>
             <img src={imgPath} alt={title}/>
 
             <div className={styles.PopularItemContent}>
@@ -27,7 +28,7 @@ function PopularItem({imgPath, title, descr, price, id}) {
                     </button>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

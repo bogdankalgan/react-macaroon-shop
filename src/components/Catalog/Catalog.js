@@ -12,8 +12,8 @@ import buttonStyles from "./CatalogCardsButton.module.css";
 
 function Catalog() {
     const [catalogCards, setCatalogCards] = useState([]);
-    const containerRef = useRef(null); // Ссылка на контейнер
-    const [itemWidth, setItemWidth] = useState(0); // Динамическая ширина элемента
+    const containerRef = useRef(null);
+    const [itemWidth, setItemWidth] = useState(0);
 
     useEffect(() => {
         const fetchCards = async () => {
@@ -67,6 +67,8 @@ function Catalog() {
             <p className="descr" style={{marginBottom: "41px", textAlign: "center"}}>
                 Тогда взгляните на наши комбо-наборы
             </p>
+
+
             <div className={styles.CatalogCardsWrapper}>
 
                 <CatalogCardsButton icon={faArrowLeft} clas={buttonStyles.catalogCardsButton} onClick={scrollLeft}/>
@@ -90,6 +92,8 @@ function Catalog() {
 
                 <CatalogCardsButton icon={faArrowRight} clas={buttonStyles.catalogCardsButton} onClick={scrollRight}/>
             </div>
+
+
             <div style={{textAlign: "center", marginBottom: "87px"}}>
                 <PopularButton text="Все готовые наборы"/>
             </div>

@@ -1,0 +1,54 @@
+.CardPageTop {
+    display: flex;
+    padding: 31px 133px 36px 136px;
+    gap: 30px;
+}
+
+.CardPageTop  h1 {
+    margin-bottom: 11px;
+}
+
+.CardPageTopImg {
+    width: 570px;
+}
+
+.CardPageTopImg img:nth-child(1) {
+    width: 570px;
+}
+
+.CardPageTopImg img:not(:nth-child(1)) {
+    width: 71px;
+    height: 71px;
+    margin-right: 15px;
+}
+
+.CardPageTopContent {}
+
+.CardPageTopDescr {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 22px;
+}
+
+.CardPageTopPros {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.CardPageTopItem {
+    display: flex;
+    align-items: center;
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.CardPageTopItem  span {
+    text-decoration: underline;
+}
+
+.CardPageTopItem img {
+    margin-right: 27px;
+}

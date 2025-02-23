@@ -1,0 +1,91 @@
+.DescriptionContainer {
+    padding: 0 135px;
+    margin-bottom: 60px;
+}
+
+.Description {
+    background: white;
+    padding: 22px 24px 57px 23px;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+}
+
+.DescriptionButtons {
+    display: flex;
+    gap: 13px;
+    border-bottom: 1px solid #EDEDF0;
+    padding-bottom: 18px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.DescriptionBtn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #292929;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.DescriptionBtn:hover {
+    color: #E7426A;
+}
+
+.DescriptionBtn:active {
+    color: #292929;
+}
+
+.DescriptionBtnActive {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #292929;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.DescriptionBtnActive:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    width: 88px;
+    height: 4px;
+    background: #E7426A;
+    left: 0;
+    bottom: 0;
+}
+
+.DescriptionBtnActive:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 4px;
+    background: #E7426A;
+    left: 92px;
+    bottom: 0;
+}
+
+.DescriptionBtnActive:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    width: 196px;
+    height: 4px;
+    background: #E7426A;
+    left: 311px;
+    bottom: 0;
+}
+
+
+.DescriptionText {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+
