@@ -12,6 +12,7 @@ import Guarentee from "./components/Guarantee/Guarentee";
 import Delivery from "./components/Delivery/Delivery";
 import Contacts from "./components/Contacts/Contacts";
 import CardPage from "./components/CardPage/CardPage";
+import News from "./components/News/News";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                         <Route path="delivery" element={<Delivery/>}/>
                         <Route path="contacts" element={<Contacts/>}/>
                         <Route path='readyNabery/:id' element={<CardPage/>}/>
+                        <Route path='news' element={<News/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

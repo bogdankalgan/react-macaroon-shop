@@ -1,7 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import styles from "./BreadCrumbs.module.css";
 
-function Breadcrumbs({ title }) {
+function Breadcrumbs({title}) {
     const location = useLocation();
 
     const pathNamesMap = {
@@ -16,6 +16,7 @@ function Breadcrumbs({ title }) {
         "guarantee": "Гарантии вкуса и качества",
         "delivery": "Доставка и оплата",
         "contacts": "Контакты",
+        "news": "Новости"
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);
