@@ -1,0 +1,8 @@
+.Login {
+    padding: 20px 135px 0 135px;
+}
+
+.LoginForm {
+    display: flex;
+    gap: 10px;
+}

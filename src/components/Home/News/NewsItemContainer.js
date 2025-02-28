@@ -18,7 +18,6 @@ function NewsItemContainer() {
                 const {data, error} = await dataBase.from("news").select("*");
 
                 if (error) throw error;
-
                 setNews(data);
             } catch (error) {
                 console.log("Error loading data", error);
@@ -84,6 +83,8 @@ function NewsItemContainer() {
                             title={item.title}
                             descr={item.description}
                             date={item.date}
+                            id={item.id}
+                            key={item.id}
                         />
                     </div>
                 ))}

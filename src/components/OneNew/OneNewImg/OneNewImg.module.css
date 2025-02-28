@@ -1,0 +1,27 @@
+.OneNewImg {
+    width: 570px;
+}
+
+
+.MainImg {
+    width: 570px;
+    height: 450px;
+    margin-bottom: 56px;
+}
+
+.MainImg > img {
+    width: 570px;
+    height: 450px;
+}
+
+.SmallImg {
+    width: 135px;
+    height: 100px;
+    display: flex;
+    gap: 15px;
+}
+
+.SmallImg > img {
+    width: 135px;
+    height: 100px;
+}
