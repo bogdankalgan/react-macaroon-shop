@@ -37,7 +37,7 @@ function News() {
             <div className={containerStyles.NewsItemContainer}>
                 {news.map((item, index) => (
                     <NewsItem key={index} imgPath={item.imgpath} title={item.title} descr={item.description}
-                              date={item.date}/>
+                              date={item.date} id={item.id}/>
                 ))}
             </div>
         </div>

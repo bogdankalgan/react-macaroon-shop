@@ -1,10 +1,10 @@
 import styles from './NewsItem.module.css';
+import {Link} from "react-router-dom";
 
 function NewsItem(props) {
-    const {imgPath, date, title, descr} = props;
-
+    const {imgPath, date, title, descr, id} = props;
     return (
-        <div className={styles.NewsItem}>
+        <Link to={`/news/${id}`} className={styles.NewsItem} id={id} key={id}>
             <img src={imgPath} alt={title}></img>
 
             <div className={styles.NewsItemContent}>
@@ -14,7 +14,7 @@ function NewsItem(props) {
 
                 <p className={styles.NewsItemDescr}>{descr}</p>
             </div>
-        </div>
+        </Link>
     )
 }
 
