@@ -1,13 +1,22 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext, useState, useEffect} from "react";
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({children}) {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true); // Добавляем статус загрузки
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+        setLoading(false);
+    }, []);
 
     const login = (userData) => {
-        setUser(userData); // ✅ Сохранение пользователя в контексте
-        localStorage.setItem("user", JSON.stringify(userData)); // ✅ Можно сохранить в localStorage
+        setUser(userData);
+        localStorage.setItem("user", JSON.stringify(userData));
     };
 
     const logout = () => {
@@ -16,7 +25,7 @@ export function AuthProvider({children}) {
     };
 
     return (
-        <AuthContext.Provider value={{user, login, logout}}>
+        <AuthContext.Provider value={{user, login, logout, loading}}>
             {children}
         </AuthContext.Provider>
     );

@@ -1,0 +1,47 @@
+.AdminHome {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: #F7EBE5;
+}
+
+.AdminHomeTitle {
+    color: #292929;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+}
+
+
+.AdminHomeDescr {
+    color: #292929;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+.AdminHomeNav {
+    display: flex;
+    gap: 20px;
+}
+
+.AdminHomeLink {
+    text-decoration: none;
+    color: #292929;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    transition: all .3s;
+    font-weight: 500;
+}
+
+.AdminHomeLink:hover {
+    color: #E7426A;
+}
+
+.AdminHomeLink:active {
+    color: #292929;
+}
