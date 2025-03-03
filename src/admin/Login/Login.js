@@ -3,6 +3,7 @@ import {useAuth} from "../AuthContext";
 import {dataBase} from "../../components/dataBase";
 import {useNavigate} from "react-router-dom";
 import styles from "./Login.module.css";
+import PinkButton from "../../components/Corporatives/PinkButton";
 
 function Login() {
     const [name, setName] = useState("");
@@ -21,12 +22,12 @@ function Login() {
                 .single();
 
             if (error || !data) {
-                setError("Неверный логин или пароль");
+                setError("Введи правильно пароль или логин, дебил сука");
                 return;
             }
 
             if (pass !== data.pass) {
-                setError("Неправильный логин или пароль")
+                setError("Введи правильно пароль или логин, дебил сука")
                 return
             }
 
@@ -42,7 +43,7 @@ function Login() {
 
     return (
         <div className={styles.Login}>
-            <h1 className="titleFirst" style={{marginBottom: '20px'}}>Вход в админку</h1>
+            <h1 className={styles.LoginFormTitle}>Вход в админку</h1>
             {error && <p style={{color: "red"}}>{error}</p>}
             <form onSubmit={handleSubmit} className={styles.LoginForm}>
                 <input
@@ -50,14 +51,16 @@ function Login() {
                     placeholder="Логин"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    className={styles.LoginFormInput}
                 />
                 <input
                     type="password"
                     placeholder="Пароль"
                     value={pass}
                     onChange={(e) => setPass(e.target.value)}
+                    className={styles.LoginFormInput}
                 />
-                <button type="submit">Войти</button>
+                <PinkButton text='Войти'/>
             </form>
         </div>
     );
