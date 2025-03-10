@@ -21,6 +21,7 @@ import ProtectedRoute from "./admin/ProtectedRoute";
 import AdminHome from "./admin/AdminHome/AdminHome";
 import Users from "./admin/Users/Users";
 import Login from "./admin/Login/Login";
+import AdminNews from "./admin/AdminNews/AdminNews"
 
 function App() {
     return (
@@ -46,9 +47,25 @@ function App() {
 
                         <Route path="/login" element={<Login/>}/>
 
-
-                        <Route path="/admin" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}/>
-                        <Route path="/admin/users" element={<ProtectedRoute><Users/></ProtectedRoute>}/>
+                        <Route
+                            path="/admin"
+                            element={
+                                <ProtectedRoute>
+                                    <AdminHome/>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/admin/users"
+                            element={
+                                <ProtectedRoute>
+                                    <Users/>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route path="/admin/news" element={<ProtectedRoute>
+                            <AdminNews/>
+                        </ProtectedRoute>}/>
                     </Routes>
                 </AuthProvider>
             </BrowserRouter>
