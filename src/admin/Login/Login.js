@@ -4,6 +4,7 @@ import {dataBase} from "../../components/dataBase";
 import {useNavigate} from "react-router-dom";
 import styles from "./Login.module.css";
 import PinkButton from "../../components/Corporatives/PinkButton";
+import bcryptjs from "bcryptjs";
 
 function Login() {
     const [name, setName] = useState("");
@@ -25,12 +26,14 @@ function Login() {
                 setError("Введи правильно пароль или логин, дебил сука");
                 return;
             }
+            
 
-            if (pass !== data.pass) {
+            const passwordMatch = await bcryptjs.compare(pass, data.pass)
+
+            if (!passwordMatch) {
                 setError("Введи правильно пароль или логин, дебил сука")
                 return
             }
-
             login({name: data.name, role: data.role});
 
             navigate("/admin");

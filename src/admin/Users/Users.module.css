@@ -6,8 +6,68 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 50px;
+}
+
+.AddUsers {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 20px;
 }
 
 .UsersInput {
-    
+    border: none;
+    padding: 17px 0 17px 14px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.UsersInput::placeholder {
+    color: #292929;
+    font-size: 12px;
+    font-family: "Monserrat", sans-serif;
+}
+
+.UsersInput:focus {
+    border: 1px solid #E37EB7;
+    outline: none;
+}
+
+.UsersList {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.User {
+    color: #292929;
+    font-family: "Monserrat", sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.UsersTitle {
+    color: #292929;
+    font-family: "Monserrat", sans-serif;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+
+.UserButton button {
+    margin-bottom: 10px;
+}
+
+.UsersName {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.UserButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

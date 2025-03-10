@@ -1,36 +1,61 @@
 import {createContext, useContext, useState, useEffect} from "react";
+import {useNavigate, useLocation} from "react-router-dom";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
-export function AuthProvider({children}) {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true); // Добавляем статус загрузки
+export const AuthProvider = ({children}) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [user, setUser] = useState(() => {
+        return JSON.parse(localStorage.getItem("user")) || null;
+    });
 
     useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
+        // Проверяем, не был ли сервер перезапущен
+        if (!sessionStorage.getItem("sessionValid")) {
+            localStorage.removeItem("user"); // Сбрасываем пользователя
+            setUser(null);
+            sessionStorage.setItem("sessionValid", "true"); // Устанавливаем флаг активности сессии
         }
-        setLoading(false);
-    }, []);
 
-    const login = (userData) => {
-        setUser(userData);
-        localStorage.setItem("user", JSON.stringify(userData));
+        // Если пользователь есть – сохраняем его в `localStorage`
+        if (user) {
+            localStorage.setItem("user", JSON.stringify(user));
+        }
+
+        // Если нажали "Назад" на странице логина – блокируем "Вперёд"
+        if (location.pathname === "/login") {
+            window.history.pushState(null, "", location.pathname);
+            window.history.forward();
+        }
+    }, [location.pathname, user]);
+
+    const login = async (userData) => {
+        try {
+            setUser(userData);
+            localStorage.setItem("user", JSON.stringify(userData));
+            navigate("/admin", {replace: true});
+        } catch (error) {
+            console.error("Ошибка входа:", error);
+        }
     };
 
     const logout = () => {
-        setUser(null);
-        localStorage.removeItem("user");
+        try {
+            setUser(null);
+            localStorage.removeItem("user");
+            sessionStorage.removeItem("sessionValid"); // Удаляем сессию при выходе
+            navigate("/login", {replace: true});
+        } catch (error) {
+            console.error("Ошибка выхода:", error);
+        }
     };
 
     return (
-        <AuthContext.Provider value={{user, login, logout, loading}}>
+        <AuthContext.Provider value={{user, login, logout}}>
             {children}
         </AuthContext.Provider>
     );
-}
+};
 
-export function useAuth() {
-    return useContext(AuthContext);
-}
+export const useAuth = () => useContext(AuthContext);
