@@ -22,6 +22,7 @@ import AdminHome from "./admin/AdminHome/AdminHome";
 import Users from "./admin/Users/Users";
 import Login from "./admin/Login/Login";
 import AdminNews from "./admin/AdminNews/AdminNews"
+import AdminNabery from "./admin/AdminNabery/AdminNabery";
 
 function App() {
     return (
@@ -66,6 +67,7 @@ function App() {
                         <Route path="/admin/news" element={<ProtectedRoute>
                             <AdminNews/>
                         </ProtectedRoute>}/>
+                        <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
                     </Routes>
                 </AuthProvider>
             </BrowserRouter>
