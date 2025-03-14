@@ -1,0 +1,43 @@
+.AdminCities {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    background: #F7EBE5;
+    padding: 50px 60px 0 60px;
+}
+
+.AddCities {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.AdminCitiesInput {
+    border: none;
+    outline: none;
+    padding: 17px 0 17px 14px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.AdminCitiesList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.AdminCitiesListItem {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.AdminCitiesButtons > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
