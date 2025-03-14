@@ -11,30 +11,23 @@ export const AuthProvider = ({children}) => {
     });
 
     useEffect(() => {
-        // Проверяем, не был ли сервер перезапущен
-        if (!sessionStorage.getItem("sessionValid")) {
-            localStorage.removeItem("user"); // Сбрасываем пользователя
-            setUser(null);
-            sessionStorage.setItem("sessionValid", "true"); // Устанавливаем флаг активности сессии
-        }
-
-        // Если пользователь есть – сохраняем его в `localStorage`
         if (user) {
             localStorage.setItem("user", JSON.stringify(user));
         }
 
-        // Если нажали "Назад" на странице логина – блокируем "Вперёд"
-        if (location.pathname === "/login") {
-            window.history.pushState(null, "", location.pathname);
-            window.history.forward();
+        if (!user && location.pathname.startsWith("/admin")) {
+            navigate("/login", {replace: true});
         }
-    }, [location.pathname, user]);
+    }, [location.pathname, user, navigate]);
 
     const login = async (userData) => {
         try {
             setUser(userData);
             localStorage.setItem("user", JSON.stringify(userData));
+
+            // 🔥 Очистка истории браузера после входа, чтобы нельзя было вернуться в `/login`
             navigate("/admin", {replace: true});
+            window.history.replaceState(null, "", "/admin");
         } catch (error) {
             console.error("Ошибка входа:", error);
         }
@@ -44,8 +37,10 @@ export const AuthProvider = ({children}) => {
         try {
             setUser(null);
             localStorage.removeItem("user");
-            sessionStorage.removeItem("sessionValid"); // Удаляем сессию при выходе
+
+            // 🔥 Полностью очищаем историю, чтобы нельзя было вернуться в `/admin`
             navigate("/login", {replace: true});
+            window.history.replaceState(null, "", "/login");
         } catch (error) {
             console.error("Ошибка выхода:", error);
         }
