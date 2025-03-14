@@ -23,6 +23,7 @@ import Users from "./admin/Users/Users";
 import Login from "./admin/Login/Login";
 import AdminNews from "./admin/AdminNews/AdminNews"
 import AdminNabery from "./admin/AdminNabery/AdminNabery";
+import AdminCities from "./admin/AdminCities/AdminCities";
 
 function App() {
     return (
@@ -68,6 +69,7 @@ function App() {
                             <AdminNews/>
                         </ProtectedRoute>}/>
                         <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
+                        <Route path="/admin/cities" element={<ProtectedRoute><AdminCities/></ProtectedRoute>}/>
                     </Routes>
                 </AuthProvider>
             </BrowserRouter>
