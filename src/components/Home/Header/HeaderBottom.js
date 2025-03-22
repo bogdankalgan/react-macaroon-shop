@@ -1,4 +1,5 @@
 import styles from "./HeaderBottom.module.css"
+import {Link} from "react-router-dom";
 
 function HeaderBottom() {
     const hrefs = {
@@ -7,6 +8,8 @@ function HeaderBottom() {
         choice: "#choice",
         createDesign: "#createDesign",
     }
+
+
     return (
         <div className={styles.headerBottom}>
             <ul className={styles.headerBottomList}>
@@ -23,12 +26,13 @@ function HeaderBottom() {
                 </select>
 
                 <li>
-                    <a href={hrefs.choice}>
+                    <Link to={'/create-your-set/choose-count'}>
                         Собрать набор
-                    </a>
+                    </Link>
                 </li>
 
-                <img src="/icons/siteIcon/logoHeader.svg" alt="header site logo"></img>
+                <Link to='/'><img src="/icons/siteIcon/logoHeader.svg" alt="header site logo"></img></Link>
+
 
                 <li>
                     <a href={hrefs.createDesign}>
