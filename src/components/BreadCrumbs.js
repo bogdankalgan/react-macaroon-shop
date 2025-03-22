@@ -1,7 +1,7 @@
 import {Link, useLocation} from "react-router-dom";
 import styles from "./BreadCrumbs.module.css";
 
-function Breadcrumbs({title}) {
+function Breadcrumbs() {
     const location = useLocation();
 
     const pathNamesMap = {
@@ -16,28 +16,30 @@ function Breadcrumbs({title}) {
         "guarantee": "Гарантии вкуса и качества",
         "delivery": "Доставка и оплата",
         "contacts": "Контакты",
-        "news": "Новости"
+        "news": "Новости",
+        "create-your-set": "Собрать набор",
+        "choose-count": "Выбрать количество",
+        "choose-taste": "Выбрать вкусы",
+        "choose-extras": "Дополнительно"
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);
 
     return (
         <nav className={styles.BreadCrumbs}>
-            <Link to="/" className={pathnames.length === 0 ? styles.active : ""}>
-                Главная
-            </Link>
+            <Link to="/">Главная</Link>
             {pathnames.map((value, index) => {
                 const to = `/${pathnames.slice(0, index + 1).join("/")}`;
                 const isLast = index === pathnames.length - 1;
 
-                return isLast ? (
-                    <span key={to} className={styles.active}>
-                        > {title || pathNamesMap[value] || value}
-                    </span>
-                ) : (
+                return (
                     <span key={to}>
                         {" > "}
-                        <Link to={to}>{pathNamesMap[value] || value}</Link>
+                        {isLast ? (
+                            <span className={styles.active}>{pathNamesMap[value] || value}</span>
+                        ) : (
+                            <Link to={to}>{pathNamesMap[value] || value}</Link>
+                        )}
                     </span>
                 );
             })}

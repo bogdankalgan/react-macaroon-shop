@@ -2,8 +2,33 @@
     position: relative;
     z-index: 1111;
     padding: 135px 221px 160px 0;
+    text-align: center;
 }
 
 .HeroText h1 {
     margin-bottom: 13px;
+}
+
+.HeroTextTitle {
+    font-size: 22px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-weight: 600;
+}
+
+.HeroTextSubtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.HeroTextSubsubtitleDevider {
+    width: 29px;
+    height: 1px;
+    background: #000;
 }

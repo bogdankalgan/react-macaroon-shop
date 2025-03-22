@@ -14,6 +14,7 @@ import Contacts from "./components/Contacts/Contacts";
 import CardPage from "./components/CardPage/CardPage";
 import News from "./components/News/News";
 import OneNew from "./components/OneNew/OneNew";
+import BuildYourSet from "./components/BuildYourSet/BuildYourSet";
 
 // Admin imports
 import {AuthProvider} from "./admin/AuthContext";
@@ -21,7 +22,7 @@ import ProtectedRoute from "./admin/ProtectedRoute";
 import AdminHome from "./admin/AdminHome/AdminHome";
 import Users from "./admin/Users/Users";
 import Login from "./admin/Login/Login";
-import AdminNews from "./admin/AdminNews/AdminNews"
+import AdminNews from "./admin/AdminNews/AdminNews";
 import AdminNabery from "./admin/AdminNabery/AdminNabery";
 import AdminCities from "./admin/AdminCities/AdminCities";
 
@@ -45,29 +46,17 @@ function App() {
                             <Route path="readyNabery/:id" element={<CardPage/>}/>
                             <Route path="news" element={<News/>}/>
                             <Route path="news/:id" element={<OneNew/>}/>
+
+                            {/* 🔹 Объединённый маршрут для сборки набора */}
+                            <Route path="create-your-set/*" element={<BuildYourSet/>}/>
                         </Route>
 
                         <Route path="/login" element={<Login/>}/>
 
-                        <Route
-                            path="/admin"
-                            element={
-                                <ProtectedRoute>
-                                    <AdminHome/>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path="/admin/users"
-                            element={
-                                <ProtectedRoute>
-                                    <Users/>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route path="/admin/news" element={<ProtectedRoute>
-                            <AdminNews/>
-                        </ProtectedRoute>}/>
+                        {/* Админка */}
+                        <Route path="/admin" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}/>
+                        <Route path="/admin/users" element={<ProtectedRoute><Users/></ProtectedRoute>}/>
+                        <Route path="/admin/news" element={<ProtectedRoute><AdminNews/></ProtectedRoute>}/>
                         <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
                         <Route path="/admin/cities" element={<ProtectedRoute><AdminCities/></ProtectedRoute>}/>
                     </Routes>

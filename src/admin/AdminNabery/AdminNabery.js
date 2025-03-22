@@ -154,7 +154,7 @@ function AdminNabery() {
                             </div>
                         ) : (
                             <div>
-                                <PopularItem imgPath={item.imgpath} id={item.id} title={item.title}
+                                <PopularItem imgPath={item.imgPath} id={item.id} title={item.title}
                                              descr={item.description} price={item.price}/>
 
                                 <div className={styles.AdminNaberyListItemButtons}>

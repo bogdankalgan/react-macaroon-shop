@@ -3,16 +3,16 @@ import styles from './HeroText.module.css';
 function HeroText() {
     return (
         <div className={styles.HeroText}>
-            <p>Macaronshop</p>
+            <p className={styles.HeroTextTitle}>Macaronshop</p>
 
-            <div>
-                <div></div>
+            <div className={styles.HeroTextSubtitle}>
+                <div className={styles.HeroTextSubsubtitleDevider}></div>
 
                 <p>
                     since 2013
                 </p>
 
-                <div></div>
+                <div className={styles.HeroTextSubsubtitleDevider}></div>
             </div>
 
             <h1 className="titleFirst">Настоящая любовь</h1>

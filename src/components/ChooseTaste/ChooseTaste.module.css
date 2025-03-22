@@ -1,0 +1,204 @@
+.ChooseTaste {
+}
+
+
+.ChooseTasteSeason {
+    width: 870px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-right: 32px;
+}
+
+.ChooseTasteSeasonCard {
+    width: 237px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 27px 15px 20px 16px;
+    min-height: 370px;
+}
+
+.ChooseTasteSeasonCardTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ChooseTasteSeasonCard > p:nth-child(2) {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+
+.ChooseTasteSeasonCardDescr {
+    margin-bottom: 64px;
+    width: 239px;
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.ChooseTasteSeasonCard img {
+    width: 180px;
+    height: 170px;
+    margin-bottom: 20px;
+}
+
+.ChooseTasteSeasonCardButtons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.ChooseTasteSeasonCardButtons > button {
+    background: none;
+    border: 1px solid rgba(41, 41, 41, .1);
+    padding: 4px 3px;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ChooseTasteSeasonCardButtons::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -11px;
+    left: -18px;
+    width: 270px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.ChooseTasteTastes {
+    display: flex;
+    padding: 0 133px 50px 135px;
+}
+
+.ChooseAvaliableTastes {
+
+}
+
+.ChooseTasteTastesTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.ChooseTasteTastesTitle > span {
+    color: #E7426A;
+}
+
+.ChooseTasteTastesItem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ChooseTastesRegularTastes {
+    width: 239px;
+    background: white;
+    padding: 27px 11px 28px 20px;
+    max-height: 475px;
+}
+
+.ChooseTastesRegularTastesButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ChooseTastesRegularTastesButtons > button {
+    width: 100%;
+}
+
+.ChooseTastesRegularTastesButtons > a > button {
+    border-color: #e7426a;
+    padding: 11px 38px;
+    color: #e7426a;
+}
+
+.ChooseTastesRegularTastesCardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.ChooseTastesRegularTastesCardContainer::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -11px;
+    left: -18px;
+    width: 270px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.ChooseTastesRegularTastesCardContainer::after {
+    content: '';
+    display: block;
+    background: #EDEDF0;
+    height: 1px;
+    position: absolute;
+    bottom: -14px;
+    left: -18px;
+    width: 270px;
+}
+
+.ChooseTastesRegularTastesCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ChooseTastesRegularTastesCard > p {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+
+.ChooseTasteTastesItem > button {
+    background: none;
+    border: 1px solid rgba(41, 41, 41, .1);
+    padding: 4px 3px;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ChooseTasteCount {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 16px;
+}

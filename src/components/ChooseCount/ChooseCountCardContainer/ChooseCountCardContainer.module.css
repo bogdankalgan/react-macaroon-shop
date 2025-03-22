@@ -1,0 +1,39 @@
+.ChooseCountCardContainer {
+    padding: 0 134px 50px 134px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 23px 28px;
+}
+
+
+.nextButton {
+    text-align: center;
+}
+
+.nextButton > button {
+    transition: all .3s;
+    background: #E7426A;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    padding: 12px 84px;
+}
+
+.nextButton > button:hover {
+    background: #F45D82;
+    cursor: pointer;
+}
+
+.nextButton > button:active {
+    background: #E7426A;
+}
+
+.nextButton > button > a {
+    color: white;
+    text-decoration: none;
+}
+
