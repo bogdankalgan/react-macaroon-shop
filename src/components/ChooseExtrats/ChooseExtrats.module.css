@@ -1,0 +1,145 @@
+.ChooseExtras {
+
+}
+
+.ChooseExtrasCards {
+    width: 870px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.ChooseExtrasCard {
+    width: 242px;
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+    text-align: center;
+
+}
+
+.ChooseExtrasCardTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+
+.ChooseExtrasCardPrice {
+    color: #e7426a;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.ChooseExtrasCardImg {
+    width: 244px;
+    height: 192px;
+    background: #EDEDF0;
+    margin-bottom: 21px;
+}
+
+.ChooseExtrasCardButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ChooseExtrasCardButtons > div {
+    display: flex;
+    gap: 14px;
+}
+
+.ChooseExtrasCardButtons > div > button {
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: 1px solid rgba(41, 41, 41, .1);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ChooseExtrasOrder {
+    background: white;
+    max-height: 244px;
+    padding: 27px 24px 17px 20px;
+    max-width: 230px;
+}
+
+
+.ChooseExtrasOrderTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ChooseExtrasOrderTitle > span {
+    color: #e7426a;
+}
+
+
+.ChooseExtrasOrderDopContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.ChooseExtrasOrderDopContainer::before {
+    content: '';
+    display: block;
+    background: #EDEDF0;
+    height: 1px;
+    position: absolute;
+    bottom: -14px;
+    left: -18px;
+    width: 270px;
+}
+
+.ChooseExtrasOrderDopContainer::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 270px;
+    height: 1px;
+    background: #EDEDF0;
+    top: -11px;
+    left: -18px;
+}
+
+
+.ChooseExtrasOrderDop {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.ChooseExtrasOrderDop > span {
+    color: #e7426a;
+}
+
+.ChooseExtrasContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px 133px 49px 134px;
+    gap: 33px;
+}
+
+.ChooseExtrasOrderButton {
+}
+
+.ChooseExtrasOrderButton > button {
+    width: 100%;
+}
