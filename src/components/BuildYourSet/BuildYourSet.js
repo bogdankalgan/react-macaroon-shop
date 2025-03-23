@@ -13,7 +13,7 @@ function BuildYourSet() {
 
     useEffect(() => {
         if (selectedCount) {
-           
+
         }
     }, [selectedCount]);
 
@@ -51,12 +51,18 @@ function BuildYourSet() {
             <Route
                 path="choose-extras"
                 element={
-                    <ChooseExtrats
-                        onNext={(extras) => {
-                            setSelectedExtras(extras);
-                            navigate("/create-your-set/summary");
-                        }}
-                    />
+                    selectedCount ? (
+                        <ChooseExtrats
+                            count={selectedCount.count}
+                            price={selectedCount.price}
+                            onNext={(extras) => {
+                                setSelectedExtras(extras);
+                                navigate("/create-your-set/summary");
+                            }}
+                        />
+                    ) : (
+                        <h1>❌ Ошибка: Сначала выберите количество макаронсов!</h1>
+                    )
                 }
             />
             <Route
