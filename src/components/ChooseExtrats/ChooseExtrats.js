@@ -33,7 +33,7 @@ function ChooseExtrats({onNext, count, price}) {
     const handleNext = () => {
         const selectedExtras = Object.values(extras).filter(e => e.count > 0)
         onNext && onNext(selectedExtras)
-        navigate("/create-your-set/summary")
+        navigate("/create-your-set/summary", {state: {extras: selectedExtras}});
     }
 
     return (
@@ -70,13 +70,13 @@ function ChooseExtrats({onNext, count, price}) {
                         {Object.values(extras).filter(e => e.count > 0).map((extras) => {
                             return (
                                 <p key={extras.id} className={styles.ChooseExtrasOrderDop}>
-                                    {extras.title} : <span>{extras.price}</span> руб
+                                    {extras.title} : <span>{extras.price} руб</span>
                                 </p>
                             )
                         })}
                     </div>
 
-                    <div onClick={() => handleNext(["Подарочная упаковка"])} className={styles.ChooseExtrasOrderButton}>
+                    <div onClick={() => handleNext()} className={styles.ChooseExtrasOrderButton}>
                         <PinkButton text="Готово"/>
                     </div>
                 </div>

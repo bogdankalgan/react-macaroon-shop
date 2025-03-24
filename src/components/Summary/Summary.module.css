@@ -1,0 +1,95 @@
+.Summary {
+    background: white;
+    padding: 46px 46px 35px 46px;
+}
+
+.Summary > h1 {
+    text-align: center;
+    margin-bottom: 19px;
+}
+
+.SummaryContaienr {
+    padding: 139px 435px 270px 435px;
+    background: rgba(0, 0, 0, .39);
+}
+
+.SummaryTitle {
+    color: #292929;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 9px;
+}
+
+.SummaryTitle > span {
+    color: #e7426a;
+}
+
+.SummaryChoose {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    opacity: .8;
+    color: #292929;
+}
+
+.SummaryChoose:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.SummaryExtras {
+    color: #292929;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 12px;
+}
+
+.SummaryExtras:nth-last-child(3) {
+    margin-bottom: 47px;
+}
+
+.SummaryExtras > span {
+    color: #e7426a;
+}
+
+.SummaryTotal {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 37px;
+}
+
+.SummaryTotal::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: -46px;
+    width: 570px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.SummaryTotal::after {
+    content: '';
+    position: absolute;
+    top: 36px;
+    right: -46px;
+    width: 570px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.SummaryTotal > p > span {
+    color: #e7426a;
+}
+
+.SummaryBtn {
+    display: flex;
+    gap: 10px;
+}
+
+.SummaryBtn > div:nth-child(1) > button {
+    color: #4E9DD3;
+}
