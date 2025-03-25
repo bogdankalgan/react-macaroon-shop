@@ -43,7 +43,35 @@ function Summary({count, tastes,}) {
 
     const basePrice = parseInt(count?.price) || 0;
     const totalPrice = basePrice + totalExtrasPrice;
-    
+
+    const handleCheckout = async () => {
+        if (!count || !count.price) return alert("Некорректный заказ");
+
+        try {
+            const res = await fetch("/api/create-checkout-session", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    items: [{price_id: "price_1R6VHcH6MqYhcDi3WtV5xhGN", count: 1}]
+                })
+            })
+                .then(res => res.json())
+                .then(data => window.location.href = data.url)
+
+            if (!res.ok) throw new Error("Ошибка при запросе");
+
+            const data = await res.json();
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                alert("Ошибка: не получен URL оплаты");
+            }
+        } catch (err) {
+            console.error("Checkout error:", err);
+            alert("Произошла ошибка при оплате");
+        }
+    }
+
 
     return (
         <div className={styles.SummaryContaienr}>
@@ -73,7 +101,7 @@ function Summary({count, tastes,}) {
                     </div>
 
                     <div className={styles.SummaryBtn}>
-                        <div>
+                        <div onClick={handleCheckout}>
                             <PopularButton text="Оформить сейчас"/>
                         </div>
 
