@@ -23,8 +23,8 @@ export default async function handler(req, res) {
                 quantity: item.count,
             })),
             mode: 'payment',
-            success_url: 'react-macaroon-shop.vercel.app/success',
-            cancel_url: 'react-macaroon-shop.vercel.app/cancel',
+            success_url: 'https://react-macaroon-shop.vercel.app/success',
+            cancel_url: 'https://react-macaroon-shop.vercel.app/cancel',
         });
 
         res.setHeader('Access-Control-Allow-Origin', '*');
