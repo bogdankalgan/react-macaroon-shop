@@ -45,7 +45,7 @@ function Summary({count, tastes,}) {
     const totalPrice = basePrice + totalExtrasPrice;
 
     const handleCheckout = async () => {
-        if (!count || !count.price) return alert("Некорректный заказ");
+        console.log("Кнопка нажата");
 
         try {
             const res = await fetch("/api/create-checkout-session", {
@@ -54,13 +54,12 @@ function Summary({count, tastes,}) {
                 body: JSON.stringify({
                     items: [{price_id: "price_1R6VHcH6MqYhcDi3WtV5xhGN", count: 1}]
                 })
-            })
-                .then(res => res.json())
-                .then(data => window.location.href = data.url)
+            });
 
             if (!res.ok) throw new Error("Ошибка при запросе");
 
             const data = await res.json();
+
             if (data.url) {
                 window.location.href = data.url;
             } else {
@@ -70,7 +69,7 @@ function Summary({count, tastes,}) {
             console.error("Checkout error:", err);
             alert("Произошла ошибка при оплате");
         }
-    }
+    };
 
 
     return (
