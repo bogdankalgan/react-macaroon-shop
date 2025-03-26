@@ -45,7 +45,7 @@ function Summary({count, tastes,}) {
     const totalPrice = basePrice + totalExtrasPrice;
 
     const handleCheckout = async () => {
-        console.log("Кнопка нажата"); // ← временно для отладки
+        console.log("Кнопка нажата");
 
         try {
             const res = await fetch("/api/create-checkout-session", {
