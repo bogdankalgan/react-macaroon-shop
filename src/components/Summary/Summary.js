@@ -48,13 +48,13 @@ function Summary({count, tastes,}) {
         console.log("Кнопка нажата");
 
         try {
-            const res = await fetch("https://stripe-back-beta.vercel.app/", {
+            const res = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    items: [{price_id: "price_123", count: 1}]
+                    items: [{price_id: "price_1R6VHcH6MqYhcDi3WtV5xhGN", count: 1}]
                 })
             });
 
