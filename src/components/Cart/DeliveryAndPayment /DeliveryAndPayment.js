@@ -4,7 +4,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
     const [state, setState] = useState({
         name: "",
         phone: "",
-        adress: "",
+        address: "",
         delivery: "",
         payment: "",
         date: "",
@@ -12,7 +12,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
         comment: "",
     })
 
-    const deliveryPrice = state.delivery === "delivery" ? 400 : 0;
+    const deliveryPrice = state.delivery === "courier" ? 400 : 0;
 
     useEffect(() => {
         onUpdate({...state, deliveryPrice})
@@ -51,7 +51,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
             </label>
 
             {state.delivery === 'courier' && (
-                <input name="adress" placeholder="Адресс доставки" onChange={handleChange}/>
+                <input name="address" placeholder="Адрес доставки" onChange={handleChange}/>
             )}
 
             <h4>Дата и время:</h4>

@@ -26,8 +26,8 @@ function Cart() {
     }, 0)
 
     const discountedTotal = totalPrice * (1 - discount);
-    const finalyTotal = discountedTotal + deliveryData.deliveryPrice;
-    const paymentRequest = useApplePay(finalyTotal);
+    const finalyTotal = Math.round(discountedTotal + (deliveryData?.delivery === "courier" ? 400 : 0));
+    const paymentRequest = useApplePay(Math.round(finalyTotal / 90));
 
     const checkPromoCode = async (code) => {
         const {data, error} = await dataBase
@@ -151,7 +151,7 @@ function Cart() {
 
                     <div className={styles.CartTotalPrice}>
                         <p>К оплате </p>
-                        <p>{Math.round(finalyTotal)} руб</p>
+                        <p>{finalyTotal} руб</p>
                     </div>
 
                     <div className={styles.CartTotalPromo}>
