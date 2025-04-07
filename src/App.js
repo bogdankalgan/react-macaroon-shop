@@ -15,6 +15,7 @@ import CardPage from "./components/CardPage/CardPage";
 import News from "./components/News/News";
 import OneNew from "./components/OneNew/OneNew";
 import BuildYourSet from "./components/BuildYourSet/BuildYourSet";
+import StripeProvider from ".//StripeProvider";
 
 // Admin imports
 import {AuthProvider} from "./admin/AuthContext";
@@ -28,41 +29,45 @@ import AdminCities from "./admin/AdminCities/AdminCities";
 
 function App() {
     return (
-        <CartProvider>
-            <BrowserRouter>
-                <AuthProvider>
-                    <Routes>
-                        <Route path="/" element={<Layout/>}>
-                            <Route index element={<Home/>}/>
-                            <Route path="cart" element={<Cart/>}/>
-                            <Route path="readyNabery" element={<ReadyNabery/>}/>
-                            <Route path="catalog" element={<Catalog/>}/>
-                            <Route path="corporatives" element={<Corporatives/>}/>
-                            <Route path="layer" element={<Layer/>}/>
-                            <Route path="marriege" element={<Marriege/>}/>
-                            <Route path="guarantee" element={<Guarentee/>}/>
-                            <Route path="delivery" element={<Delivery/>}/>
-                            <Route path="contacts" element={<Contacts/>}/>
-                            <Route path="readyNabery/:id" element={<CardPage/>}/>
-                            <Route path="news" element={<News/>}/>
-                            <Route path="news/:id" element={<OneNew/>}/>
+        <StripeProvider>
 
-                            {/* 🔹 Объединённый маршрут для сборки набора */}
-                            <Route path="create-your-set/*" element={<BuildYourSet/>}/>
-                        </Route>
 
-                        <Route path="/login" element={<Login/>}/>
+            <CartProvider>
+                <BrowserRouter>
+                    <AuthProvider>
+                        <Routes>
+                            <Route path="/" element={<Layout/>}>
+                                <Route index element={<Home/>}/>
+                                <Route path="cart" element={<Cart/>}/>
+                                <Route path="readyNabery" element={<ReadyNabery/>}/>
+                                <Route path="catalog" element={<Catalog/>}/>
+                                <Route path="corporatives" element={<Corporatives/>}/>
+                                <Route path="layer" element={<Layer/>}/>
+                                <Route path="marriege" element={<Marriege/>}/>
+                                <Route path="guarantee" element={<Guarentee/>}/>
+                                <Route path="delivery" element={<Delivery/>}/>
+                                <Route path="contacts" element={<Contacts/>}/>
+                                <Route path="readyNabery/:id" element={<CardPage/>}/>
+                                <Route path="news" element={<News/>}/>
+                                <Route path="news/:id" element={<OneNew/>}/>
 
-                        {/* Админка */}
-                        <Route path="/admin" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}/>
-                        <Route path="/admin/users" element={<ProtectedRoute><Users/></ProtectedRoute>}/>
-                        <Route path="/admin/news" element={<ProtectedRoute><AdminNews/></ProtectedRoute>}/>
-                        <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
-                        <Route path="/admin/cities" element={<ProtectedRoute><AdminCities/></ProtectedRoute>}/>
-                    </Routes>
-                </AuthProvider>
-            </BrowserRouter>
-        </CartProvider>
+                                {/* 🔹 Объединённый маршрут для сборки набора */}
+                                <Route path="create-your-set/*" element={<BuildYourSet/>}/>
+                            </Route>
+
+                            <Route path="/login" element={<Login/>}/>
+
+                            {/* Админка */}
+                            <Route path="/admin" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}/>
+                            <Route path="/admin/users" element={<ProtectedRoute><Users/></ProtectedRoute>}/>
+                            <Route path="/admin/news" element={<ProtectedRoute><AdminNews/></ProtectedRoute>}/>
+                            <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
+                            <Route path="/admin/cities" element={<ProtectedRoute><AdminCities/></ProtectedRoute>}/>
+                        </Routes>
+                    </AuthProvider>
+                </BrowserRouter>
+            </CartProvider>
+        </StripeProvider>
     );
 }
 

@@ -45,34 +45,37 @@ function Summary({count, tastes,}) {
     const totalPrice = basePrice + totalExtrasPrice;
 
     const handleCheckout = async () => {
-        console.log("Кнопка нажата");
-
         try {
+            const name = `Кастомный набор (${count.count}) шт.`
+
+            const flavorText = flavorList.map(f => `${f.count} x ${flavorNameMap[f.name] || f.name}`).join(', ');
+            const extrasText = extraList.map(e => `${e.count} x ${e.title}`).join(', ');
+            const description = [flavorText, extrasText].filter(Boolean).join(' + ');
+            const amount = totalPrice * 100;
+
             const res = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    items: [{price_id: "price_1R6VHcH6MqYhcDi3WtV5xhGN", count: 1}]
+                    customItem: {name, description, amount}
                 })
-            });
+            })
 
-            if (!res.ok) throw new Error("Ошибка при запросе");
+            if (!res.ok) throw new Error("Ошибка при запросе")
 
             const data = await res.json();
-
             if (data.url) {
                 window.location.href = data.url;
             } else {
-                alert("Ошибка: не получен URL оплаты");
+                alert("Ошибка: не получен URL оплаты")
             }
-        } catch (err) {
-            console.error("Checkout error:", err);
-            alert("Произошла ошибка при оплате");
+        } catch (e) {
+            console.error("Checkout error:", e)
+            alert("Произошла ошибка при оплате")
         }
-    };
-
+    }
 
     return (
         <div className={styles.SummaryContaienr}>
