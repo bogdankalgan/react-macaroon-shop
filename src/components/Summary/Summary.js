@@ -44,6 +44,7 @@ function Summary({count, tastes,}) {
     const basePrice = parseInt(count?.price) || 0;
     const totalPrice = basePrice + totalExtrasPrice;
 
+
     const handleCheckout = async () => {
         try {
             const name = `Кастомный набор (${count.count}) шт.`
@@ -76,6 +77,7 @@ function Summary({count, tastes,}) {
             alert("Произошла ошибка при оплате")
         }
     }
+
 
     return (
         <div className={styles.SummaryContaienr}>
