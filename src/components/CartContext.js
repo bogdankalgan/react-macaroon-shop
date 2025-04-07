@@ -25,10 +25,22 @@ export const CartProvider = ({children}) => {
         setCartItems([]);
     };
 
+    const increaseQuantity = (id) => {
+        setCartItems((prev) => prev.map((item) => item.id === id ? {...item, quantity: item.quantity + 1} : item))
+    }
+
+    const decreaseQuantity = (id) => {
+        setCartItems((prev) => prev.map((item) => item.id === id ? {
+            ...item,
+            quantity: Math.max(1, item.quantity - 1)
+        } : item))
+    }
+
     const cartCount = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
 
     return (
-        <CartContext.Provider value={{cartItems, addToCart, removeFromCart, clearCart, cartCount}}>
+        <CartContext.Provider
+            value={{cartItems, addToCart, removeFromCart, clearCart, cartCount, increaseQuantity, decreaseQuantity}}>
             {children}
         </CartContext.Provider>
     );

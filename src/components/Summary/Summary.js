@@ -44,33 +44,6 @@ function Summary({count, tastes,}) {
     const basePrice = parseInt(count?.price) || 0;
     const totalPrice = basePrice + totalExtrasPrice;
 
-    /*const handleCheckout = async () => {
-
-        try {
-            const res = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    items: [{price_id: "price_1R6VHcH6MqYhcDi3WtV5xhGN", count: 1}]
-                })
-            });
-
-            if (!res.ok) throw new Error("Ошибка при запросе");
-
-            const data = await res.json();
-
-            if (data.url) {
-                window.location.href = data.url;
-            } else {
-                alert("Ошибка: не получен URL оплаты");
-            }
-        } catch (err) {
-            console.error("Checkout error:", err);
-            alert("Произошла ошибка при оплате");
-        }
-    };*/
 
     const handleCheckout = async () => {
         try {

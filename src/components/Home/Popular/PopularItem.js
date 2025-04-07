@@ -8,6 +8,16 @@ import {Link} from "react-router-dom";
 function PopularItem({imgPath, title, descr, price, id}) {
     const {addToCart} = useContext(CartContext);
 
+    const handleAdd = () => {
+        addToCart({
+            id: title,
+            name: title,
+            description: descr,
+            price: parseFloat(price.replace(/[^\d.]/g, '')), // "2800 руб" → 2800
+            image: imgPath,
+        });
+    };
+
     return (
         <Link to={`/readyNabery/${id}`} className={styles.PopularItem} key={id}>
             <img src={imgPath} alt={title}/>
@@ -21,7 +31,7 @@ function PopularItem({imgPath, title, descr, price, id}) {
 
                     <button
                         className={styles.PopularItemButton}
-                        onClick={() => addToCart({id, title, price})}
+                        onClick={handleAdd}
                     >
                         <FontAwesomeIcon icon={faShoppingBag} style={{width: "13px", height: "19px"}}/>
                         В корзину

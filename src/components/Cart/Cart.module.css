@@ -1,0 +1,222 @@
+.Cart {
+    display: flex;
+    justify-content: space-between;
+    padding: 61px 132px 43px 135px;
+    gap: 30px;
+}
+
+.CartItemsContainer {
+    background: white;
+    margin-bottom: 20px;
+}
+
+
+.CartItem {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+    padding: 20px 32px 39px 17px;
+    width: 670px;
+    position: relative;
+    background: white;
+}
+
+.CartItem > img {
+    margin-right: 15px;
+}
+
+.CartItemTitle {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #292929;
+    margin-bottom: 10px;
+}
+
+.CartItemDescr {
+    width: 219px;
+}
+
+.CartItemInfo {
+    margin-right: 58px;
+}
+
+.CartItemCount {
+    display: flex;
+    gap: 14px;
+    margin-right: 70px;
+}
+
+.CartItemCount > button {
+    background: none;
+    border-radius: 3px;
+    border: 1px solid rgba(41, 41, 41, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: #2B1414;
+    font-size: 17px;
+}
+
+.CartItemCount > p {
+    color: rgba(0, 0, 0, .88);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.CartItemPrice {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.CartItemPrice > span {
+    color: #e7426a;
+}
+
+.CartItemWithoutDelivery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 23px 33px 26px;
+}
+
+.CartItemWithoutDelivery > p:nth-child(1) {
+    font-size: 14px;
+    color: #292929;
+    opacity: .7;
+    font-family: "Poppins", sans-serif;
+}
+
+.CartItemWithoutDelivery > p:nth-child(2) {
+    color: #e7426a;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+.removeButton {
+    background: none;
+    border: none;
+    color: rgba(41, 41, 41, .2);
+    position: absolute;
+    right: 11px;
+    top: 14px;
+}
+
+
+.CartTotal {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+    padding: 30px;
+    width: 470px;
+    max-height: 370px;
+}
+
+.CartTotalTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.CartTotalDescr {
+    color: rgba(41, 41, 41, .8);
+}
+
+.CartTotalDescr:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.CartTotalDescr:nth-child(4) {
+    margin-bottom: 36px;
+}
+
+.CartTotalPrice {
+    width: 100%;;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.CartTotalPrice::before {
+    content: '';
+    display: block;
+    background: #EDEDF0;
+    height: 1px;
+    position: absolute;
+    bottom: 38px;
+    left: -31px;
+    width: 422px;
+}
+
+.CartTotalPrice::after {
+    content: '';
+    display: block;
+    background: #EDEDF0;
+    height: 1px;
+    position: absolute;
+    width: 422px;
+    left: -31px;
+    bottom: -17px;
+}
+
+.CartTotalPrice > p:nth-child(1) {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.CartTotalPrice > p:nth-child(2) {
+    font-size: 18px;
+    color: #292929;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+.CartTotalPromo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 21px;
+}
+
+.CartTotalPromo > p {
+    margin-right: 13px;
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.CartTotalPromo button {
+    font-size: 14px;
+    padding: 11px 15px;
+}
+
+.CartTotalPromo > input {
+    border: 1px solid #EDEDF0;
+    background: #F7F7F7;
+    padding: 12px 0 13px 12px;
+    width: 197px;
+    transition: all .3s;
+}
+
+.CartTotalPromo > input::placeholder {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    opacity: .4;
+}
+
+.CartTotalPromo > input:focus {
+    outline: none;
+    border: 1px solid #E7426A;
+}
+
