@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react";
-import ApplePayButton from "../ApplePayButton";
-
 
 function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
     const [state, setState] = useState({
@@ -87,11 +85,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
             </label>
 
             <div>
-                {state.payment === "applepay" ? (
-                    <ApplePayButton total={finalTotal}/>
-                ) : (
-                    <button onClick={handleSubmit}>Оформить заказ</button>
-                )}
+                <button onClick={handleSubmit}>Оформить заказ</button>
             </div>
         </div>
     )

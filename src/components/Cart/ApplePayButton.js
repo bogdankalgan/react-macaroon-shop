@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
-import {useStripe, PaymentRequestButtonElement} from "@stripe/react-stripe-js";
+import { useEffect, useState } from "react";
+import { useStripe } from "@stripe/react-stripe-js";
 
-function ApplePayButton({total}) {
+export const useApplePay = (total) => {
     const stripe = useStripe();
     const [paymentRequest, setPaymentRequest] = useState(null);
 
@@ -9,27 +9,20 @@ function ApplePayButton({total}) {
         if (!stripe) return;
 
         const request = stripe.paymentRequest({
-            country: 'RU',
-            currency: 'rub',
+            country: 'US',
+            currency: 'usd',
             total: {
                 label: "Macaroon Shop",
                 amount: total * 100,
             },
             requestPayerName: true,
             requestPayerEmail: true,
-        })
+        });
 
         request.canMakePayment().then(result => {
-            if (result) setPaymentRequest(request)
-        })
+            if (result) setPaymentRequest(request);
+        });
     }, [stripe, total]);
 
-    return (
-        <div>
-            <PaymentRequestButtonElement options={{paymentRequest}}/>
-        </div>
-    )
-}
-
-
-export default ApplePayButton;
+    return paymentRequest;
+};

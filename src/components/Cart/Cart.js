@@ -7,6 +7,7 @@ import PinkButton from "../Corporatives/PinkButton";
 import ChepTogether from "./ChepTogether/ChepTogether";
 import DeliveryAndPayment from "./DeliveryAndPayment /DeliveryAndPayment";
 import styles from "./Cart.module.css";
+import { useApplePay } from "./ApplePayButton";
 
 function Cart() {
     const {cartItems, removeFromCart, increaseQuantity, decreaseQuantity} = useContext(CartContext);
@@ -26,6 +27,7 @@ function Cart() {
 
     const discountedTotal = totalPrice * (1 - discount);
     const finalyTotal = discountedTotal + deliveryData.deliveryPrice;
+    const paymentRequest = useApplePay(finalyTotal);
 
     const checkPromoCode = async (code) => {
         const {data, error} = await dataBase
@@ -68,6 +70,12 @@ function Cart() {
 
         } else if (formData.payment === "cash") {
             alert("Заказ оформлен! Оплата при получении")
+        } else if (formData.payment === "applepay") {
+            if (paymentRequest) {
+                paymentRequest.show();
+            } else {
+                alert("Apple Pay недоступен");
+            }
         }
     }
 
