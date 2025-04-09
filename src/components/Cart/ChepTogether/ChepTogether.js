@@ -71,7 +71,7 @@ function ChepTogether() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className={styles.ChepTogetherItems}>
                 {cheapItems.map((item) => (
                     <div key={item.id} className={styles.ChepTogetherItem}>
 

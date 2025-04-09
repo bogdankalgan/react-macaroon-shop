@@ -1,0 +1,249 @@
+.DeliveryAndPayment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.DeliveryAndPayment h3 {
+    margin-bottom: 7px;
+}
+
+.DeliveryAndPaymentDescr {
+    text-align: center;
+    font-size: 16px;
+    color: #292929;
+    opacity: .7;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 35px;
+}
+
+.DeliveryAndPaymentForm > p {
+    color: #292929;
+    font-size: 11px;
+    opacity: .8;
+    font-family: "Poppins", sans-serif;
+}
+
+.DeliveryAndPaymentBlock {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.DeliveryAndPaymentLabel {
+    display: flex;
+    flex-direction: column;
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 24px;
+}
+
+.DeliveryAndPaymentLabel > select {
+    background-color: white;
+    background-image: url("/public/icons/chevron-down-solid.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 15px;
+    background-position-x: 300px;
+    border: 1px solid #EDEDF0;
+    padding: 17px 13px 14px 15px;
+    width: 328px;
+    appearance: none;
+}
+
+.DeliveryAndPaymentLabel > select:focus {
+    border: 1px solid #FEB0E1;
+    outline: none;
+}
+
+.DeliveryAndPaymentLabel > select > option {
+    color: #292929;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.DeliveryAndPaymentLabel > textarea {
+     border: none;
+    outline: none;
+    min-width: 670px;
+    height: 108px;
+    padding: 12px 14px 52px 14px;
+}
+
+.DeliveryAndPaymentLabel > textarea:focus {
+    border: 1px solid #FEB0E1;
+    outline: none;
+}
+
+.DeliveryAndPaymentLabel > textarea::placeholder {
+    color: #292929;
+    opacity: .4;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+
+.DeliveryAndPaymentLabel > textarea::-webkit-scrollbar {
+    display: none;
+}
+
+
+.DeliveryAndPaymentLabel input {
+    border: 1px solid #EDEDF0;
+    outline: none;
+    border-radius: 0;
+    padding: 17px 0 14px 14px;
+    width: 328px;
+}
+
+.DeliveryAndPaymentLabel input:focus {
+    border: 1px solid #FEB0E1;
+}
+
+.DeliveryAndPaymentLabel input::placeholder {
+    color: #292929;
+    opacity: .4;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.DeliveryAndPaymentSubtitle {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 11px;
+    font-weight: 400;
+}
+
+
+.DeliveryRadioGroup {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.DeliveryRadio {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0 12px 17px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    min-width: 328px;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    gap: 14px;
+background: white;
+}
+
+.DeliveryRadio > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.DeliveryRadio input[type="radio"] {
+    display: none;
+}
+
+.DeliveryRadioActive {
+    border-color: #df3c6d;
+}
+
+.DeliveryRadio span {
+    font-weight: 600;
+    font-size: 14px;
+    color: #292929;
+}
+
+.DeliveryRadio p {
+    font-size: 14px;
+    color: #df3c6d;
+}
+
+.DeliveryPayment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+    margin-bottom: 18px;
+}
+
+.PaymentMethodGroup {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.PaymentMethodGroup label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #292929;
+    position: relative;
+}
+
+.PaymentMethodGroup input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    background-color: white;
+}
+
+.PaymentMethodGroup input[type="radio"]:checked {
+    background-color: #df3c6d;
+    border-color: #df3c6d;
+    background-image: url("/public/icons/check-solid.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.PaymentMethodGroup input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+.DeliveryPayment > button {
+    width: 254px;
+}
+
+.DeliveryPaymentTotal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 19px 0;
+    position: relative;
+    border-top: 1px solid rgba(41,41,41,.1);
+    border-bottom: 1px solid rgba(41,41,41,.1);
+}
+
+
+.DeliveryPaymentTotal > p:nth-child(1) {
+    color: #292929;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.DeliveryPaymentTotal > p:nth-child(2) {
+    color: #df3c6d;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
