@@ -1,15 +1,3 @@
-.DeliveryAndPayment {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-}
-
-
-.DeliveryAndPayment h3 {
-    margin-bottom: 7px;
-}
-
 .DeliveryAndPaymentDescr {
     text-align: center;
     font-size: 16px;
@@ -22,7 +10,6 @@
 .DeliveryAndPaymentForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 24px;
 }
 
