@@ -49,13 +49,19 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 console.error("Ошибка при создании сессии stripe", error)
             }
         } else if (state.payment === 'applepay') {
-            const totalAmount = Number(finalTotal);
-            if (!totalAmount || isNaN(totalAmount)) {
-                return alert("Ошибка: сумма заказа не определена");
+            const totalAmount = typeof finalTotal === 'object'
+              ? Number(finalTotal.total + (state.delivery === 'courier' ? 400 : 0))
+              : Number(finalTotal + (state.delivery === 'courier' ? 400 : 0));
+
+            if (!totalAmount || isNaN(totalAmount) || totalAmount <= 0) {
+                console.error("❌ Неверная сумма для Apple Pay:", totalAmount);
+                return alert("Ошибка: сумма заказа не определена или отрицательная");
             }
 
+            console.log("⏳ Проверка Apple Pay: сумма =", totalAmount);
+
             if(!window.Stripe) {
-                return alert("Apple pay не поддерживается ")
+                return alert("Apple Pay не поддерживается в этом браузере или устройстве")
             }
 
             const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN")
@@ -71,17 +77,18 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 requestPayerEmail: true,
             })
 
-            const canMakePayment = await paymentRequest.canMakePayment()
+            const canMakePayment = await paymentRequest.canMakePayment();
+            console.log("✅ Результат canMakePayment:", canMakePayment);
             if(canMakePayment) {
                 paymentRequest.show()
             } else {
-                alert("Apple pay недоступен")
+                alert("Apple Pay недоступен")
             }
         }
     }
 
     return (
-        <div className={styles.DeliveryAndPayment}>
+        <div>
             <div>
                 <h3 className="titleSecond">Доставка</h3>
                 <p className={styles.DeliveryAndPaymentDescr}>Укажите контактные данные и выберите способ доставки</p>
@@ -146,7 +153,6 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                     <label className={styles.DeliveryAndPaymentLabel}>
                         Адрес доставки
                         <input name="address" placeholder="Адрес доставки" onChange={handleChange}/>
-
                     </label>
                 )}
 
@@ -204,7 +210,9 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                         <p>{finalTotal} руб</p>
                     </div>
 
-                    <PinkButton text="Оформить заказ"/>
+                    <div onClick={handleSubmit}>
+                        <PinkButton text="Оформить заказ"/>
+                    </div>
                 </div>
 
                 <p>
