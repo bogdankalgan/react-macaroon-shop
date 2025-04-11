@@ -27,7 +27,9 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
         setState((prev) => ({...prev, [name]: value}))
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
         if(state.payment === "cash") {
             alert("Ваш заказ оформлен, оплата наличными")
         } else if (state.payment === 'online') {
@@ -47,26 +49,34 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 console.error("Ошибка при создании сессии stripe", error)
             }
         } else if (state.payment === 'applepay') {
+            const totalAmount = Number(finalTotal);
+            if (!totalAmount || isNaN(totalAmount)) {
+                return alert("Ошибка: сумма заказа не определена");
+            }
+
             if(!window.Stripe) {
                 return alert("Apple pay не поддерживается ")
             }
 
             const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN")
+
             const paymentRequest = stripe.paymentRequest({
                 country: 'US',
                 currency: 'usd',
                 total: {
                     label: "Сумма заказа",
-                    amount: finalTotal.total * 100,
+                    amount: totalAmount * 100,
                 },
                 requestPayerName: true,
                 requestPayerEmail: true,
             })
 
-            const elements = stripe.elements()
-            const prButton =  elements.create("paymentRequestButton", {
-                paymentRequest
-            })
+            const canMakePayment = await paymentRequest.canMakePayment()
+            if(canMakePayment) {
+                paymentRequest.show()
+            } else {
+                alert("Apple pay недоступен")
+            }
         }
     }
 
@@ -77,7 +87,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 <p className={styles.DeliveryAndPaymentDescr}>Укажите контактные данные и выберите способ доставки</p>
             </div>
 
-            <form className={styles.DeliveryAndPaymentForm}>
+            <form className={styles.DeliveryAndPaymentForm} onSubmit={handleSubmit}>
                 <div className={styles.DeliveryAndPaymentBlock}>
                 <label className={styles.DeliveryAndPaymentLabel}>
                     Ваше имя*
