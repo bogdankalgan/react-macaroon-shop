@@ -49,40 +49,42 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 console.error("Ошибка при создании сессии stripe", error)
             }
         } else if (state.payment === 'applepay') {
-            const totalAmount = typeof finalTotal === 'object'
-              ? Number(finalTotal.total + (state.delivery === 'courier' ? 400 : 0))
-              : Number(finalTotal + (state.delivery === 'courier' ? 400 : 0));
+            const totalAmountRub = typeof finalTotal === 'object'
+              ? Number(finalTotal.total)
+              : Number(finalTotal);
 
-            if (!totalAmount || isNaN(totalAmount) || totalAmount <= 0) {
-                console.error("❌ Неверная сумма для Apple Pay:", totalAmount);
+            const totalAmountUsd = Math.round(totalAmountRub / 90);
+
+            if (!totalAmountUsd || isNaN(totalAmountUsd) || totalAmountUsd <= 0) {
+                console.error("❌ Неверная сумма для Apple Pay (usd):", totalAmountUsd);
                 return alert("Ошибка: сумма заказа не определена или отрицательная");
             }
 
-            console.log("⏳ Проверка Apple Pay: сумма =", totalAmount);
+            console.log("⏳ Проверка Apple Pay: USD =", totalAmountUsd);
 
-            if(!window.Stripe) {
-                return alert("Apple Pay не поддерживается в этом браузере или устройстве")
+            if (!window.Stripe) {
+                return alert("Apple Pay не поддерживается в этом браузере или устройстве");
             }
 
-            const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN")
+            const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN");
 
             const paymentRequest = stripe.paymentRequest({
                 country: 'US',
                 currency: 'usd',
                 total: {
                     label: "Сумма заказа",
-                    amount: totalAmount * 100,
+                    amount: totalAmountUsd * 100,
                 },
                 requestPayerName: true,
                 requestPayerEmail: true,
-            })
+            });
 
             const canMakePayment = await paymentRequest.canMakePayment();
             console.log("✅ Результат canMakePayment:", canMakePayment);
-            if(canMakePayment) {
-                paymentRequest.show()
+            if (canMakePayment) {
+                paymentRequest.show();
             } else {
-                alert("Apple Pay недоступен")
+                alert("Apple Pay недоступен");
             }
         }
     }
@@ -150,7 +152,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                     </div>
                 </div>
                 {state.delivery === 'courier' && (
-                    <label className={styles.DeliveryAndPaymentLabel}>
+                    <label className={styles.DeliveryAndPaymentLabel}>ч
                         Адрес доставки
                         <input name="address" placeholder="Адрес доставки" onChange={handleChange}/>
                     </label>
