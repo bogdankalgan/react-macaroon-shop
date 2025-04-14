@@ -56,7 +56,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({ line_items })
+                    body: JSON.stringify({ line_items: line_items })
                 });
 
                 const data = await response.json();
@@ -70,6 +70,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 console.error("Ошибка при создании сессии Stripe:", error);
                 alert("Произошла ошибка при создании оплаты. Пожалуйста, попробуйте позже.");
             }
+
         } else if (state.payment === 'applepay') {
             const totalAmountRub = typeof finalTotal === 'object'
               ? Number(finalTotal.total)
