@@ -47,8 +47,6 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 quantity: item.quantity || item.count || 1
             }));
 
-            console.log("✅ Передаём line_items:", line_items);
-            console.log("📤 Отправляем:", JSON.stringify({ line_items: line_items }, null, 2));
 
             try {
                 const response = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
