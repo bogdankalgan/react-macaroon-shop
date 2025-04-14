@@ -30,23 +30,45 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+
         if(state.payment === "cash") {
             alert("Ваш заказ оформлен, оплата наличными")
         } else if (state.payment === 'online') {
+            const items = finalTotal?.items || [];
+            if (!items.length) {
+                console.error("❌ Нет товаров для оформления оплаты");
+                return alert("Ошибка: товары не найдены");
+            }
+
+            const line_items = items
+              .filter(item => item.price_id && typeof item.price_id === "string")
+              .map(item => ({
+                price: item.price_id,
+                quantity: item.quantity || item.count || 1
+            }));
+
+            console.log("✅ Передаём line_items:", line_items);
+            console.log("📤 Отправляем:", JSON.stringify({ line_items: line_items }, null, 2));
+
             try {
                 const response = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({items: finalTotal.items})
-                })
+                    body: JSON.stringify({ line_items })
+                });
+
                 const data = await response.json();
+                console.log("🎯 Ответ Stripe:", data);
                 if (data.url) {
                     window.location.href = data.url;
+                } else {
+                    throw new Error("Stripe session URL не получен");
                 }
             } catch (error) {
-                console.error("Ошибка при создании сессии stripe", error)
+                console.error("Ошибка при создании сессии Stripe:", error);
+                alert("Произошла ошибка при создании оплаты. Пожалуйста, попробуйте позже.");
             }
         } else if (state.payment === 'applepay') {
             const totalAmountRub = typeof finalTotal === 'object'
@@ -65,7 +87,6 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
             if (!window.Stripe) {
                 return alert("Apple Pay не поддерживается в этом браузере или устройстве");
             }
-
             const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN");
 
             const paymentRequest = stripe.paymentRequest({
@@ -152,7 +173,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                     </div>
                 </div>
                 {state.delivery === 'courier' && (
-                    <label className={styles.DeliveryAndPaymentLabel}>ч
+                    <label className={styles.DeliveryAndPaymentLabel}>
                         Адрес доставки
                         <input name="address" placeholder="Адрес доставки" onChange={handleChange}/>
                     </label>
@@ -209,7 +230,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                         <p>
                             {state.delivery === "courier" ? "Итоговая сумма заказа вместе с доставкой: " : "Итоговая сумма заказа: "}
                         </p>
-                        <p>{finalTotal} руб</p>
+                        <p>{finalTotal.total} руб</p>
                     </div>
 
                     <div onClick={handleSubmit}>

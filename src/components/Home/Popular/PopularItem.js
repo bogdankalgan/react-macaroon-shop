@@ -5,7 +5,7 @@ import {faShoppingBag} from "@fortawesome/free-solid-svg-icons";
 import {CartContext} from "../../CartContext";
 import {Link} from "react-router-dom";
 
-function PopularItem({imgPath, title, descr, price, id}) {
+function PopularItem({imgPath, title, descr, price, id, price_id}) {
     const {addToCart} = useContext(CartContext);
 
     const handleAdd = () => {
@@ -13,8 +13,9 @@ function PopularItem({imgPath, title, descr, price, id}) {
             id: title,
             name: title,
             description: descr,
-            price: parseFloat(price.replace(/[^\d.]/g, '')), // "2800 руб" → 2800
+            price: parseFloat(price.replace(/[^\d.]/g, '')),
             image: imgPath,
+            price_id: price_id,
         });
     };
 
