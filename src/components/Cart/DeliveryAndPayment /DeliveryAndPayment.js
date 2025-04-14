@@ -40,12 +40,30 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 return alert("Ошибка: товары не найдены");
             }
 
-            const line_items = items
-              .filter(item => item.price_id && typeof item.price_id === "string")
-              .map(item => ({
-                price: item.price_id,
-                quantity: item.quantity || item.count || 1
-            }));
+            const usdRate = 90;
+
+            const line_items = items.map(item => {
+                const quantity = item.quantity || item.count || 1;
+
+                if (item.price_id) {
+                    return {
+                        price: item.price_id,
+                        quantity
+                    };
+                } else {
+                    return {
+                        price_data: {
+                            currency: "usd",
+                            product_data: {
+                                name: item.name || "Кастомный набор",
+                                description: item.description || ""
+                            },
+                            unit_amount: Math.round((item.price / usdRate) * 100)
+                        },
+                        quantity
+                    };
+                }
+            });
 
 
             try {
