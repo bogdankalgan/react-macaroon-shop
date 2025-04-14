@@ -47,34 +47,49 @@ function Summary({count, tastes,}) {
 
     const handleCheckout = async () => {
         try {
-            const name = `Кастомный набор (${count.count}) шт.`
+            const name = `Кастомный набор (${count.count}) шт`
 
             const flavorText = flavorList.map(f => `${f.count} x ${flavorNameMap[f.name] || f.name}`).join(', ');
             const extrasText = extraList.map(e => `${e.count} x ${e.title}`).join(', ');
             const description = [flavorText, extrasText].filter(Boolean).join(' + ');
-            const amount = totalPrice * 100;
+            const usdRate = 90; // курс рубля к доллару, можно обновлять
+            const amount = Math.round((totalPrice / usdRate) * 100);
+
+            const line_items = [
+                {
+                    price_data: {
+                        currency: 'usd',
+                        product_data: {
+                            name,
+                            description
+                        },
+                        unit_amount: amount
+                    },
+                    quantity: 1
+                }
+            ]
+
+            console.log("line-items кастомного набора :", line_items)
 
             const res = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    customItem: {name, description, amount}
-                })
+                body: JSON.stringify({ line_items })
             })
 
-            if (!res.ok) throw new Error("Ошибка при запросе")
+            if(!res.ok) throw new Error ("Ошибка при запросе")
 
             const data = await res.json();
-            if (data.url) {
+            if(data.url) {
                 window.location.href = data.url;
             } else {
-                alert("Ошибка: не получен URL оплаты")
+                alert("Ошибка: не получел URL оплаты")
             }
-        } catch (e) {
-            console.error("Checkout error:", e)
-            alert("Произошла ошибка при оплате")
+        } catch (error) {
+            console.log("Checkout error:", error);
+            alert('Произошла ошибка при оплате')
         }
     }
 
