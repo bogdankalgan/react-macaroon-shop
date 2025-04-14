@@ -1,8 +1,17 @@
 import Stripe from 'stripe';
 
+export const config = {
+    api: {
+        bodyParser: true,
+    },
+};
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+console.log(process.env.STRIPE_SECRET_KEY)
 
 export default async function handler(req, res) {
+    console.log("🟡 create-checkout-session called:", req.method);
+    console.log("📦 Получен запрос:", req.body);
     if (req.method === 'OPTIONS') {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -14,21 +23,23 @@ export default async function handler(req, res) {
         return res.status(405).end();
     }
 
-    const {items} = req.body;
+    const { line_items } = req.body;
+
+    if (!line_items || !Array.isArray(line_items) || line_items.length === 0) {
+        return res.status(400).json({ error: "Line items are missing or invalid" });
+    }
 
     try {
+        console.log("🔥 Line items на сервере:", line_items);
         const session = await stripe.checkout.sessions.create({
-            line_items: items.map(item => ({
-                price: item.price_id,
-                quantity: item.count,
-            })),
+            line_items: line_items,
             mode: 'payment',
             success_url: 'https://react-macaroon-shop.vercel.app/success',
             cancel_url: 'https://react-macaroon-shop.vercel.app/cancel',
         });
 
         res.setHeader('Access-Control-Allow-Origin', '*');
-        res.status(200).json({url: session.url});
+        res.status(200).json({ url: session.url });
     } catch (e) {
         console.error(e);
         res.status(500).json({error: e.message});

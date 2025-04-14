@@ -12,7 +12,7 @@ function PopularItemContainer(props) {
         <div className={styles.PopularItemContainer}>
             {items.map((item,) => (
                 <PopularItem key={item.id} id={item.id} imgPath={item.imgPath} title={item.title} descr={item.description}
-                             price={item.price} onClick={() => addToCart(item)}/>
+                             price={item.price} onClick={() => addToCart(item)} price_id={item.price_id}/>
             ))}
         </div>
     )

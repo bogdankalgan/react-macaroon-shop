@@ -84,7 +84,7 @@ function Cart() {
             <Header/>
             <BreadCrumbs/>
 
-            <h2 className="titleSecond" style={{textAlign: "center", marginBottom: ""}}>Ваша корзина</h2>
+            <h2 className="titleSecond" style={{textAlign: "center"}}>Ваша корзина</h2>
             <div className={styles.Cart}>
                 <div>
                     <div className={styles.CartItemsContainer}>
@@ -130,7 +130,10 @@ function Cart() {
 
                     <div>
                         <DeliveryAndPayment
-                            finalTotal={finalyTotal}
+                            finalTotal={{
+                                items: cartItems,
+                                total: finalyTotal
+                            }}
                             onUpdate={setDeliveryData}
                             onSubmit={handleOrderSumbit}
                         />
