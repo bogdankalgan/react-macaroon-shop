@@ -55,13 +55,15 @@ function Summary({count, tastes,}) {
             const usdRate = 90; // курс рубля к доллару, можно обновлять
             const amount = Math.round((totalPrice / usdRate) * 100);
 
+            const hasDescription = description && description.trim() !== ""
+
             const line_items = [
                 {
                     price_data: {
                         currency: 'usd',
                         product_data: {
                             name,
-                            description
+                            ...(hasDescription ? {description} : {}),
                         },
                         unit_amount: amount
                     },
