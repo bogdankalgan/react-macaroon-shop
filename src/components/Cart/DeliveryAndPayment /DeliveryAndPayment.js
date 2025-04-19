@@ -27,7 +27,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
         setState((prev) => ({...prev, [name]: value}))
     }
 
-    const handleSubmit = async (e) => {
+    /*const handleSubmit = async (e) => {
         e.preventDefault();
 
 
@@ -123,6 +123,106 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 paymentRequest.show();
             } else {
                 alert("Apple Pay недоступен");
+            }
+        }
+    }*/
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if(state.payment === "cash") {
+            alert("Ваш заказ оформлен, оплата наличными")
+            return
+        }
+
+        const items = finalTotal?.items || []
+        if(!items.length) {
+            console.error("❌ Нет товаров для оформления оплаты")
+            return alert("Ошибка: товары не найдены")
+        }
+
+        const usdRate = 90
+
+        const line_items = items.map((item) => {
+            const name = item.name || "Набор";
+            const description = item.description || "";
+            const quantity = item.quantity || item.count || 1;
+
+            let amountUsd = Math.round((item.price / usdRate) * 100)
+            if(amountUsd < 50) amountUsd = 50
+
+            return {
+                price_data: {
+                    currency: "usd",
+                    unit_amount: amountUsd,
+                    product_data: {
+                        name,
+                        ...(description.trim() ? {description} : {})
+                    },
+                },
+                quantity
+            }
+        })
+
+        if(state.payment === "online") {
+            try {
+                const response = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ line_items })
+                })
+
+                const data = await response.json();
+                if(data.url) {
+                    window.location.href = data.url;
+                } else {
+                    throw new Error("Stripe session URL не получен")
+                }
+            } catch (error) {
+                console.error("Ошибка при создании сессии Stripe:", error);
+                alert("Произошла ошибка при создании оплаты. Пожалуйста, попробуйте позже.");
+            }
+        }
+
+        if(state.payment === "applepay") {
+            const totalAmountRub = typeof finalTotal === 'object' ? Number(finalTotal.total) : Number(finalTotal);
+
+            const totalAmountUsd = Math.round(totalAmountRub / usdRate);
+
+            if(!totalAmountUsd || isNaN(totalAmountUsd) || totalAmountUsd <= 0) {
+                console.error("❌ Неверная сумма для Apple Pay (usd):", totalAmountUsd);
+                return alert("Ошибка: сумма заказа не определена или отрицательная")
+            }
+
+            console.log("⏳ Проверка Apple Pay: USD = ", totalAmountUsd);
+
+            if(!window.Stripe) {
+                return alert("Apple Pay не поддерживается в этом браузере или устройстве")
+            }
+
+            const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN")
+
+            const paymentRequest = stripe.paymentRequest({
+                country: 'US',
+                currency: "usd",
+                total: {
+                    label: "Сумма заказа",
+                    amount: totalAmountUsd * 100,
+                },
+                requestPayerName: true,
+                requestPayerEmail: true,
+            })
+
+            const canMakePayment = await paymentRequest.canMakePayment()
+            console.log("✅ Результат canMakePayment:", canMakePayment)
+
+            if(canMakePayment) {
+                paymentRequest.show()
+            } else {
+                alert("Apple Pay недоступен")
             }
         }
     }

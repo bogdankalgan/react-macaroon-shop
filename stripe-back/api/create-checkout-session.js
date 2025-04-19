@@ -11,11 +11,14 @@ console.log(process.env.STRIPE_SECRET_KEY)
 
 export default async function handler(req, res) {
     const allowedOrigins = [
-        "http://localhost:3000/",
-        "https://react-macaroon-shop.vercel.app/"
-    ]
+        "http://localhost:3000",
+        "https://react-macaroon-shop.vercel.app"
+    ];
 
     const origin = req.headers.origin;
+    if (!origin) {
+        console.warn("⚠️ Origin не указан в заголовках");
+    }
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
     }
@@ -79,9 +82,16 @@ export default async function handler(req, res) {
             }
             return {
                 price: item.price,
-                quantity: item.quantity || 1,
-            }
+                quantity: item.quantity || 1
+            };
         });
+
+        const hasPrice = convertedLineItems.some(item => item.price);
+        const hasPriceData = convertedLineItems.some(item => item.price_data);
+
+        if (hasPrice && hasPriceData) {
+            return res.status(400).json({ error: "Cannot mix items with price_id and price_data in the same session. All items must use one format." });
+        }
 
         console.log("📦 Отправляем в Stripe:", JSON.stringify(convertedLineItems, null, 2));
         const session = await stripe.checkout.sessions.create({
