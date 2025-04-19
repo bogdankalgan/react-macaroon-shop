@@ -52,8 +52,9 @@ function Summary({count, tastes,}) {
             const flavorText = flavorList.map(f => `${f.count} x ${flavorNameMap[f.name] || f.name}`).join(', ');
             const extrasText = extraList.map(e => `${e.count} x ${e.title}`).join(', ');
             const description = [flavorText, extrasText].filter(Boolean).join(' + ');
-            const usdRate = 90; // курс рубля к доллару, можно обновлять
-            const amount = Math.round((totalPrice / usdRate) * 100);
+            const amountRub = totalPrice || 0;
+            let amountUsd = Math.round((amountRub / 90) * 100);
+            if (amountUsd < 50) amountUsd = 50;
 
             const hasDescription = description && description.trim() !== ""
 
@@ -65,7 +66,7 @@ function Summary({count, tastes,}) {
                             name,
                             ...(hasDescription ? {description} : {}),
                         },
-                        unit_amount: amount
+                        unit_amount: amountUsd
                     },
                     quantity: 1
                 }
