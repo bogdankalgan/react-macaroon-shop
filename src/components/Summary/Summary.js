@@ -45,7 +45,7 @@ function Summary({count, tastes,}) {
     const totalPrice = basePrice + totalExtrasPrice;
 
 
-    const handleCheckout = async () => {
+    /*const handleCheckout = async () => {
         try {
             const name = `Кастомный набор (${count.count}) шт`
 
@@ -93,6 +93,55 @@ function Summary({count, tastes,}) {
         } catch (error) {
             console.log("Checkout error:", error);
             alert('Произошла ошибка при оплате')
+        }
+    }*/
+
+    const handleCheckout = async () => {
+        try {
+            const name = `Кастомный набор (${count.count}) шт.`
+
+            const flavorText =  flavorList.map(f => `${f.count} x ${flavorNameMap[f.name] || f.name}` ).join(', ');
+            const extrasText = extraList.map(e => `${e.count} x ${e.title}`).join(', ');
+            const description = [flavorText, extrasText].filter(Boolean).join(' +');
+
+            const amountRub = totalPrice || 0
+            let amountUsd = Math.round((amountRub / 90) * 100)
+
+            if (amountUsd < 50) {
+                amountUsd = 50
+            }
+
+            const line_items = [
+                {
+                    price_data: {
+                        currency: 'USD',
+                        unit_amount: amountUsd,
+                        product_data: {
+                            name,
+                            ...(description.trim() ? {description} : {})
+                        }
+                    },
+                    quantity: 1
+                }
+            ]
+
+            const res = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
+                method: 'POST',
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({line_items})
+            })
+
+            const data = await res.json();
+
+            if(data.url) {
+                window.location.href = data.url;
+            } else {
+                alert("Ошибка: URL оплаты не был получен")
+            }
+
+        } catch (error) {
+            console.error("Checkout error:",error);
+            alert("Произошла ошибка при оплате")
         }
     }
 
