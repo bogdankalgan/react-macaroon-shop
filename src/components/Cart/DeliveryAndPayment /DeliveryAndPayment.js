@@ -48,8 +48,8 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "apikey": "api key",
-                    "Authorization": "Bearer your api key"
+                    "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Z2xoZ3F5YnZpeWp5cHNvdmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYxOTk0NzEsImV4cCI6MjA1MTc3NTQ3MX0.EYtNK0qHV4_z5ehpHClFCV-FGOplqoaSXfPwj2bpaZ8",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Z2xoZ3F5YnZpeWp5cHNvdmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYxOTk0NzEsImV4cCI6MjA1MTc3NTQ3MX0.EYtNK0qHV4_z5ehpHClFCV-FGOplqoaSXfPwj2bpaZ8"
                 },
                 body: JSON.stringify( {
                     set_name: "Заказ с сайта",
@@ -158,7 +158,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 return alert("Apple Pay не поддерживается в этом браузере или устройстве")
             }
 
-            const stripe = window.Stripe("you api key")
+            const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN")
 
             const paymentRequest = stripe.paymentRequest({
                 country: 'US',
