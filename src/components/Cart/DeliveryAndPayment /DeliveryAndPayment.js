@@ -27,111 +27,65 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
         setState((prev) => ({...prev, [name]: value}))
     }
 
-    /*const handleSubmit = async (e) => {
-        e.preventDefault();
+    const saveOrder = async () => {
+        try {
+            console.log("Отправка данных в базу: ", {
+                customer_name: state.name,
+                phone: state.phone,
+                delivery_method: state.delivery,
+                delivery_datetime: (state.date instanceof Date) && state.time ? new Date(`${state.date.toLocaleDateString("en-CA")}T${state.time}`).toISOString() : null,
+                comment: state.comment,
+                payment_method: state.payment
+            })
 
-
-        if(state.payment === "cash") {
-            alert("Ваш заказ оформлен, оплата наличными")
-        } else if (state.payment === 'online') {
-            const items = finalTotal?.items || [];
-            if (!items.length) {
-                console.error("❌ Нет товаров для оформления оплаты");
-                return alert("Ошибка: товары не найдены");
+            if (!(state.date instanceof Date) || !state.time) {
+                console.warn("Дата или время не выбраны, пропускаем сохранение заказа");
+                return alert("Пожалуйста, выберете дату и время")
             }
 
-            const usdRate = 90;
 
-            const line_items = items.map(item => {
-                const quantity = item.quantity || item.count || 1;
-
-                if (item.price_id) {
-                    return {
-                        price: item.price_id,
-                        quantity
-                    };
-                } else {
-                    return {
-                        price_data: {
-                            currency: "usd",
-                            product_data: {
-                                name: item.name || "Кастомный набор",
-                                description: item.description || ""
-                            },
-                            unit_amount: Math.round((item.price / usdRate) * 100)
-                        },
-                        quantity
-                    };
-                }
-            });
-
-
-            try {
-                const response = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ line_items: line_items })
-                });
-
-                const data = await response.json();
-                console.log("🎯 Ответ Stripe:", data);
-                if (data.url) {
-                    window.location.href = data.url;
-                } else {
-                    throw new Error("Stripe session URL не получен");
-                }
-            } catch (error) {
-                console.error("Ошибка при создании сессии Stripe:", error);
-                alert("Произошла ошибка при создании оплаты. Пожалуйста, попробуйте позже.");
-            }
-
-        } else if (state.payment === 'applepay') {
-            const totalAmountRub = typeof finalTotal === 'object'
-              ? Number(finalTotal.total)
-              : Number(finalTotal);
-
-            const totalAmountUsd = Math.round(totalAmountRub / 90);
-
-            if (!totalAmountUsd || isNaN(totalAmountUsd) || totalAmountUsd <= 0) {
-                console.error("❌ Неверная сумма для Apple Pay (usd):", totalAmountUsd);
-                return alert("Ошибка: сумма заказа не определена или отрицательная");
-            }
-
-            console.log("⏳ Проверка Apple Pay: USD =", totalAmountUsd);
-
-            if (!window.Stripe) {
-                return alert("Apple Pay не поддерживается в этом браузере или устройстве");
-            }
-            const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN");
-
-            const paymentRequest = stripe.paymentRequest({
-                country: 'US',
-                currency: 'usd',
-                total: {
-                    label: "Сумма заказа",
-                    amount: totalAmountUsd * 100,
+            const response = await fetch("https://cyglhgqybviyjypsovlm.supabase.co/rest/v1/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "apikey": "api key",
+                    "Authorization": "Bearer your api key"
                 },
-                requestPayerName: true,
-                requestPayerEmail: true,
-            });
+                body: JSON.stringify( {
+                    set_name: "Заказ с сайта",
+                    customer_name: state.name,
+                    phone: state.phone,
+                    delivery_method: state.delivery,
+                    delivery_datetime:
+                        state.date && state.time
+                            ? new Date(
+                                `${state.date.toISOString().split("T")[0]}T${state.time}`
+                            ).toISOString()
+                            : null,
+                    comment: state.comment,
+                    payment_method: state.payment
+                })
+            })
 
-            const canMakePayment = await paymentRequest.canMakePayment();
-            console.log("✅ Результат canMakePayment:", canMakePayment);
-            if (canMakePayment) {
-                paymentRequest.show();
+            if(!response.ok) {
+                const errorText = await response.text();
+                console.error("Ошибка базы данных рот ебал: ", errorText);
             } else {
-                alert("Apple Pay недоступен");
+                console.log("Твой ебаный заказ сохранен")
             }
+        } catch (error) {
+            console.error(error)
         }
-    }*/
+    }
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+
+
         if(state.payment === "cash") {
+            await saveOrder();
             alert("Ваш заказ оформлен, оплата наличными")
             return
         }
@@ -177,6 +131,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
 
                 const data = await response.json();
                 if(data.url) {
+                    await saveOrder();
                     window.location.href = data.url;
                 } else {
                     throw new Error("Stripe session URL не получен")
@@ -203,7 +158,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 return alert("Apple Pay не поддерживается в этом браузере или устройстве")
             }
 
-            const stripe = window.Stripe("pk_test_51R6DaOH6MqYhcDi3LMz3N61TkFdRnv0RHY2TjArdkQ95KSiF04zBKhlaiAuDtp7m9nFzFwZhoutY3UGKOpN7SiG800k1x8r7KN")
+            const stripe = window.Stripe("you api key")
 
             const paymentRequest = stripe.paymentRequest({
                 country: 'US',
@@ -218,8 +173,8 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
 
             const canMakePayment = await paymentRequest.canMakePayment()
             console.log("✅ Результат canMakePayment:", canMakePayment)
-
             if(canMakePayment) {
+                await saveOrder();
                 paymentRequest.show()
             } else {
                 alert("Apple Pay недоступен")
@@ -309,9 +264,9 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
 
                 <label className={styles.DeliveryAndPaymentLabel}>
                 Время
-                <select>
-                    <option value="12:00-16:00">12:00-16:00</option>
-                    <option value="16:00-18:00">16:00-18:00</option>
+                <select name="time" value={state.time} onChange={handleChange}>
+                    <option value="12:00:00">12:00-16:00</option>
+                    <option value="16:00:00">16:00-18:00</option>
                 </select>
                 </label>
                 </div>

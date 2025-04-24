@@ -45,56 +45,6 @@ function Summary({count, tastes,}) {
     const totalPrice = basePrice + totalExtrasPrice;
 
 
-    /*const handleCheckout = async () => {
-        try {
-            const name = `Кастомный набор (${count.count}) шт`
-
-            const flavorText = flavorList.map(f => `${f.count} x ${flavorNameMap[f.name] || f.name}`).join(', ');
-            const extrasText = extraList.map(e => `${e.count} x ${e.title}`).join(', ');
-            const description = [flavorText, extrasText].filter(Boolean).join(' + ');
-            const amountRub = totalPrice || 0;
-            let amountUsd = Math.round((amountRub / 90) * 100);
-            if (amountUsd < 50) amountUsd = 50;
-
-            const hasDescription = description && description.trim() !== ""
-
-            const line_items = [
-                {
-                    price_data: {
-                        currency: 'usd',
-                        product_data: {
-                            name,
-                            ...(hasDescription ? {description} : {}),
-                        },
-                        unit_amount: amountUsd
-                    },
-                    quantity: 1
-                }
-            ]
-
-            console.log("line-items кастомного набора :", line_items)
-
-            const res = await fetch("https://stripe-back-beta.vercel.app/api/create-checkout-session", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ line_items })
-            })
-
-            if(!res.ok) throw new Error ("Ошибка при запросе")
-
-            const data = await res.json();
-            if(data.url) {
-                window.location.href = data.url;
-            } else {
-                alert("Ошибка: не получел URL оплаты")
-            }
-        } catch (error) {
-            console.log("Checkout error:", error);
-            alert('Произошла ошибка при оплате')
-        }
-    }*/
 
     const handleCheckout = async () => {
         try {
