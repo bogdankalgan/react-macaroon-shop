@@ -3,3 +3,4 @@ public/site.webmanifest
 .idea
 .gitattributes
 README.md
+.env
