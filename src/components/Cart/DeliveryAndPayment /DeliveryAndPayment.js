@@ -29,15 +29,6 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
 
     const saveOrder = async () => {
         try {
-            console.log("Отправка данных в базу: ", {
-                customer_name: state.name,
-                phone: state.phone,
-                delivery_method: state.delivery,
-                delivery_datetime: (state.date instanceof Date) && state.time ? new Date(`${state.date.toLocaleDateString("en-CA")}T${state.time}`).toISOString() : null,
-                comment: state.comment,
-                payment_method: state.payment
-            })
-
             if (!(state.date instanceof Date) || !state.time) {
                 console.warn("Дата или время не выбраны, пропускаем сохранение заказа");
                 return alert("Пожалуйста, выберете дату и время")
@@ -49,7 +40,8 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                 headers: {
                     "Content-Type": "application/json",
                     "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Z2xoZ3F5YnZpeWp5cHNvdmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYxOTk0NzEsImV4cCI6MjA1MTc3NTQ3MX0.EYtNK0qHV4_z5ehpHClFCV-FGOplqoaSXfPwj2bpaZ8",
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Z2xoZ3F5YnZpeWp5cHNvdmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYxOTk0NzEsImV4cCI6MjA1MTc3NTQ3MX0.EYtNK0qHV4_z5ehpHClFCV-FGOplqoaSXfPwj2bpaZ8"
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Z2xoZ3F5YnZpeWp5cHNvdmxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYxOTk0NzEsImV4cCI6MjA1MTc3NTQ3MX0.EYtNK0qHV4_z5ehpHClFCV-FGOplqoaSXfPwj2bpaZ8",
+                    "Prefer": "return=representation"
                 },
                 body: JSON.stringify( {
                     set_name: "Заказ с сайта",
@@ -73,8 +65,28 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
             } else {
                 console.log("Твой ебаный заказ сохранен")
             }
+
+            const text = await response.text();
+            if(!text) {
+                console.error("пустой ответ от supabase")
+                return
+            }
+
+            const result = JSON.parse(text)
+            const order  = result[0];
+
+            await fetch("https://twilio-sms-sigma.vercel.app/api/send-sms", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    phone: state.phone,
+                    message: `Твой заказ N${order.id} принят. Сходи нахуй хахахаха`
+                })
+            })
+
+            console.log("заказ сохранен и сообщение отправлено")
         } catch (error) {
-            console.error(error)
+            console.error("ошибка при сохранении заказа",error)
         }
     }
 

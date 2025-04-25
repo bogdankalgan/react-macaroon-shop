@@ -84,6 +84,16 @@ function Summary({count, tastes,}) {
             const data = await res.json();
 
             if(data.url) {
+                await fetch("https://twilio-sms-sigma.vercel.app/api/send-sms", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        phone: "+420604258667",
+                        message: `Давайте мне  ${totalPrice} руб электронных`
+                })
+                })
                 window.location.href = data.url;
             } else {
                 alert("Ошибка: URL оплаты не был получен")
