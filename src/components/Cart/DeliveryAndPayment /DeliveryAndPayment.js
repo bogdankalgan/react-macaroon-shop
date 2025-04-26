@@ -55,7 +55,8 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                             ).toISOString()
                             : null,
                     comment: state.comment,
-                    payment_method: state.payment
+                    payment_method: state.payment,
+                    delivery_adress: state.address,
                 })
             })
 
