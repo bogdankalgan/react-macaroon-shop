@@ -35,6 +35,23 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
             }
 
 
+            const formatDeliveryDate = () => {
+                if(!state.date || !state.time) {
+                    return null
+                }
+
+                const months = ["января", "февраля", "марта", "апреля", "мая", "июня",
+                    "июля", "августа", "сентября", "октября", "ноября", "декабря"]
+
+                const dateObj = new Date(state.date)
+                const day = dateObj.getDate()
+                const month = months[dateObj.getMonth()]
+                const year = dateObj.getFullYear()
+
+                return `${day} ${month} ${year}, ${state.time}`
+            }
+
+
             const response = await fetch("https://cyglhgqybviyjypsovlm.supabase.co/rest/v1/orders", {
                 method: "POST",
                 headers: {
@@ -44,16 +61,11 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                     "Prefer": "return=representation"
                 },
                 body: JSON.stringify( {
-                    set_name: "Заказ с сайта",
+                    set_name: finalTotal?.items?.map(item => item.name).join(", ")  || "Заказ с сайта",
                     customer_name: state.name,
                     phone: state.phone,
                     delivery_method: state.delivery,
-                    delivery_datetime:
-                        state.date && state.time
-                            ? new Date(
-                                `${state.date.toISOString().split("T")[0]}T${state.time}`
-                            ).toISOString()
-                            : null,
+                    delivery_datetime: formatDeliveryDate(),
                     comment: state.comment,
                     payment_method: state.payment,
                     delivery_adress: state.address,

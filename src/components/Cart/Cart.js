@@ -8,6 +8,7 @@ import ChepTogether from "./ChepTogether/ChepTogether";
 import DeliveryAndPayment from "./DeliveryAndPayment /DeliveryAndPayment";
 import styles from "./Cart.module.css";
 import { useApplePay } from "./ApplePayButton";
+import CartAddMore from "./CartAddMore/CartAddMore";
 
 function Cart() {
     const {cartItems, removeFromCart, increaseQuantity, decreaseQuantity} = useContext(CartContext);
@@ -169,6 +170,8 @@ function Cart() {
                     </div>
                 </div>
             </div>
+
+            <CartAddMore/>
         </section>
     );
 }

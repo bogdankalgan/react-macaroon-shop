@@ -16,6 +16,7 @@ import News from "./components/News/News";
 import OneNew from "./components/OneNew/OneNew";
 import BuildYourSet from "./components/BuildYourSet/BuildYourSet";
 import StripeProvider from ".//StripeProvider";
+import NotFound from "./components/NotFound/NotFound";
 
 // Admin imports
 import {AuthProvider} from "./admin/AuthContext";
@@ -30,8 +31,6 @@ import AdminCities from "./admin/AdminCities/AdminCities";
 function App() {
     return (
         <StripeProvider>
-
-
             <CartProvider>
                 <BrowserRouter>
                     <AuthProvider>
@@ -63,6 +62,8 @@ function App() {
                             <Route path="/admin/news" element={<ProtectedRoute><AdminNews/></ProtectedRoute>}/>
                             <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
                             <Route path="/admin/cities" element={<ProtectedRoute><AdminCities/></ProtectedRoute>}/>
+
+                            <Route path="*" element={<NotFound/>}/>
                         </Routes>
                     </AuthProvider>
                 </BrowserRouter>
