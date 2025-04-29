@@ -20,7 +20,10 @@ function Breadcrumbs() {
         "create-your-set": "Собрать набор",
         "choose-count": "Выбрать количество",
         "choose-taste": "Выбрать вкусы",
-        "choose-extras": "Дополнительно"
+        "choose-extras": "Дополнительно",
+        "create-design": "Создать дизайн",
+        "choose-quantity": "Выбрать количество",
+        "choose-img": "Выбрать картинку"
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);

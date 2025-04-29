@@ -14,7 +14,7 @@ function NotFound() {
 
             <p className={styles.NotFoundNumber}>404</p>
 
-            <img src='./img/404/404.png' alt='404'/>
+            <img src='../img/404/404.png' alt='404'/>
 
             <button className={styles.NotFoundButton}>
                 <Link to='/'>Назад</Link>

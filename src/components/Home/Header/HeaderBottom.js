@@ -35,9 +35,7 @@ function HeaderBottom() {
 
 
                 <li>
-                    <a href={hrefs.createDesign}>
-                        Создать дизайн
-                    </a>
+                    <Link to="/create-design/">Создать дизайн</Link>
                 </li>
 
                 <select>
