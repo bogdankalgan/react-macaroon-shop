@@ -16,6 +16,11 @@ import News from "./components/News/News";
 import OneNew from "./components/OneNew/OneNew";
 import BuildYourSet from "./components/BuildYourSet/BuildYourSet";
 import StripeProvider from ".//StripeProvider";
+import NotFound from "./components/NotFound/NotFound";
+import CreateDesign from "./components/CreateDesing/CreateDesign";
+import ChooseQuantity from "./components/CreateDesignQuantity/ChooseQuantity";
+import {CreateDesignProvider} from "./components/DesignContext";
+import ChooseImg from "./components/ChooseImg/ChooseImg";
 
 // Admin imports
 import {AuthProvider} from "./admin/AuthContext";
@@ -30,8 +35,6 @@ import AdminCities from "./admin/AdminCities/AdminCities";
 function App() {
     return (
         <StripeProvider>
-
-
             <CartProvider>
                 <BrowserRouter>
                     <AuthProvider>
@@ -55,6 +58,16 @@ function App() {
                                 <Route path="create-your-set/*" element={<BuildYourSet/>}/>
                             </Route>
 
+
+                            <Route path="create-design" element={
+                                <CreateDesignProvider>
+                                    <CreateDesign/>
+                                </CreateDesignProvider>
+                            }>
+                                <Route path="choose-quantity" element={<ChooseQuantity/>}/>
+                                <Route path="choose-img" element={<ChooseImg/>}/>
+                            </Route>
+
                             <Route path="/login" element={<Login/>}/>
 
                             {/* Админка */}
@@ -63,6 +76,8 @@ function App() {
                             <Route path="/admin/news" element={<ProtectedRoute><AdminNews/></ProtectedRoute>}/>
                             <Route path="/admin/nabery" element={<ProtectedRoute><AdminNabery/></ProtectedRoute>}/>
                             <Route path="/admin/cities" element={<ProtectedRoute><AdminCities/></ProtectedRoute>}/>
+
+                            <Route path="*" element={<NotFound/>}/>
                         </Routes>
                     </AuthProvider>
                 </BrowserRouter>

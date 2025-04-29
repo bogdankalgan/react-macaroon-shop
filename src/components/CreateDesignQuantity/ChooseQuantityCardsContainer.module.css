@@ -1,0 +1,5 @@
+.ChooseQuantityCardsContainer {
+    display: flex;
+    gap: 30px;
+    padding: 0 285px 50px 285px;
+}

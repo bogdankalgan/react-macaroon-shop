@@ -1,0 +1,41 @@
+.ChooseQuantityCard {
+    background: white;
+    padding: 14px 13px 37px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: all .3s;
+}
+
+.ChooseQuantityCardImg {
+    background: #EDEDF0;
+    width: 244px;
+    height: 192px;
+}
+
+.ChooseQuantityCardTitle {
+    color: #292929;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+.ChooseQuantityCardPrice {
+    color: #e7426a;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+
+.ChooseQuantityCard:hover {
+    border: 1px solid #e7426a;
+    cursor: pointer;
+}
+
+.ChooseQuantityCard:active {
+    border: none;
+}

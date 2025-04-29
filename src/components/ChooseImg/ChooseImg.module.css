@@ -1,0 +1,216 @@
+.ChooseImgContaier {
+    padding: 27px 135px 122px 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ChooseImg {
+    display: flex;
+    padding: 30px 30px 0 0 ;
+    flex-wrap: wrap;
+    gap: 53px 30px;
+    text-align: center;
+}
+
+.ChooseImgContent {
+    display: flex;
+}
+
+.ChooseImgSidebr {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 21px 12px 18px 13px;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+    max-height: 650px;
+    min-width: 255px;
+}
+
+.ChooseImgSidebarTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    margin-bottom: 34px;
+}
+
+.ChooseImgSidebarItem {
+    width: 75px;
+    height: 75px;
+    position: relative;
+}
+
+.ChooseImgSidebarItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 13px;
+    position: relative;
+    margin-bottom: 37px;
+}
+
+.ChooseImgSidebarItems::after {
+    content: '';
+    display: block;
+    width: 279px;
+    height: 1px;
+    background: #EDEDF0;
+    position: absolute;
+    bottom: -18px;
+    left: -13px;
+}
+
+.ChooseImgUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    margin-bottom: 26px;
+    color: #4E9DD3;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.ChooseImgUpload::after {
+    content: '';
+    display: block;
+    width: 279px;
+    height: 1px;
+    background: #EDEDF0;
+    position: absolute;
+    bottom: -12px;
+    left: -13px;
+}
+
+.ChooseImgUploadLabel {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ChooseImgUploadAddText {
+    margin-top: 13px;
+}
+
+.ChooseImgUploadAddText > input {
+    border: 1px solid #4E9DD3;
+    width: 222px;
+    height: 40px;
+    border-radius: 3px;
+    text-align: center;;
+    transition: all .3s;
+}
+
+.ChooseImgUploadAddText > input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+
+.ChooseImgUploadAddText > input::placeholder {
+    color: #4E9DD3;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.ChooseImgUploadImg {
+    background: #F7F7F7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    cursor: pointer;
+}
+
+.ChooseImgSidebarItemButton {
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 18px;
+    height: 18px;
+}
+
+.ChooseImgSidebarItem > img {
+    width: 72px;
+    height: 72px;
+}
+
+.ChooseImgSidebarTitle::after {
+    content: '';
+    display: block;
+    width: 279px;
+    height: 1px;
+    background: #EDEDF0;
+    margin-top: 10px;
+    position: absolute;
+    left: -13px;
+    bottom: -15px;
+}
+
+.ChooseImgContaier > h1 {
+    margin-bottom: 9px;
+}
+
+.ChooseImgDescr {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;;
+    margin-bottom: 59px;
+    color: rgba(41, 41, 41, .7);
+    width: 285px;
+    text-align: center;
+}
+
+.ChooseImgCounter {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.ChooseImgCounter > button {
+    background: white;
+    color: black;
+    border: 1px solid rgba(41,41,41,.1);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+.ChooseImgRule {
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ChooseImgButtonNext {
+    width: 222px;
+    height: 40px;
+    background: #4E9DD3;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
