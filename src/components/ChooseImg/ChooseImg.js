@@ -120,7 +120,7 @@ function ChooseImg() {
     const handleNext = () => {
         if (totalCount === amount) {
             localStorage.removeItem("create-design-selected");
-            navigate("/create-your-design/choose-more");
+            navigate("/create-design/choose-more");
         }
     };
 

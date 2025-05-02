@@ -4,9 +4,11 @@ import {useCreateDesign} from "../DesignContext";
 
 function ChooseQuantityCard({text, price, amount}) {
     const navigate = useNavigate();
-    const {setAmount} = useCreateDesign();
+    const {setAmount, setBaseCount, setBasePrice} = useCreateDesign();
 
     const onClick = () => {
+        setBaseCount(amount)
+        setBasePrice(price)
         setAmount(amount)
         navigate("/create-design/choose-img")
     }

@@ -1,0 +1,93 @@
+.ChooseMore {
+
+}
+
+.ChooseMoreContainer {
+    padding-right: 135px;
+    display: flex;
+    gap: 30px;
+}
+
+.ChooseMoreSidebar {
+    padding: 27px 12px 16px 13px;
+    background: white;
+    max-width: 270px;
+    max-height: 287px;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+}
+
+.ChooseMoreSidebarTitle {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: #292929;
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.ChooseMoreSidebarTitle > span {
+    color: #e7426a;
+}
+
+.ChooseMoreSidebarItems {
+    position: relative;;
+    margin-bottom: 50px;
+}
+
+.ChooseMoreSidebarItems::after {
+    content: '';
+    position: absolute;
+    bottom: -34px;
+    left: -14px;
+    width: 296px;
+    height: 1px;
+    background: #EDEDF0;
+
+}
+
+.ChooseMoreSidebarItems::before {
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: -14px;
+    width: 296px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.ChooseMoreSidebarItem {
+    display: flex;
+    align-items: center;
+}
+
+.ChooseMoreSidebarItem > span {
+    color: #292929;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-right: 10px;
+}
+
+.ChooseMoreSidebarItem > span > span {
+    color: #e7426a;
+}
+
+.ChooseMoreSidebarItem >  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #292929;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-left: auto;
+}
+
+.ChooseMoreSidebarNext {
+    width: 100%;
+}
+
+.ChooseMoreSidebarNext > button {
+    width: 100%;
+}

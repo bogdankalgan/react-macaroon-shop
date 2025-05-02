@@ -21,6 +21,7 @@ import CreateDesign from "./components/CreateDesing/CreateDesign";
 import ChooseQuantity from "./components/CreateDesignQuantity/ChooseQuantity";
 import {CreateDesignProvider} from "./components/DesignContext";
 import ChooseImg from "./components/ChooseImg/ChooseImg";
+import ChooseMore from "./components/ChooseMore/ChooseMore";
 
 // Admin imports
 import {AuthProvider} from "./admin/AuthContext";
@@ -66,6 +67,7 @@ function App() {
                             }>
                                 <Route path="choose-quantity" element={<ChooseQuantity/>}/>
                                 <Route path="choose-img" element={<ChooseImg/>}/>
+                                <Route path="choose-more" element={<ChooseMore/>}/>
                             </Route>
 
                             <Route path="/login" element={<Login/>}/>
