@@ -23,7 +23,8 @@ function Breadcrumbs() {
         "choose-extras": "Дополнительно",
         "create-design": "Создать дизайн",
         "choose-quantity": "Выбрать количество",
-        "choose-img": "Выбрать картинку"
+        "choose-img": "Выбрать картинку",
+        "choose-more": "Дополнительно"
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);
