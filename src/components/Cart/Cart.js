@@ -18,7 +18,8 @@ function Cart() {
 
     const parsePrice = (price) => {
         if (typeof price === "number") return price;
-        return parseFloat(price.replace(/[^\d.]/g, ""));
+        if (typeof price === "string") return parseFloat(price.replace(/[^\d.]/g, ""));
+        return 0;
     };
 
     const totalPrice = cartItems.reduce((sum, item) => {

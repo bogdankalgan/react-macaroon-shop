@@ -5,15 +5,14 @@ import ChooseMoreItemContainer from "./ChooseMoreItemContainer";
 import PinkButton from "../Corporatives/PinkButton";
 import styles from "./ChooseMore.module.css"
 import {useCreateDesign} from "../DesignContext";
-import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 function ChooseMore() {
     const {baseCount, basePrice} = useCreateDesign()
-    const [selectedExtras, setSelectedExtras] = useState([])
+    const {selectedExtras, setSelectedExtras} = useCreateDesign()
     const navigate = useNavigate()
 
-    const handleClick = () => navigate("/your-choice");
+    const handleClick = () => navigate("/create-design/your-choice");
 
     const handleRemoveExtra = (id) => {
         setSelectedExtras(prev =>
@@ -23,7 +22,6 @@ function ChooseMore() {
         );
     }
 
-   /* const totalExtrasPrice = selectedExtras.reduce((sum, item) => sum + item.price * item.count, 0);*/
 
     return (
         <div>
@@ -55,8 +53,8 @@ function ChooseMore() {
 
 
 
-                    <div style={{textAlign: "center"}} className={styles.ChooseMoreSidebarNext}>
-                        <PinkButton text="ГОТОВО" onClick={handleClick} />
+                    <div style={{textAlign: "center"}} className={styles.ChooseMoreSidebarNext} onClick={handleClick}>
+                        <PinkButton text="ГОТОВО"  />
                     </div>
                 </div>
             </div>

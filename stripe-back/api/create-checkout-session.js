@@ -100,6 +100,9 @@ export default async function handler(req, res) {
             mode: 'payment',
             success_url: 'https://react-macaroon-shop.vercel.app/success',
             cancel_url: 'https://react-macaroon-shop.vercel.app/cancel',
+            billing_address_collection: req.body.billing_address_collection,
+            phone_number_collection: req.body.phone_number_collection,
+            shipping_address_collection: req.body.shipping_address_collection,
         });
 
         if (allowedOrigins.includes(origin)) {

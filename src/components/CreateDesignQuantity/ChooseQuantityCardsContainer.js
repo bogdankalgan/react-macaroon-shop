@@ -3,9 +3,9 @@ import styles from "./ChooseQuantityCardsContainer.module.css";
 
 function ChooseQuantityCardsContainer() {
     const items = [
-        {text: "Набор из 9 макарон с индивидуальным дизайном", price: "950 руб.", amount: 9},
-        {text: "Набор из 16 макарон с индивидуальным дизайном", price: "1500 руб.", amount: 16},
-        {text: "Набор в форме сердца из 22 макарон с индивидуальным дизайном ", price: "2500 руб.", amount: 22}
+        {text: "Набор из 9 макарон с индивидуальным дизайном", price: 950, amount: 9},
+        {text: "Набор из 16 макарон с индивидуальным дизайном", price: 1500, amount: 16},
+        {text: "Набор в форме сердца из 22 макарон с индивидуальным дизайном ", price: 2500, amount: 22}
     ]
 
     return (
