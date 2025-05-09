@@ -10,6 +10,12 @@
     padding: 11px 135px;
 }
 
+@media (max-width: 320px) {
+    .headerTop {
+        display: none;
+    }
+}
+
 .itemsContainer {
     display: flex;
     flex-direction: column;

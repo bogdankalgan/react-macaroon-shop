@@ -61,3 +61,125 @@
     margin-left: 5px;
 }
 
+
+@media (max-width: 320px) {
+    .headerBottom{
+        display: none;
+    }
+
+    .headerMobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px 18px 5px 18px;
+        width: 284px;
+        background: #F7EBE5;
+    }
+}
+
+.headerMobileButton {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.headerMobileButton > div {
+    width: 20px;
+    height: 1px;
+    background: black;
+    transition: all .3s;
+}
+
+.headerMobileButton > div:last-child {
+    width: 12px;
+}
+
+.headerMobileButton:hover > div:last-child {
+    width: 20px;
+}
+
+.headerMobileButton:active > div:last-child {
+    width: 12px;
+}
+
+.headerMobileCart {
+    text-decoration: none;
+    color: black;
+}
+
+.headerMobileMenu {
+    background: #F7EBE5;
+    padding: 20px 19px 46px 19px;
+}
+
+.headerMobileItem {
+    padding-bottom: 11px;
+    padding-top: 11px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    text-align: center;
+}
+
+.headerMobileItem a {
+    color: #2B1414;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    transition: all .3s;
+    text-transform: uppercase;
+}
+
+.headerMobileItem select {
+    background: none;
+    border: none;
+}
+
+.headerMobileItem:nth-child(7) {
+    margin-bottom: 22px;
+}
+
+.headerMobileLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 11px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 11px;
+}
+
+.headerMobileLinks a {
+    color: #2B1414;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    transition: all .3s;
+    text-transform: uppercase;
+}
+
+.headerMobilePhone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 11px;;
+}
+
+.headerMobilePhone > a {
+    color: #2B1414;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    transition: all .3s;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.headerMobileSocials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+}

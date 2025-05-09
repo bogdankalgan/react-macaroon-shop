@@ -6,6 +6,12 @@
     background-color: #f7ebe5;
 }
 
+@media (max-width: 320px) {
+    .headerTop {
+        display: none;
+    }
+}
+
 .headerTopList {
     list-style: none;
     display: flex;
