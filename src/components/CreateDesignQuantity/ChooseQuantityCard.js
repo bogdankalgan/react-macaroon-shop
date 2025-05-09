@@ -8,7 +8,7 @@ function ChooseQuantityCard({text, price, amount}) {
 
     const onClick = () => {
         setBaseCount(amount)
-        setBasePrice(price)
+        setBasePrice(Number(price))
         setAmount(amount)
         navigate("/create-design/choose-img")
     }
@@ -19,7 +19,7 @@ function ChooseQuantityCard({text, price, amount}) {
 
             <p className={styles.ChooseQuantityCardTitle}>{text}</p>
 
-            <p className={styles.ChooseQuantityCardPrice}>{price}</p>
+            <p className={styles.ChooseQuantityCardPrice}>{price} руб</p>
         </button>
     )
 }

@@ -10,7 +10,7 @@ function ChooseMoreItemContainer({selectedExtras, setSelectedExtras}) {
             if(exists) {
                return prev.map(i => i.title === item.title ? {...i, count: i.count + 1} : i)
             }
-            return [...prev, {...item, count: 1}]
+            return [...prev, {...item, price: Number(item.price), count: 1}]
         })
     }
 
@@ -40,7 +40,7 @@ function ChooseMoreItemContainer({selectedExtras, setSelectedExtras}) {
                 const count = selected ? selected.count : 0
 
                 return (
-                    <ChooseMoreItem title={item.title} price={item.price} key={item.title} count={count} onIncrease={() => handleAddExtra(item)} onDecrease={() => handleRemoveExtra(item)}/>)
+                    <ChooseMoreItem title={item.title} price={item.price} key={item.price} count={count} onIncrease={() => handleAddExtra(item)} onDecrease={() => handleRemoveExtra(item)}/>)
             })}
         </div>
     )

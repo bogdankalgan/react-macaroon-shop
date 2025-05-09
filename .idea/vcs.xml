@@ -4,5 +4,6 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/stripe-back" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/twillo-sms" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webhook" vcs="Git" />
   </component>
 </project>

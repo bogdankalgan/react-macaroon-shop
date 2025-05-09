@@ -41,7 +41,9 @@ export const AuthProvider = ({children}) => {
             // 🔥 Полностью очищаем историю, чтобы нельзя было вернуться в `/admin`
             navigate("/login", {replace: true});
             window.history.replaceState(null, "", "/login");
-        } catch (error) {
+
+
+        } catch(error) {
             console.error("Ошибка выхода:", error);
         }
     };

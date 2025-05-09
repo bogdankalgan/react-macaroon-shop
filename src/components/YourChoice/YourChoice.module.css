@@ -1,0 +1,110 @@
+.YourChoiceContainer {
+    padding: 241px 435px 270px 435px;
+    background: rgba(0,0,0, .39);
+}
+
+.YourChoice {
+    background: white;
+    padding: 48px 46px 35px 46px;
+    border-radius: 5px;
+    border: 1px solid #EDEDF0;
+}
+
+.YourChoiceContent {
+
+}
+
+.YourChoiceTitle {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.YourChoiceTitle > span {
+    color: #e7426a;
+}
+
+.YourChoiceItems {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 43px;
+}
+
+.YourChoiceItem {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.YourChoiceItem > span {
+    color: #e7426a;
+}
+
+.YourChoiceTotal {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.YourChoiceTotal:before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: -47px;
+    width: 570px;
+    height: 1px;
+    background: #EDEDF0;
+}
+
+.YourChoiceTotal:after {
+    content: '';
+    position: absolute;
+    width: 570px;
+    height: 1px;
+    background: #EDEDF0;
+    bottom: -20px;
+    right: -47px;
+}
+
+.YourChoiceTotal > p {
+    color: #292929;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.YourChoiceTotal span {
+    color: #e7426a;
+}
+
+.YourChoiceButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.YourChoiceButtons > button {
+    background: none;
+    border: 1px solid #4E9DD3;
+    border-radius: 3px;
+    padding: 16px 41px;
+    color: #4E9DD3;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.YourChoiceButtons > button:hover {
+    background: #4E9DD3;
+    color: white;
+}
+
+.YourChoiceButtons > button:active {
+    background: none;
+    color: #4E9DD3;
+}
