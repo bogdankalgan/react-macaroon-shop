@@ -5,6 +5,14 @@
     text-align: center;
 }
 
+@media (max-width: 320px) {
+    .HeroText{
+        padding: 0;
+    }
+}
+
+
+
 .HeroText h1 {
     margin-bottom: 13px;
 }
@@ -25,6 +33,12 @@
     gap: 8px;
     font-weight: 600;
     margin-bottom: 24px;
+}
+
+@media (max-width: 320px) {
+    .HeroTextSubtitle {
+        margin-bottom: 40px;
+    }
 }
 
 .HeroTextSubsubtitleDevider {

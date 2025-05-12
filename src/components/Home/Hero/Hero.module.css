@@ -6,6 +6,7 @@
     height: 475px;
 }
 
+
 .whiteRound {
     position: absolute;
     width: 479px;
@@ -82,4 +83,14 @@
     filter: blur(40px);
     top: 321px;
     right: 121px;
+}
+
+@media (max-width: 320px) {
+    .Hero {
+        flex-direction: column;
+        width: 272px;
+        justify-content: start;
+        padding: 65px 24px 0 24px;
+        margin-bottom:  34px;
+    }
 }
