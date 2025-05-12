@@ -14,6 +14,16 @@
     top: 39px;
 }
 
+@media (max-width: 320px) {
+    .mainImg {
+        top: 281px;
+        left: 52px;
+        right: 52px;
+        width: 216px;
+        height: 216px;
+    }
+}
+
 .HeroImg img {
     position: absolute;
 }
@@ -23,9 +33,33 @@
     top: 47px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(2) {
+        left: 134px;
+        top: 281px;
+    }
+
+    .HeroImg div:nth-child(2) > img {
+        width: 12px;
+        height: 11px;
+    }
+}
+
 .HeroImg div:nth-child(3) {
     left: 605px;
     top: 72px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(3) {
+        top: 271px;
+        left: 252px;
+    }
+
+    .HeroImg div:nth-child(3) > img {
+        width: 37px;
+        height: 40px;
+    }
 }
 
 .HeroImg div:nth-child(4) {
@@ -33,9 +67,33 @@
     top: 194px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(4) {
+        top: 344px;
+        left: 276px;
+    }
+
+    .HeroImg div:nth-child(4) > img {
+        width: 15px;
+        height: 19px;
+    }
+}
+
 .HeroImg div:nth-child(5) {
     left: 606px;
     top: 282px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(5) {
+        top: 404px;
+        left: 274px;
+    }
+
+    .HeroImg div:nth-child(5) > img {
+        width: 13px;
+        height: 9px;
+    }
 }
 
 .HeroImg div:nth-child(6) {
@@ -43,14 +101,40 @@
     top: 344px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(6) {
+        top: 434px;
+        left: 267px;
+    }
+
+    .HeroImg div:nth-child(6) > img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
 .HeroImg div:nth-child(7) {
     left: 565px;
     bottom: 401px;
 }
 
+
+
 .HeroImg div:nth-child(8) {
     left: 320px;
     top: 417px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(8) {
+        bottom: 30px;
+        left: 230px;
+    }
+
+    .HeroImg div:nth-child(8) > img {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 .HeroImg div:nth-child(9) {
@@ -58,9 +142,33 @@
     top: 409px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(9) {
+        top: 497px;
+        left: 138px;
+    }
+
+    .HeroImg div:nth-child(9) > img {
+        width: 35px;
+        height: 34px;
+    }
+}
+
 .HeroImg div:nth-child(10) {
     left: 150px;
     top: 319px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(10) {
+        top: 470px;
+        left: 64px;
+    }
+
+    .HeroImg div:nth-child(10) > img {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 .HeroImg div:nth-child(11) {
@@ -68,12 +176,48 @@
     top: 234px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(11) {
+        top: 395px;
+        left: 7px;
+    }
+
+    .HeroImg div:nth-child(11) > img {
+        width: 36px;
+        height: 36px;
+    }
+}
+
 .HeroImg div:nth-child(12) {
     left: 130px;
     top: 201px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(12) {
+        top: 347px;
+        left: 33px;
+    }
+
+    .HeroImg div:nth-child(12) > img {
+        width: 10px;
+        height: 14px;
+    }
+}
+
 .HeroImg div:nth-child(13) {
     left: 153px;
     top: 65px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg div:nth-child(13) {
+        top: 279px;
+        left: 47px;
+    }
+
+    .HeroImg div:nth-child(13) > img {
+        width: 36px;
+        height: 36px;
+    }
 }

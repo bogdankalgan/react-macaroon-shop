@@ -1,8 +1,20 @@
-import React from "react";
+import React/* {useEffect, useState}*/ from "react";
 import styles from "./HeroImg.module.css";
 import {motion} from "framer-motion";
 
 function HeroImg() {
+
+    /*const [isMobile, setIsMobile] = useState(window.innerWidth <= 320)*/
+
+   /* useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 320)
+        }
+        window.addEventListener('rezise', handleResize())
+        return () => window.removeEventListener('resize', handleResize())
+    }, [])*/
+
+
     const images = [
         'img/hero/top-center-nut.png',
         'img/hero/top-right-brown-macaron.png',
@@ -24,7 +36,10 @@ function HeroImg() {
     })
     return (
         <div className={styles.HeroImg}>
-            <img alt="hero animated img" src="img/hero/main-img.png" className={styles.mainImg}></img>
+            <picture>
+                <source media="(max-width: 320px)" srcSet="img/hero/main-img-mobile.png"/>
+                <img alt="hero animated img" src="img/hero/main-img.png" className={styles.mainImg}></img>
+            </picture>
             {images.map((image, index) => (
                 <motion.div key={index} animate={{...getRandomPosition()}} transition={{
                     duration: 2,

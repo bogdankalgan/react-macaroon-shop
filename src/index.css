@@ -16,6 +16,12 @@ body {
     color: #292929;
 }
 
+@media (max-width: 320px) {
+    .titleFirst {
+        font-size: 24px;
+    }
+}
+
 .titleSecond {
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
@@ -28,6 +34,12 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     color: #292929;
+}
+
+@media (max-width: 320px) {
+    .descr{
+        font-size: 14px;
+    }
 }
 
 .descr > span {
