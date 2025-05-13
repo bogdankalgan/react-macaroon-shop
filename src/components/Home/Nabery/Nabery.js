@@ -79,18 +79,28 @@ function Nabery() {
 
     const StyledNaberyItem = styled.div`
         position: relative;
-        background: ${(item) => item.backgroundBefore || "transparent"};
+        background: ${(props) => props.backgroundBefore || "transparent"};
 
         &::after {
             content: "";
             display: inline-block;
             width: 100%;
             height: 100%;
-            background: ${(item) => item.backgroundBefore || "transparent"};
+            background: ${(props) => props.backgroundBefore || "transparent"};
             position: absolute;
             left: 0;
             top: 0;
-            clip-path: ${(item) => item.clipPath};
+            clip-path: ${(props) => props.clipPath};
+        }
+        
+        @media (max-width: 320px) {
+            background: none !important;
+            & {
+                background-color: transparent !important;
+            }
+            &::after {
+                background: none !important;
+            }
         }
     `;
 
