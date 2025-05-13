@@ -4,17 +4,6 @@ import {motion} from "framer-motion";
 
 function HeroImg() {
 
-    /*const [isMobile, setIsMobile] = useState(window.innerWidth <= 320)*/
-
-   /* useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 320)
-        }
-        window.addEventListener('rezise', handleResize())
-        return () => window.removeEventListener('resize', handleResize())
-    }, [])*/
-
-
     const images = [
         'img/hero/top-center-nut.png',
         'img/hero/top-right-brown-macaron.png',

@@ -92,5 +92,25 @@
         justify-content: start;
         padding: 65px 24px 0 24px;
         margin-bottom:  34px;
+        overflow-x: hidden;
+        height: 100vh;
+    }
+
+    .greenRound, .greyRound, .orangeRound, .whiteRound, .yellowRound {
+        display: none;
+    }
+
+    .roseRound {
+        width: 135px;
+        height: 135px;
+        left: 32px;
+        top: 320px;
+    }
+
+    .blueRound {
+        width: 234px;
+        height: 234px;
+        left: 175px;
+        top: 291px;
     }
 }
