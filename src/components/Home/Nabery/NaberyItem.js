@@ -13,6 +13,7 @@ function NaberyItem(props) {
 
                 <p className={styles.NaberyItemTitle}>{title} <FontAwesomeIcon icon={faArrowRight}/></p>
 
+
                 <p className={styles.NaberyItemDescr}>{descr}</p>
             </a>
         </div>

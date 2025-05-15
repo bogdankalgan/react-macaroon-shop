@@ -50,3 +50,29 @@
     z-index: 111;
 }
 
+
+@media (max-width: 320px) {
+    .NaberyItem {
+        background: none !important;
+        width: 288px;
+        height: 17px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(41,41,41,.16);
+    }
+
+    .NaberyItemDescr {
+        display: none;
+    }
+
+    .NaberyItemIconContainer {
+        display: none;
+    }
+
+    .NaberyItemTitle {
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        width: 288px;
+    }
+}
+

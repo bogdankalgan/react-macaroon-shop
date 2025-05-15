@@ -72,27 +72,36 @@ function CardContainer() {
 
     const containerRef = useRef(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 4;
+    const [itemsPerPage, setItemsPerPage] = useState(window.innerWidth <= 320 ? 3 : 4);
     const totalPages = Math.ceil(items.length / itemsPerPage);
 
     const scrollToPage = (page) => {
         if (containerRef.current) {
-            const scrollAmount = containerRef.current.clientWidth;
+            const cardWidth = 288;
+            const gap = 30;
+            const scrollAmount = page === 1
+                ? 0
+                : window.innerWidth <= 320
+                    ? (cardWidth + gap) * (page - 1)
+                    : (cardWidth + gap) * itemsPerPage * (page - 1);
             containerRef.current.scrollTo({
-                left: (page - 1) * scrollAmount,
-                behavior: "smooth",
+                left: scrollAmount,
+                behavior: "smooth"
             });
         }
     };
 
     const handlePageChange = (page) => {
-        setCurrentPage(page);
-        scrollToPage(page);
+        const maxPage = totalPages;
+        const safePage = Math.min(page, maxPage);
+        setCurrentPage(safePage);
+        scrollToPage(safePage);
     };
 
     useEffect(() => {
         const handleScroll = () => {
             if (containerRef.current) {
+                // Removed restriction on mobile to allow free scrolling
                 const scrollLeft = containerRef.current.scrollLeft;
                 const scrollWidth = containerRef.current.clientWidth;
                 const page = Math.round(scrollLeft / scrollWidth) + 1;
@@ -106,6 +115,14 @@ function CardContainer() {
         return () => {
             if (ref) ref.removeEventListener("scroll", handleScroll);
         };
+    }, [totalPages]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setItemsPerPage(window.innerWidth <= 320 ? 3 : 4);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     return (
@@ -113,6 +130,12 @@ function CardContainer() {
             <div
                 ref={containerRef}
                 className={styles.ItemsContainer}
+                style={window.innerWidth <= 320 ? {
+                    maxWidth: "calc(288px * 3 + 30px * 2 + 17px * 2)",
+                    paddingLeft: "17px",
+                    paddingRight: "17px",
+                    overflowX: "auto"
+                } : {}}
             >
                 {items.map((item, index) => (
                     <div
