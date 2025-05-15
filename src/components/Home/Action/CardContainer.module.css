@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow-x: hidden;
+    overflow-x: auto;
     gap: 30px;
     margin-bottom: 37px;
     overflow-y: hidden;
@@ -14,5 +14,14 @@
 
 .ItemsContainer::-webkit-scrollbar {
     display: none;
+}
+
+@media (max-width: 320px) {
+  .ItemsContainer {
+    max-width: calc(288px * 3 + 30px * 2 + 17px * 2);
+    padding-left: 17px;
+    padding-right: 17px;
+    overflow-x: hidden;
+  }
 }
 
