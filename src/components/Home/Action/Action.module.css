@@ -5,3 +5,13 @@
 .Action h2 {
     margin-bottom: 50px;
 }
+
+@media (max-width: 320px) {
+    .Action {
+        padding: 38px 17px 61px 17px;
+    }
+
+    .Action h2 {
+        margin-bottom: 17px;
+    }
+}

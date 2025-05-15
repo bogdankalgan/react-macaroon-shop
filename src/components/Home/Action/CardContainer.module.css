@@ -6,15 +6,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow-x: auto;
+    overflow-x: hidden;
     gap: 30px;
     margin-bottom: 37px;
     overflow-y: hidden;
-    scroll-behavior: smooth;
 }
 
 .ItemsContainer::-webkit-scrollbar {
     display: none;
 }
-
 

@@ -27,3 +27,11 @@
 .ActionItemTitle p {
     width: 220px;
 }
+
+
+@media (max-width: 320px) {
+    .ActionItem {
+        width: 288px;
+        height: 422px;
+    }
+}

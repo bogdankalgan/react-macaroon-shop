@@ -30,6 +30,12 @@ body {
     text-align: center;
 }
 
+@media (max-width: 320px) {
+    .titleSecond {
+        font-size: 18px;
+    }
+}
+
 .descr {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
