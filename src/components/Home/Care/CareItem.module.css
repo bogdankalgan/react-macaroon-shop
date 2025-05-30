@@ -19,3 +19,25 @@
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
+
+@media (max-width: 320px) {
+    .CareItem {
+        width: 141px;
+        height: 245px;
+    }
+
+    .CareItem img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 15px;
+    }
+
+    .CareItemTitle {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .CareItemDescr {
+        font-size: 10px;
+    }
+}

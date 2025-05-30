@@ -16,3 +16,17 @@
 .FooterLeftItem:nth-child(2) .FooterLeftItemText {
     width: 77px;
 }
+
+@media (max-width: 320px) {
+    .FooterLeftItem {
+        flex-direction: row;
+        gap: 28px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .FooterLeftItemText {
+        width: 100% !important;
+        text-align: left;
+    }
+}

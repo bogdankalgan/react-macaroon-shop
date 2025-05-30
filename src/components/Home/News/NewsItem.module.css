@@ -31,3 +31,33 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
 }
+
+@media (max-width: 320px) {
+    .NewsItem {
+        height: 280px;
+        width: 140px;
+        display: inline-block;
+    }
+
+    .NewsItem > img {
+        width: 140px;
+        height: 101px;
+    }
+
+    .NewsItemContent {
+        padding: 10px 10px 35px 10px;
+        gap: 5px;
+    }
+
+    .NewsItemDate {
+        font-size: 10px;
+    }
+
+    .NewsItemTitle {
+        font-size: 12px;
+    }
+
+    .NewsItemDescr {
+        font-size: 10px;
+    }
+}

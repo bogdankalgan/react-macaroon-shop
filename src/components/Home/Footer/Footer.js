@@ -19,7 +19,7 @@ function Footer() {
             </div>
 
             <div className={styles.FooterRight}>
-                <div>
+                <div className={styles.FooterRightContacts}>
                     <a href='tel:+7 (812) 309 82 88' className={styles.FooterRightLink}>+7 (812) 309 82 88</a>
                     <p className={styles.FooterRightHours}>с 9:00 до 21:00</p>
                 </div>

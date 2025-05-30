@@ -119,7 +119,9 @@ function CardContainer() {
 
     useEffect(() => {
         const handleResize = () => {
-            setItemsPerPage(window.innerWidth <= 320 ? 3 : 4);
+            const isMobile = window.innerWidth <= 320;
+            setItemsPerPage(isMobile ? 3 : 4);
+            setCurrentPage(1); // сброс страницы
         };
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -131,15 +133,16 @@ function CardContainer() {
                 ref={containerRef}
                 className={styles.ItemsContainer}
                 style={window.innerWidth <= 320 ? {
-                    maxWidth: "calc(288px * 3 + 30px * 2 + 17px * 2)",
+                    width: "calc(288px * 3 + 30px * 2 + 17px * 2)",
                     paddingLeft: "17px",
                     paddingRight: "17px",
                     overflowX: "auto"
                 } : {}}
             >
-                {items.map((item, index) => (
+                {(window.innerWidth <= 320 ? items.slice(0, 3) : items).map((item, index) => (
                     <div
                         key={index}
+                        className={`${styles.CardWrapper} ${window.innerWidth <= 320 && index >= 3 ? styles.HiddenCard : ''}`}
                     >
                         <Card
                             title={item.title}

@@ -4,3 +4,11 @@
     margin-bottom: 3px;
     gap: 10px;
 }
+
+
+@media (max-width: 320px) {
+    .NewsButtonContainer {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}

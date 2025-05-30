@@ -2,3 +2,10 @@
     display: flex;
     gap: 30px;
 }
+
+@media (max-width: 320px) {
+    .CareItemContainer {
+        gap: 16px 6px;
+        flex-wrap: wrap;
+    }
+}

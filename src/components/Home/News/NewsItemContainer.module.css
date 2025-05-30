@@ -10,3 +10,9 @@
 .NewsItemContainer::-webkit-scrollbar {
     display: none;
 }
+
+@media (max-width: 320px) {
+    .NewsItemContainer {
+        gap: 8px;
+    }
+}

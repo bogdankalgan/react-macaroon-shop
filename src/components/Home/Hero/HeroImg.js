@@ -26,8 +26,8 @@ function HeroImg() {
     return (
         <div className={styles.HeroImg}>
             <picture>
-                <source media="(max-width: 320px)" srcSet="img/hero/main-img-mobile.png"/>
-                <img alt="hero animated img" src="img/hero/main-img.png" className={styles.mainImg}></img>
+            <source media="(max-width: 320px)" srcSet="img/hero/main-img-mobile.png"/>
+            <img alt="hero animated img" src="img/hero/main-img.png" className={styles.mainImg}></img>
             </picture>
             {images.map((image, index) => (
                 <motion.div key={index} animate={{...getRandomPosition()}} transition={{

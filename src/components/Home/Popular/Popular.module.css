@@ -2,6 +2,23 @@
     padding: 108px 135px 0 135px;
 }
 
+
 .Popular h2 {
     margin-bottom: 42px;
+}
+
+
+@media (max-width: 320px) {
+    .Popular {
+        padding: 0 13px 50px 15px;
+    }
+
+    .Popular h2 {
+        margin-bottom: 20px;
+    }
+
+    .Popular > div > button {
+        font-size: 12px;
+        padding: 11px 24px 13px 24px;
+    }
 }

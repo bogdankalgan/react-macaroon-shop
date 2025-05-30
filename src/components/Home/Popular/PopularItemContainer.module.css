@@ -5,3 +5,11 @@
     margin-bottom: 35px;
     justify-content: center;
 }
+
+@media (max-width: 320px) {
+    .PopularItemContainer {
+        gap: 8px;
+        justify-content: start;
+        margin-bottom: 24px;
+    }
+}

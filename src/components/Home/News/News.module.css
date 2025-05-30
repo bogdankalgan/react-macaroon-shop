@@ -5,3 +5,13 @@
 .News h2 {
     margin-bottom: 40px;
 }
+
+@media (max-width: 320px) {
+    .News {
+        padding: 50px 16px;
+    }
+
+    .News > h2 {
+        margin-bottom: 20px;
+    }
+}
