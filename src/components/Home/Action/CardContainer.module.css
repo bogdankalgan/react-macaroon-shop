@@ -5,15 +5,22 @@
 .ItemsContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow-x: auto;
     gap: 30px;
     margin-bottom: 37px;
     overflow-y: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 .ItemsContainer::-webkit-scrollbar {
     display: none;
+}
+
+.CardWrapper {
+    min-width: 288px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 @media (max-width: 320px) {
@@ -21,7 +28,16 @@
     max-width: calc(288px * 3 + 30px * 2 + 17px * 2);
     padding-left: 17px;
     padding-right: 17px;
-    overflow-x: hidden;
+    overflow-x: auto;
+  }
+
+  .ActionContainer {
+    width: 100%;
+    overflow: hidden;
   }
 }
 
+
+.HiddenCard {
+  display: none;
+}

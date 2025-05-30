@@ -80,7 +80,9 @@ function HeaderBottom() {
                     <div></div>
                 </button>
 
-                <img src="/icons/mobile-logo-header.svg" alt="header site logo"/>
+                <Link to={'/'}>
+                    <img src="/icons/mobile-logo-header.svg" alt="header site logo"/>
+                </Link>
 
                 <Link to="/cart" className={styles.headerMobileCart}>
                     <FontAwesomeIcon icon={faCartShopping}/>

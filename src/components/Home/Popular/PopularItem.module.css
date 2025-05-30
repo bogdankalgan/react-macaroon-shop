@@ -1,10 +1,29 @@
 .PopularItem {
     background: #FFFFFF;
     border: 1px solid #EDEDF0;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: left;
     width: 370px;
     text-decoration: none;
+}
+
+@media (max-width: 320px) {
+    .PopularItem {
+        width: 140px;
+        min-height: 215px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .PopularItem > img {
+        width: 124px;
+        height: 98px;
+        margin-left: 8px;
+        margin-top: 9px;
+    }
 }
 
 .PopularItemTitle {
@@ -15,12 +34,28 @@
     margin-bottom: 14px;
 }
 
+@media (max-width: 320px) {
+    .PopularItemTitle {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+}
+
 .PopularItemContent {
     height: 156px;
     padding: 21px 22px 10px 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+}
+
+@media (max-width: 320px) {
+    .PopularItemContent {
+        padding: 11px 10px 11px 12px;
+        flex-grow: 1;
+        height: auto;
+    }
 }
 
 .PopularItemDescr {
@@ -30,6 +65,16 @@
     font-family: "Poppins", sans-serif;
     margin-bottom: 35px;
     white-space: pre-wrap;
+    max-height: 60px;
+    overflow: hidden;
+}
+
+@media (max-width: 320px) {
+    .PopularItemDescr {
+        font-size: 10px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
 }
 
 .PopularItemPriceContainer {
@@ -43,9 +88,16 @@
     display: inline-block;
     position: absolute;
     width: 370px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #EDEDF0;
     left: -23px;
     top: -14px;
+}
+
+@media (max-width: 320px) {
+    .PopularItemPriceContainer::before {
+        width: 140px;
+        left: -12px;
+    }
 }
 
 .PopularItemPriceContainer::after {
@@ -57,11 +109,25 @@
     top: -12px;
 }
 
+@media (max-width: 320px) {
+    .PopularItemPriceContainer::after {
+        height: 36px;
+        right: 30px;
+        top: -14px;
+    }
+}
+
 .PopularItemPrice {
     color: #E7426A;
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
+}
+
+@media (max-width: 320px) {
+    .PopularItemPrice {
+        font-size: 14px;
+    }
 }
 
 .PopularItemButton {
@@ -76,6 +142,16 @@
     transition: all .3s;
 }
 
+@media (max-width: 320px) {
+    .PopularItemButton {
+        font-size: 0;
+    }
+
+    .PopularItemButton > svg {
+        margin-right: 0;
+    }
+}
+
 .PopularItemButton:hover {
     color: #E7426A;
 }
@@ -86,4 +162,9 @@
 
 .PopularItemButton svg {
     margin-right: 11px;
+}
+@media (max-width: 320px) {
+    .PopularItemPriceContainer {
+        margin-top: auto;
+    }
 }

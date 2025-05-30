@@ -40,3 +40,41 @@
     font-family: "Poppins", sans-serif;
     text-align: right;
 }
+
+@media (max-width: 320px) {
+    .Footer {
+        padding: 33px 16px 53px 16px;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .FooterMid {
+        display: none;
+    }
+
+    .FooterLeftText {
+        font-size: 10px;
+        width: 173px;
+    }
+
+    .FooterRight {
+        gap: 27px;
+    }
+
+    .FooterRightLink {
+        font-size: 12px;
+    }
+
+    .FooterRightHours {
+        font-size: 10px;
+    }
+
+    .FooterRightContacts {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        right: 16px;
+        top: 211px;
+    }
+}

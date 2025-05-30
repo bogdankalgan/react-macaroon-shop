@@ -5,3 +5,13 @@
 .Care h2 {
     margin-bottom: 40px;
 }
+
+@media (max-width: 320px) {
+    .Care {
+        padding: 50px 16px 0 16px;
+    }
+
+    .Care h2 {
+        margin-bottom: 18px;
+    }
+}
