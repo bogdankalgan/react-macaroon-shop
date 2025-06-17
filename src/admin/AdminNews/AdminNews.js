@@ -118,7 +118,7 @@ function AdminNews() {
                     value={newDescr}
                     onChange={(e) => setNewDescr(e.target.value)}
                 />
-                <input type="file" accept="image/*" onChange={handleFileChange}/>
+                <input type="file" accept="image/*" data-testid="file-input" onChange={handleFileChange} />
                 <div onClick={addOrUpdateNews}>
                     <PinkButton
                         text={loading ? "Загрузка..." : editingId ? "Обновить новость" : "Добавить новость"}
