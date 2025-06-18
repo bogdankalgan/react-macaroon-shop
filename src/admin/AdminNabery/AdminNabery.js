@@ -21,7 +21,7 @@ function AdminNabery() {
         const {data, error} = await dataBase.from("popularitems").select("*").order("id", {ascending: false});
 
         if (!error) {
-            setItems(data); // 🔥 Теперь карточки отобразятся!
+            setItems(data); 
         } else {
             console.error("Ошибка загрузки наборов:", error);
         }
