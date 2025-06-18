@@ -168,8 +168,8 @@ function AdminNews() {
                                     })}
                                 />
                                 <div style={{display: "flex", gap: "10px"}}>
-                                    <div onClick={() => startEditing(newsItem)}>
-                                        <PinkButton text="Редактировать"/>
+                                    <div  data-testid={`edit-button-${newsItem.id}`} onClick={() => startEditing(newsItem)}>
+                                        <PinkButton text="Редактировать" data-testid={`edit-button-${newsItem.id}`}/>
                                     </div>
                                     <div onClick={() => deleteNews(newsItem.id)}>
                                         <PinkButton text="Удалить новость"/>

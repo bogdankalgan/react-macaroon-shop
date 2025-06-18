@@ -1,5 +1,18 @@
 const mockUpload = jest.fn(() => Promise.resolve("mocked/image/path.jpg"));
 const mockInsert = jest.fn();
+const mockSelect = jest.fn(() => ({
+  order: () => Promise.resolve({
+    data: [{
+      id: 1,
+      title: "Test title",
+      description: "Test description",
+      imgpath: "",
+      date: new Date().toISOString(),
+    }],
+    error: null,
+  }),
+}));
+const mockUpdate = jest.fn(() => Promise.resolve({ error: null }));
 
 jest.mock("../../../components/dataBase", () => {
   return {
@@ -14,10 +27,28 @@ jest.mock("../../../components/dataBase", () => {
           mockInsert(...args);
           return Promise.resolve({ error: null });
         },
-        update: () => Promise.resolve({ error: null }),
-        delete: () => Promise.resolve({ error: null }),
-        select: () => ({
-          order: () => Promise.resolve({ data: [], error: null }),
+        update: (...args) => ({
+          eq: () => {
+            mockUpdate(...args);
+            return Promise.resolve({ error: null });
+          },
+        }),
+        delete: (...args) => ({
+          eq: () => {
+            return Promise.resolve({ error: null });
+          },
+        }),
+        select: (...args) => ({
+          order: () => Promise.resolve({
+            data: [{
+              id: 1,
+              title: "Test title",
+              description: "Test description",
+              imgpath: "",
+              date: new Date().toISOString(),
+            }],
+            error: null,
+          }),
         }),
       }),
     },
@@ -47,5 +78,58 @@ test("добавляет новость", async () => {
   await waitFor(() => {
     expect(mockUpload).toHaveBeenCalledTimes(1);
     expect(mockInsert).toHaveBeenCalledTimes(1);
+  });
+});
+
+test("редактирует новость", async () => {
+  const user = userEvent.setup();
+
+  render(
+    <MemoryRouter>
+      <AdminNews />
+    </MemoryRouter>
+  );
+
+  const editButton = await screen.findByTestId("edit-button-1");
+  await user.click(editButton);
+
+  const [titleInput] = await screen.findAllByDisplayValue("Test title");
+  const [descrInput] = await screen.findAllByDisplayValue("Test description");
+
+  await user.clear(titleInput);
+  await user.type(titleInput, "New title");
+
+  await user.clear(descrInput);
+  await user.type(descrInput, "New description");
+
+  await user.click(screen.getByRole("button", { name: /обновить/i }));
+
+  await waitFor(() => {
+    expect(mockUpdate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        title: "New title",
+        description: "New description",
+      })
+    );
+  });
+});
+
+test("удаляет новость", async () => {
+  const user = userEvent.setup();
+
+  render(
+    <MemoryRouter>
+      <AdminNews />
+    </MemoryRouter>
+  );
+
+  const deleteButtons = await screen.findAllByText((_, node) =>
+    node?.textContent?.trim() === "Удалить новость"
+  );
+  const deleteButton = deleteButtons[deleteButtons.length - 1]; // Берём кнопку внутри элемента новости
+  await user.click(deleteButton);
+
+  await waitFor(() => {
+    expect(screen.queryByText("Test title")).not.toBeInTheDocument();
   });
 });
