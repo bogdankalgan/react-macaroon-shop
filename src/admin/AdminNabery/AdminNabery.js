@@ -21,7 +21,7 @@ function AdminNabery() {
         const {data, error} = await dataBase.from("popularitems").select("*").order("id", {ascending: false});
 
         if (!error) {
-            setItems(data); 
+            setItems(data);
         } else {
             console.error("Ошибка загрузки наборов:", error);
         }
@@ -126,7 +126,7 @@ function AdminNabery() {
                        className={styles.AdminNaberyInput}/>
                 <input type="text" placeholder="Цена" value={price} onChange={(e) => setPrice(e.target.value)}
                        className={styles.AdminNaberyInput}/>
-                <input type="file" accept="image/*" onChange={handleFileChange} className={styles.AdminNaberyInput}/>
+                <input type="file" accept="image/*" data-testid="file-input" onChange={handleFileChange} className={styles.AdminNaberyInput}/>
                 <div onClick={addOrUpdateItem}>
                     <PinkButton text={loading ? "Загрузка..." : editingId ? "Обновить" : "Добавить"}/>
                 </div>
@@ -143,7 +143,7 @@ function AdminNabery() {
                                        onChange={(e) => setDescr(e.target.value)} className={styles.AdminNaberyInput}/>
                                 <input type="text" value={price} placeholder="Цена"
                                        onChange={(e) => setPrice(e.target.value)} className={styles.AdminNaberyInput}/>
-                                <input type="file" accept="image/*" onChange={handleFileChange}
+                                <input type="file" accept="image/*" data-testid="file-input" onChange={handleFileChange}
                                        className={styles.AdminNaberyInput}/>
                                 <div onClick={addOrUpdateItem}>
                                     <PinkButton text="Сохранить"/>
@@ -158,10 +158,10 @@ function AdminNabery() {
                                              descr={item.description} price={item.price}/>
 
                                 <div className={styles.AdminNaberyListItemButtons}>
-                                    <div onClick={() => startEditing(item)}>
-                                        <PinkButton text="Редактировать"/>
+                                    <div data-testid={`edit-button-${item.id}`} onClick={() => startEditing(item)} >
+                                        <PinkButton text="Редактировать" data-testid={`edit-button-${item.id}`}/>
                                     </div>
-                                    <div onClick={() => deleteItem(item.id)}>
+                                    <div data-testid={`delete-button-${item.id}`} onClick={() => deleteItem(item.id)}>
                                         <PinkButton text="Удалить"/>
                                     </div>
                                 </div>
@@ -173,5 +173,6 @@ function AdminNabery() {
         </div>
     );
 }
+
 
 export default AdminNabery;
