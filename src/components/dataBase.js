@@ -25,7 +25,7 @@ export const uploadImageToSupabase = async (file) => {
             return null;
         }
 
-        // 🔹 Получаем `publicURL` загруженного файла
+
         const {data} = dataBase.storage.from("news-images").getPublicUrl(filePath);
 
         if (!data) {
