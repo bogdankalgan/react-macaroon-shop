@@ -3,6 +3,7 @@ import {dataBase} from "../../components/dataBase";
 import PinkButton from "../../components/Corporatives/PinkButton";
 import styles from "./AdminCities.module.css";
 
+
 function AdminCities() {
     const [cities, setCities] = useState([]);
     const [newCityName, setNewCityName] = useState('');
@@ -43,7 +44,7 @@ function AdminCities() {
         } else {
             const {error} = await dataBase
                 .from("cities")
-                .insert([{name: newCityName}]); // ✅ ID больше не передаётся
+                .insert([{name: newCityName}]);
 
             if (error) {
                 console.error("Ошибка добавления города: ", error);
