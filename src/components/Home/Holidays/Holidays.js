@@ -1,5 +1,6 @@
 import styles from "./Holidays.module.css";
 import HolidaysItem from "./HolidaysItem";
+import {useEffect} from "react";
 
 function Holidays() {
     const items = [
@@ -10,6 +11,13 @@ function Holidays() {
         {text: "8 марта\n Международный Женский День", imtUrl: "./icons/holidays/5.svg"},
         {text: "9 марта\n День Сурка", imtUrl: "./icons/holidays/6.svg"},
     ]
+
+
+    useEffect(() => {
+        document.body.classList.add('holidays-page')
+        return () => document.body.classList.remove('holidays-page')
+    }, [])
+
     return (
         <section className={styles.Holidays}>
             <h2 className='titleSecond'>Ближайшие праздники</h2>

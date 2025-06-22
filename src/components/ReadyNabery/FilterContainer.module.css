@@ -4,3 +4,10 @@
     gap: 3px;
     margin-bottom: 41px;
 }
+
+@media (max-width: 320px) {
+    .FilterContainer {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+}

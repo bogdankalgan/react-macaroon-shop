@@ -1,4 +1,4 @@
-import Filter from '../../Home/ReadyNabery/Filter';
+import Filter from '../../ReadyNabery/Filter';
 import styles from './OneNewFilter.module.css';
 
 function OneNewFilter() {

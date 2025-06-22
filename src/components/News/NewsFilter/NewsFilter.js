@@ -1,6 +1,6 @@
 import styles from "./NewsFilter.module.css";
-import Filter from '../../Home/ReadyNabery/Filter';
-import filterContainerStyles from '../../Home/ReadyNabery/FilterContainer.module.css'
+import Filter from '../../ReadyNabery/Filter';
+import filterContainerStyles from '../../ReadyNabery/FilterContainer.module.css'
 
 function NewsFilter() {
     const items = [
