@@ -307,7 +307,7 @@ function DeliveryAndPayment({onUpdate, finalTotal, onSubmit}) {
                     <h4>Способы оплаты: </h4>
 
                     <div className={styles.PaymentMethodGroup}>
-                        <label>
+                        <label data-testid="payment-method-label">
                             <input type="radio" name="payment" value="online" checked={state.payment === "online"} onChange={handleChange}/>
                             <span>Оплата картой онлайн</span>
                         </label>

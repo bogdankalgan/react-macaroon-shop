@@ -6,3 +6,10 @@
     font-size: 14px;
     font-family: "Poppins", sans-serif;
 }
+
+@media(max-width: 320px) {
+    .Filter {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+}
