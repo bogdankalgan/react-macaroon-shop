@@ -6,21 +6,50 @@
     overflow-x: auto;
 }
 
+@media (max-width: 320px) {
+    .CatalogCards {
+        flex-wrap: wrap;
+        max-width: 100%;
+        gap: 4px;
+        padding-bottom: 19px;
+    }
+}
+
 .CatalogCards::-webkit-scrollbar {
     display: none;
 }
 
-
 .CatalogCards > div {
     width: 271px;
+}
+
+@media (max-width: 320px) {
+    .CatalogCards > a {
+        min-width: 140px;
+        min-height: 246px;
+    }
 }
 
 .CatalogCards div::before {
     width: 271px;
 }
 
+@media (max-width: 320px) {
+    .CatalogCards div::before {
+        width: 140px;
+    }
+}
+
 .CatalogCards div::after {
     right: 111px;
+}
+
+@media (max-width: 320px) {
+    .CatalogCards div::after {
+        right: 30px;
+        height: 42px;
+    }
+
 }
 
 .CatalogCards p {
@@ -37,6 +66,16 @@
     position: relative;
 }
 
+@media (max-width: 320px) {
+    .CatalogCardsWrapper {
+        padding: 33px 16px 19px 16px;
+    }
+
+    .CatalogCardsWrapper > button {
+        display: none;
+    }
+}
+
 .CatalogCardsWrapper > button:last-child {
     top: 88px;
     right: 110px;
@@ -47,4 +86,15 @@
     top: 88px;
     left: 81px;
     width: 50px;
+}
+
+@media (max-width: 320px) {
+    .CatalogCards > a > div > div > p {
+        max-width: 68px;
+        font-size: 13px;
+    }
+
+    .CatalogCards > a > div > div > button {
+        max-width: 20px;
+    }
 }

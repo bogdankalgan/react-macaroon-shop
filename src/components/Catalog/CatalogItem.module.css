@@ -6,6 +6,18 @@
     justify-content: space-between;
 }
 
+@media (max-width: 320px) {
+    .catalogItem > img {
+        width: 106px;
+        height: 121px;
+    }
+    .catalogItem {
+        width: 106px;
+        height: 166px;
+    }
+
+}
+
 .catalogItem::after {
     content: "";
     display: block;
@@ -16,10 +28,23 @@
     left: 0;
 }
 
+@media (max-width: 320px) {
+    .catalogItem::after {
+        width: 140px;
+        height: 101px;
+    }
+}
+
 
 .catalogItem:nth-child(1) {
     background: #FFB84E;
     padding: 41px 69px 45px 69px;
+}
+
+@media (max-width: 320px) {
+    .catalogItem:nth-child(1) {
+        padding: 18px 17px 20px 17px;
+    }
 }
 
 .catalogItem:nth-child(1)::after {
@@ -29,6 +54,13 @@
 .catalogItem:nth-child(2) {
     background: #FEB0E1;
     padding: 10px 32px 45px 33px;
+}
+
+
+@media (max-width: 320px) {
+    .catalogItem:nth-child(2) {
+        padding: 18px 17px 20px 17px;
+    }
 }
 
 .catalogItem:nth-child(2)::after {
@@ -41,8 +73,26 @@
     padding: 22px 72px 45px 72px;
 }
 
+@media (max-width: 320px) {
+    .catalogItem:nth-child(3) {
+        padding: 14px 16px;
+        display: flex;
+        width: 288px;
+        height: 96px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 .catalogItem:nth-child(3)::after {
     background: linear-gradient(180deg, rgba(243, 214, 179, 0) 10%, #EEB776 75%);
+}
+
+@media (max-width: 320px) {
+    .catalogItem:nth-child(3)::after {
+        display: none;
+    }
 }
 
 .catalogItemText {
@@ -51,4 +101,12 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     z-index: 1;
+}
+
+@media (max-width: 320px) {
+    .catalogItemText {
+        font-size: 14px;
+        text-align: center;
+    }
+
 }

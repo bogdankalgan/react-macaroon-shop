@@ -28,7 +28,7 @@ function PopularItem({imgPath, title, descr, price, id, price_id}) {
                 <p className={styles.PopularItemDescr}>{descr}</p>
 
                 <div className={styles.PopularItemPriceContainer}>
-                    <p className={styles.PopularItemPrice}>{price} ₽</p>
+                    <p className={styles.PopularItemPrice}>{price}</p>
 
                     <button
                         className={styles.PopularItemButton}

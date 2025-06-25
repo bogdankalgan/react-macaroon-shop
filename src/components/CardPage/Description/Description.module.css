@@ -3,6 +3,13 @@
     margin-bottom: 60px;
 }
 
+@media (max-width: 320px) {
+    .DescriptionContainer {
+        display: none;
+        margin-bottom: 27px;
+    }
+}
+
 .Description {
     background: white;
     padding: 22px 24px 57px 23px;
