@@ -22,6 +22,13 @@ function CardPageTop(props) {
 
                 <p className={styles.CardPageTopDescr}>{descr}</p>
 
+                <div className={ `${styles.CardPageTopImg} ${styles.mobileOnlyImages}`}>
+                    <img src={imgPath} alt={descr} />
+                    <img src={imgPath} alt={descr} />
+                    <img src={imgPath} alt={descr} />
+                    <img src={imgPath} alt={descr} />
+                </div>
+
                 <Taste taste={taste} count={count}/>
                 <Price price={price} />
 

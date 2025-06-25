@@ -3,8 +3,22 @@
     margin-bottom: 74px;
 }
 
+@media (max-width: 320px) {
+    .CatalogItemContainer {
+        padding: 12px 16px 30px 16px;
+        margin-bottom: 30px;;
+    }
+}
+
 .CatalogItemContainerBottom {
     display: flex;
     gap: 29px;
     justify-content: center;
+}
+
+@media (max-width: 320px) {
+    .CatalogItemContainerBottom {
+        flex-wrap: wrap;
+        gap: 11px 8px;
+    }
 }

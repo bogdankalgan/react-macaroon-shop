@@ -10,11 +10,25 @@
     margin-bottom: 25px;
 }
 
+@media (max-width: 320px) {
+    .Price {
+        order: 4;
+        padding: 11px 15px;
+        width: 256px;
+    }
+}
+
 .PriceText {
     color: #E7426A;
     font-size: 24px;
     font-family: "Monserrat", sans-serif;
     font-weight: 500;
+}
+
+@media (max-width: 320px) {
+    .PriceText {
+        font-size: 18px;
+    }
 }
 
 .Price > button {
@@ -24,3 +38,12 @@
     font-size: 14px;
     font-weight: 600;
 }
+
+@media (max-width: 320px) {
+    .Price > button {
+        padding: 12px 22px;
+        font-size: 12px;
+    }
+}
+
+
