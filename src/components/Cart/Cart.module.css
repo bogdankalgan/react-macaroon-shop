@@ -93,15 +93,6 @@
     color: #e7426a;
 }
 
-@media (max-width: 320px) {
-    .CartItem {
-        flex-direction: column;
-        width: 223px;
-        border: none;
-        border-bottom: 1px solid #EDEDF0;
-        align-items: start;
-    }
-}
 
 .CartItemWithoutDelivery {
     display: flex;
@@ -259,3 +250,81 @@
 }
 
 
+
+@media (max-width: 320px) {
+    .CartItem {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        padding: 22px 13px 16px 9px;
+        grid-template-areas:
+      "image info"
+      "count price"
+      "note discount";
+        column-gap: 12px;
+        row-gap: 10px;
+        border: none;
+        align-items: start;
+        border-bottom: 1px solid #EDEDF0;
+        border-radius: 0;
+        width: 91%;
+    }
+
+    .CartItem > img {
+        grid-area: image;
+        width: 69px;
+        height: 69px;
+    }
+
+    .CartItemInfo {
+        grid-area: info;
+    }
+
+    .CartItemTitle {
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .CartItemDescr {
+        font-size: 10px;
+        color: #666;
+        width: 100%;
+    }
+
+    .CartItemCount {
+        grid-area: count;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .CartItemCount button {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .CartItemPrice {
+        grid-area: price;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .CartItemNote {
+        grid-area: note;
+        font-size: 14px;
+        font-weight: 600;
+        color: #e7426a;
+        line-height: 1.2;
+    }
+
+    .CartItemDiscount {
+        grid-area: discount;
+        font-size: 16px;
+        font-weight: bold;
+        color: #e7426a;
+        text-align: right;
+    }
+
+}

@@ -11,9 +11,34 @@
 
 }
 
+@media (max-width: 320px) {
+    .ChepTogther {
+        padding: 10px 12px;
+        font-size: 16px;
+        white-space: nowrap;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+        justify-content: space-between;
+    }
+}
+
 .ChepTogther > img {
     margin-left: 10px;
 }
+
+@media (max-width: 320px) {
+    .ChepTogther > img {
+        width: 81px;
+        height: 35px;
+        position: absolute;
+        top: 14px;
+        right: 60px;
+        z-index: -1;
+    }
+}
+
+
 
 .ChepTogtherContainer {
     border-radius: 5px;
@@ -28,6 +53,16 @@
     grid-template-columns: repeat(5, auto);
     justify-content: center;
     gap: 20px;
+}
+
+@media (max-width: 320px) {
+    .ChepTogtherStars > img:nth-child(1), img:nth-child(2) {
+        display: none;
+    }
+
+    .ChepTogtherStars {
+        gap: 2px;
+    }
 }
 
 
