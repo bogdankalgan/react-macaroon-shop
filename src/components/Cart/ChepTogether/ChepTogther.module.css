@@ -128,3 +128,58 @@
 .ChepTogetherItemPrice > span:nth-child(2) > span {
     color: #e7426a;
 }
+
+@media (max-width: 320px) {
+    .ChepTogetherItem {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-areas:
+      "image title"
+      "buttons price";
+        column-gap: 12px;
+    }
+
+    .ChepTogetherItemTitle {
+        display: contents;
+    }
+
+    .ChepTogetherItemTitle img {
+        grid-area: image;
+        width: 69px;
+        height: 69px;
+        margin-bottom: 9px;
+    }
+
+    .ChepTogetherItemTitle p {
+        grid-area: title;
+        font-size: 12px;
+        font-weight: bold;
+
+    }
+
+    .ChepTogetherItemButtons {
+        grid-area: buttons;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .ChepTogetherItemPrice {
+        grid-area: price;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 14px;
+    }
+
+    .ChepTogetherItemPrice span:first-child {
+        font-size: 14px;
+    }
+
+    .ChepTogetherItemPrice span:last-child {
+        font-size: 14px;
+        font-weight: bold;
+        color: #e7426a;
+    }
+}

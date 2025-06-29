@@ -148,6 +148,12 @@
     max-height: 370px;
 }
 
+@media (max-width: 320px) {
+    .CartTotal {
+        display: none;
+    }
+}
+
 .CartTotalTitle {
     color: #292929;
     font-size: 18px;

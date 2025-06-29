@@ -7,10 +7,24 @@
     margin-bottom: 35px;
 }
 
+@media (max-width: 320px) {
+    .DeliveryAndPaymentDescr {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+}
+
 .DeliveryAndPaymentForm {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+@media (max-width: 320px) {
+    .DeliveryAndPaymentForm {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 .DeliveryAndPaymentForm > p {
@@ -26,6 +40,14 @@
     margin-bottom: 24px;
 }
 
+@media (max-width: 320px) {
+    .DeliveryAndPaymentBlock {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
 .DeliveryAndPaymentLabel {
     display: flex;
     flex-direction: column;
@@ -33,6 +55,13 @@
     font-size: 14px;
     font-family: "Poppins", sans-serif;
     margin-bottom: 24px;
+}
+
+@media (max-width: 320px) {
+    .DeliveryAndPaymentLabel {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
 }
 
 .DeliveryAndPaymentLabel > select {
@@ -48,6 +77,12 @@
     appearance: none;
 }
 
+@media (max-width: 320px) {
+    .DeliveryAndPaymentLabel > select {
+        width: 288px;
+    }
+}
+
 .DeliveryAndPaymentLabel > select:focus {
     border: 1px solid #FEB0E1;
     outline: none;
@@ -60,11 +95,19 @@
 }
 
 .DeliveryAndPaymentLabel > textarea {
-     border: none;
+    border: none;
     outline: none;
     min-width: 670px;
     height: 108px;
     padding: 12px 14px 52px 14px;
+}
+
+@media (max-width: 320px) {
+    .DeliveryAndPaymentLabel > textarea {
+        min-width: 262px;
+        height: 76px;
+        padding: 12px;
+    }
 }
 
 .DeliveryAndPaymentLabel > textarea:focus {
@@ -80,6 +123,12 @@
     font-weight: 400;
 }
 
+@media (max-width: 320px) {
+    .DeliveryAndPaymentLabel > textarea::placeholder {
+        font-size: 14px;
+    }
+}
+
 
 .DeliveryAndPaymentLabel > textarea::-webkit-scrollbar {
     display: none;
@@ -92,6 +141,12 @@
     border-radius: 0;
     padding: 17px 0 14px 14px;
     width: 328px;
+}
+
+@media (max-width: 320px) {
+    .DeliveryAndPaymentLabel  input {
+        width: 288px;
+    }
 }
 
 .DeliveryAndPaymentLabel input:focus {
@@ -120,6 +175,13 @@
     margin-bottom: 24px;
 }
 
+@media (max-width: 320px) {
+    .DeliveryRadioGroup {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 .DeliveryRadio {
     display: flex;
     align-items: flex-start;
@@ -132,7 +194,14 @@
     font-family: "Poppins", sans-serif;
     position: relative;
     gap: 14px;
-background: white;
+    background: white;
+}
+
+@media (max-width: 320px) {
+    .DeliveryRadio {
+        min-width: 288px;
+        padding: 11px 0 11px 12px;
+    }
 }
 
 .DeliveryRadio > div {
@@ -168,11 +237,35 @@ background: white;
     margin-bottom: 18px;
 }
 
+@media (max-width: 320px) {
+    .DeliveryPayment {
+        align-items: start;
+    }
+
+    .DeliveryPayment > h4 {
+        display: none;
+    }
+
+    .DeliveryPayment div:last-child {
+        text-align: center;
+        width: 100%;
+    }
+}
+
 .PaymentMethodGroup {
     display: flex;
     gap: 40px;
     align-items: center;
     justify-content: space-between;
+ }
+
+@media (max-width: 320px) {
+    .PaymentMethodGroup {
+        flex-direction: column;
+        gap: 15px;
+        align-items: start;
+        width: 100%;
+    }
 }
 
 .PaymentMethodGroup label {
@@ -184,6 +277,16 @@ background: white;
     font-weight: 600;
     color: #292929;
     position: relative;
+}
+
+@media (max-width: 320px) {
+    .PaymentMethodGroup label {
+        font-size: 12px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(41,41,41,.1);
+        border-top: 1px solid rgba(41,41,41,.1);
+        width: 100%;
+    }
 }
 
 .PaymentMethodGroup input[type="radio"] {
