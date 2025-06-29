@@ -74,10 +74,8 @@ function ChepTogether() {
             <div className={styles.ChepTogetherItems}>
                 {cheapItems.map((item) => (
                     <div key={item.id} className={styles.ChepTogetherItem}>
-
                         <div className={styles.ChepTogetherItemTitle}>
                             <img src={item.image} alt={item.id}></img>
-
                             <p>{item.name}</p>
                         </div>
                         <div className={styles.ChepTogetherItemButtons}>
@@ -85,7 +83,6 @@ function ChepTogether() {
                             <span>{quantities[item.id]}</span>
                             <button onClick={() => handleChange(item.id, 1)}>+</button>
                         </div>
-
                         <div className={styles.ChepTogetherItemPrice}>
                             <span>{item.originalPrice} руб</span>
                             <span>Цена: <span>{item.price} руб</span></span>
