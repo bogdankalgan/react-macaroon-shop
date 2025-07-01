@@ -36,14 +36,14 @@ function Hero() {
                 </div>
 
                 <div className={styles.HeroText}>
-                    <h2 className="titleSecond" style={{marginBottom: "13px"}}>Корпоративные подарки</h2>
-                    <p className="descr" style={{textAlign: "center", marginBottom: "63px"}}>Брендированные пирожные
+                    <h2 className="titleSecond">Корпоративные подарки</h2>
+                    <p className="descr">Брендированные пирожные
                         макарон, которые
                         поднимут <br/> аппетит ваших клиентов
                         или порадуют коллектив</p>
 
 
-                    <p className="descr" style={{fontSize: "16px", marginBottom: "32px"}}>
+                    <p className="descr">
                         Поднять мотивацию сотрудников? Увеличить лояльность клиентов или расположить их к <br/> себе
                         перед
                         большой сделкой? <br/>

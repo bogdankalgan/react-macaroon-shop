@@ -9,6 +9,15 @@
     top: 105px;
 }
 
+@media (max-width: 320px) {
+    .greyRound {
+        width: 234px;
+        height: 234px;
+        top: 233px;
+        left: 175px;
+    }
+}
+
 .greenRound {
     position: absolute;
     background: #9BFF9F;
@@ -18,6 +27,15 @@
     filter: blur(100px);
     left: 451px;
     top: 99px;
+}
+
+@media (max-width: 320px) {
+    .greenRound {
+        width: 66px;
+        height: 65px;
+        top: 230px;
+        left: 221px;
+    }
 }
 
 .blueRound {
@@ -31,6 +49,15 @@
     top: 187px;
 }
 
+@media (max-width: 320px) {
+    .blueRound {
+        width: 90px;
+        height: 90px;
+        top: 281px;
+        left: 36px;
+    }
+}
+
 .round98 {
     position: absolute;
     background: rgba(60, 88, 76, .27);
@@ -42,6 +69,12 @@
     top: 35px;
 }
 
+@media (max-width: 320px) {
+    .round98 {
+        display: none;
+    }
+}
+
 .round98Two {
     position: absolute;
     background: rgba(60, 88, 76, .38);
@@ -51,4 +84,13 @@
     filter: blur(100px);
     left: 330px;
     top: 247px;
+}
+
+@media (max-width: 320px) {
+    .round98Two {
+        width: 138px;
+        height: 138px;
+        top: 316px;
+        left: 152px;
+    }
 }

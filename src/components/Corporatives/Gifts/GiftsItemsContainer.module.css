@@ -5,16 +5,57 @@
     margin-bottom: 33px;
 }
 
+@media (max-width: 320px) {
+    .GiftsItemsContainer {
+        margin-bottom: 44px;
+    }
+}
+
+@media (max-width: 320px) {
+    .GiftsItemsContainer {
+        padding: 0 16px 18px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
 .GiftsItemsContainer > div {
     width: 271px;
+}
+
+@media (max-width: 320px) {
+    .GiftsItemsContainer  div {
+        width: 118px;
+    }
+
+    .GiftsItemsContainer > div {
+        padding: 0 8px 11px 12px;
+    }
+
+    .GiftsItemsContainer > a {
+        width: 138px;
+    }
 }
 
 .GiftsItemsContainer p {
     width: 232px;
 }
 
+@media (max-width: 320px) {
+    .GiftsItemsContainer  p{
+        width: 118px;
+    }
+}
+
 .GiftsItemsContainer img {
     padding: 22px 14px 0 14px;
+}
+
+@media (max-width: 320px) {
+    .GiftsItemsContainer img {
+        padding: 9px 8px 12px 8px;
+        margin: 0;
+    }
 }
 
 .GiftsItemsContainer div::after {
@@ -23,6 +64,12 @@
 
 .GiftsItemsContainer div::before {
     width: 271px;
+}
+
+@media (max-width: 320px) {
+    .GiftsItemsContainer div::before {
+        width: 138px;
+    }
 }
 
 .GiftsItemsContainer button {

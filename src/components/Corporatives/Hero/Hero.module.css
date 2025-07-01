@@ -1,5 +1,12 @@
 .Hero {
     margin-bottom: 117px;
+    overflow-x: hidden;
+}
+
+@media (max-width: 320px) {
+    .Hero {
+        margin-bottom: 42px;
+    }
 }
 
 .HeroImg {
@@ -17,14 +24,41 @@
     z-index: 12;
 }
 
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(1) {
+        width: 198px;
+        height: 220px;
+        left: 61px;
+        top: 204px;
+    }
+}
+
 .HeroImg img:nth-child(2) {
     left: 478px;
     top: 50px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(2) {
+        width: 41px;
+        height: 42px;
+        left: 237px;
+        top: 201px;
+    }
+}
+
 .HeroImg img:nth-child(3) {
     left: 507px;
     top: 244px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(3) {
+        width: 47px;
+        height: 44px;
+        top: 314px;
+        left: 254px;
+    }
 }
 
 .HeroImg img:nth-child(4) {
@@ -37,14 +71,41 @@
     top: 427px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(5) {
+        width: 24px;
+        height: 30px;
+        top: 420px;
+        left: 181px;
+    }
+}
+
 .HeroImg img:nth-child(6) {
     left: 155px;
     top: 385px;
 }
 
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(6) {
+        width: 38px;
+        height: 38px;
+        top: 396px;
+        left: 50px;
+    }
+}
+
 .HeroImg img:nth-child(7) {
     left: 88px;
     top: 322px;
+}
+
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(7) {
+        width: 39px;
+        height: 38px;
+        top: 359px;
+        left: 11px;
+    }
 }
 
 .HeroImg img:nth-child(8) {
@@ -53,9 +114,28 @@
     z-index: 11;
 }
 
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(8) {
+        width: 45px;
+        height: 45px;
+        top: 276px;
+        left: 16px;
+    }
+}
+
 .HeroImg img:nth-child(9) {
     left: 124px;
     top: 53px;
+}
+
+
+@media (max-width: 320px) {
+    .HeroImg img:nth-child(9) {
+        width: 41px;
+        height: 41px;
+        top: 203px;
+        left: 32px;
+    }
 }
 
 .HeroBottom {
@@ -64,7 +144,55 @@
     padding-right: 135px;
 }
 
+@media (max-width: 320px) {
+    .HeroBottom {
+        padding-right: 0;
+    }
+}
+
 .HeroText {
     padding: 136px 0 2px 25px;
 }
 
+.HeroText > h2 {
+    margin-bottom: 13px;
+}
+
+.HeroText > p:nth-child(2) {
+    text-align: center;
+    margin-bottom: 63px;
+}
+
+.HeroText > p:nth-child(3) {
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+
+@media (max-width: 320px) {
+    .HeroText {
+        padding: 43px 16px 42px 16px;
+    }
+
+
+    .HeroText > p:nth-child(2) {
+        margin-bottom: 335px;
+    }
+
+    .HeroText > p:nth-child(3) {
+        font-size: 14px;
+    }
+
+    .HeroText > p:nth-child(3) > br {
+        display: none;
+    }
+
+    .HeroText > p:nth-child(2) > br {
+        display: none;
+    }
+
+
+    .HeroText > div > button {
+        font-size: 12px;
+    }
+}
