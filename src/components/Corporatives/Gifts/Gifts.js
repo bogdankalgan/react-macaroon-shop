@@ -5,7 +5,7 @@ import PinkButton from "../PinkButton"
 function Gifts() {
     return (
         <section className={styles.Gifts}>
-            <h2 className="titleSecond" style={{marginBottom: "40px"}}>Некоторые варианты подарков</h2>
+            <h2 className="titleSecond">Некоторые варианты подарков</h2>
 
             <GiftsItemContainer/>
 

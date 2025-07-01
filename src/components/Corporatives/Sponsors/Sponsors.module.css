@@ -5,10 +5,33 @@
     margin-bottom: 48px;
 }
 
+@media (max-width: 320px) {
+    .Sponsors {
+        margin-bottom: 45px;
+    }
+
+    .Sponsors > div:nth-child(2) {
+        display: none;
+    }
+}
+
 .SponsorsContainer {
     display: flex;
     gap: 67px;
     margin-bottom: 42px;
+}
+
+@media (max-width: 320px) {
+    .SponsorsContainer {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .SponsorsContainer > img {
+        width: 80px;
+        height: 50px;
+    }
 }
 
 .SponsorsContainer img {

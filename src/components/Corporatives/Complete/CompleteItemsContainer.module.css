@@ -5,6 +5,13 @@
     overflow-x: auto;
 }
 
+@media (max-width: 320px) {
+    .completeItemContainer {
+        padding: 21px 16px 32px 16px;
+        gap: 8px;
+    }
+}
+
 .completeItemContainer::-webkit-scrollbar {
     display: none;
 }

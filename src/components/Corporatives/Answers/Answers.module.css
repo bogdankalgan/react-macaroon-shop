@@ -2,9 +2,22 @@
     margin-bottom: 64px;
 }
 
+@media (max-width: 320px) {
+    .Answer {
+        margin-bottom: 40px;
+    }
+}
+
 .AnswerItemsContainer {
     padding: 0 66px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+}
+
+@media (max-width: 320px) {
+    .AnswerItemsContainer {
+        padding: 11px 16px 0 16px;
+        gap: 0;
+    }
 }

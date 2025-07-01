@@ -5,11 +5,25 @@
     padding: 15px 14px 24px 14px;
 }
 
+@media (max-width: 320px) {
+    .completeItem {
+        padding: 9px 8px 12px 8px;
+    }
+}
+
 .completeItemImg {
     width: 243px;
     height: 192px;
     background: #E9E6E6;
     margin-bottom: 22px;
+}
+
+@media (max-width: 320px) {
+    .completeItemImg {
+        width: 124px;
+        height: 98px;
+        margin-bottom: 10px;
+    }
 }
 
 .completeItemText {
@@ -18,3 +32,8 @@
     font-weight: 600;
 }
 
+@media (max-width: 320px) {
+    .completeItemText {
+        font-size: 12px;
+    }
+}

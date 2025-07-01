@@ -2,6 +2,29 @@
     margin-bottom: 69px;
 }
 
+@media (max-width: 320px) {
+    .Gifts {
+        margin-bottom: 44px;
+    }
+}
+
 .Gifts button {
     padding: 17px 78px 16px 79px;
+}
+@media (max-width: 320px) {
+    .Gifts button {
+        padding: 13px 53px;
+        font-size: 12px;
+    }
+}
+
+.Gifts > h2 {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 320px) {
+    .Gifts > h2 {
+        margin-bottom: 25px;
+        width: 288px;
+    }
 }
