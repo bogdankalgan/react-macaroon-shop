@@ -26,3 +26,9 @@
     color: #4E9DD3;
 }
 
+
+@media (max-width: 320px) {
+    .BreadCrumbs {
+        font-size: 9px;
+    }
+}

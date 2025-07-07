@@ -28,10 +28,89 @@
 
 .HeroTextList {
     padding-left: 25px;
+    text-align: left;
+}
+
+.HeroText > div > p {
+    margin-bottom: 12px;
 }
 
 .HeroTextListItem {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     color: #292929;
+}
+
+.HeroText h1 {
+    margin-bottom: 13px;
+    text-align: center;
+}
+
+.HeroText > div {
+    text-align: center;
+}
+
+.HeroText > div > img {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .HeroText {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .HeroText > div > img {
+        width: 267px;
+        height: 210px;
+        display: block;
+    }
+
+    .HeroText > div:nth-child(1) {
+        order: 1;
+    }
+
+    .HeroTextButtons {
+        order: 2;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .HeroTextButtons > button:nth-child(1) {
+        padding: 12px 52px;
+        margin-right: 0;
+    }
+
+    .HeroTextButtons > button:nth-child(2) {
+        padding: 12px 58px;
+    }
+
+    .HeroTextListWrap {
+        order: 3;
+    }
+
+
+    .HeroTextImageMobile {
+        display: none;
+    }
+
+
+    .HeroTextImageMobile {
+        display: block;
+        order: 2;
+        width: 100%;
+    }
+
+    .Hero > div:first-of-type {
+        display: none;
+    }
+
+    .HeroTextList {
+        list-style: none;
+        text-align: left;
+    }
+
 }

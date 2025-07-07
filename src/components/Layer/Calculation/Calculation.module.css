@@ -3,6 +3,12 @@
     padding: 76px 136px;
 }
 
+@media (max-width: 320px) {
+    .Calculation {
+        padding: 38px 16px 14px 16px;
+    }
+}
+
 .Calculation > p > a {
     color: #4E9DD3;
     transition: all .3s;
@@ -31,6 +37,13 @@
     column-gap: 29px;
     width: 100%;
     margin-bottom: 23px;
+}
+
+@media (max-width: 320px) {
+    .CalculationInputs {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .CalculationInputs > div:has(input) {
@@ -63,4 +76,32 @@
     color: #292929;
     font-family: "Poppins", sans-serif;
     margin-bottom: 6px;
+}
+
+@media (max-width: 320px) {
+    .CalculationInputs input, textarea {
+        width: 275px;
+        padding: 11px 0 10px 11px;
+    }
+
+    .CalculationInputs > div:nth-child(1) {
+        order: 1;
+    }
+
+    .CalculationInputs > div:nth-child(2) {
+        order: 3;
+    }
+
+    .CalculationInputs > div:nth-child(3) {
+        order: 5;
+    }
+
+    .CalculationInputs > div:nth-child(4) {
+        order: 2;
+    }
+
+    .CalculationInputs > div:nth-child(5) {
+        order: 4;
+    }
+
 }

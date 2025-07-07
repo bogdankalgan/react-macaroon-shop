@@ -2,6 +2,12 @@
     padding: 67px 135px 48px 135px;
 }
 
+@media (max-width: 320px) {
+    .Recomended {
+        padding: 40px 16px 32px 16px;
+    }
+}
+
 .RecomendedItemContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -10,3 +16,15 @@
     align-items: start;
 }
 
+@media (max-width: 320px) {
+    .RecomendedItemContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .RecomendedItemContainer::-webkit-scrollbar {
+        display: none;
+    }
+}

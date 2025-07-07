@@ -4,10 +4,16 @@ import PopularButton from '../../Home/Popular/PopularButton'
 function HeroText() {
     return (
         <div className={styles.HeroText}>
-            <h1 className='titleFirst' style={{marginBottom: "13px"}}>Поставки пирожных оптом</h1>
+            <div>
+                <h1 className='titleFirst'>Поставки пирожных оптом</h1>
 
-            <p className="descr">Наши макаронсы и трубочки продаются в крупнейших кондитерских и кофейных сетях
+                <p className="descr">Наши макаронсы и трубочки продаются в крупнейших кондитерских и кофейных сетях
                 Санкт-Петербурга. Присоединяйтесь!</p>
+            </div>
+
+            <div className={styles.HeroTextImageMobile}>
+                <img src="/img/layerHero/1.png" alt="layer" />
+            </div>
 
             <div className={styles.HeroTextButtons}>
                 <PopularButton text="Презентация"/>
