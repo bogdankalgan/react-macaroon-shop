@@ -8,6 +8,7 @@
     margin-bottom: 58px;
 }
 
+
 .HeroImg {
     margin-right: 154px;
 }
@@ -39,4 +40,73 @@
     margin-bottom: 41px;
     display: flex;
     gap: 10px;
+}
+
+.HeroImgMobile {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .Hero {
+        padding: 43px 16px;
+        flex-direction: column;
+    }
+
+    .Hero h2 {
+        text-align: center;
+        width: 272px;
+    }
+
+    .HeroText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .HeroText > p:nth-child(2) {
+        width: 265px;
+    }
+
+    .HeroText > p:nth-child(2) > br {
+        display: none;
+    }
+
+    .HeroImgMobile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .HeroImgMobile img {
+        width: 197px;
+        height: 312px;
+    }
+
+    .HeroImg > img:nth-child(1) {
+        display: none;
+    }
+
+    .HeroButtons {
+        flex-direction: column;
+    }
+
+    .HeroImg > img:nth-child(2) {
+        top: 253px;
+        left: 235px;
+    }
+
+    .HeroImg > img:nth-child(3) {
+        top: 398px;
+        left: 254px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .HeroImg > img:nth-child(4) {
+        top: 280px;
+        left: 24px;
+        display: block;
+        width: 50px;
+        height: 52px;
+    }
 }

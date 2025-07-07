@@ -4,3 +4,10 @@
     flex-wrap: wrap;
     gap: 27px;
 }
+
+@media (max-width: 320px) {
+    .NabForMarriegeItem {
+        padding: 16px 16px 43px 16px;
+        gap: 4px;
+    }
+}

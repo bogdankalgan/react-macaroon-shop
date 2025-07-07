@@ -13,7 +13,12 @@ function Hero() {
             <div className={roundStyles.whiteRound}></div>
             <div className={roundStyles.greyRound}></div>
 
-            <HeroText/>
+
+            <div className={styles.HeroTextWrapper}>
+                <HeroText />
+            </div>
+
+
         </section>
     )
 }

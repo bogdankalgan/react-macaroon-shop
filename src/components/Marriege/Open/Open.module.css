@@ -3,13 +3,33 @@
     align-items: center;
 }
 
+@media (max-width: 320px) {
+    .Open {
+        flex-direction: column;
+    }
+}
+
 .OpenImg {
+}
+
+@media (max-width: 320px) {
+    .OpenImg {
+        display: none;
+    }
 }
 
 .OpenContent {
     display: flex;
     flex-direction: column;
     align-items: start;
+}
+
+@media (max-width: 320px) {
+    .OpenContent {
+        order: 1;
+        align-items: center;
+        padding: 49px 16px 0 16px;
+    }
 }
 
 .OpenContent > button {
@@ -21,6 +41,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px 30px;
+}
+
+@media (max-width: 320px) {
+    .OpenInputs {
+        align-items: center;
+    }
 }
 
 .OpenInputs input {
@@ -39,6 +65,12 @@
 
 .OpenIdea {
     width: 570px;
+}
+
+@media (max-width: 320px) {
+    .OpenIdea {
+        width: 100%;
+    }
 }
 
 .OpenIdea > input {

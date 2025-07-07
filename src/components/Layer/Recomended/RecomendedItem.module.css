@@ -10,9 +10,23 @@
     width: 339px;
 }
 
+@media (max-width: 320px) {
+    .RecomendedItem {
+        padding: 31px 14px 16px 14px;
+        width: 258px;
+        height: 209px;
+    }
+}
+
 .RecomendedItem > div {
     border: none;
     padding: 0;
+}
+
+@media (max-width: 320px) {
+    .RecomendedItem > div {
+        width: 250px;
+    }
 }
 
 .RecomendedItemText {
@@ -26,6 +40,7 @@
     width: 370px;
 }
 
+
 .RecomendedItem > div > p:not(:last-child) {
     margin-bottom: 36px;
 }
@@ -36,6 +51,13 @@
 
 .RecomendedItem > div > p {
     width: 330px;
+}
+
+@media (max-width: 320px) {
+    .RecomendedItem > div > p {
+        width: 260px;
+        font-size: 13px;
+    }
 }
 
 .RecomendedItemTitle, .RecomendedItemDescr {

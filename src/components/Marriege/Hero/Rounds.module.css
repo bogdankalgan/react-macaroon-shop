@@ -10,6 +10,15 @@
     z-index: -1;
 }
 
+@media (max-width: 320px) {
+    .whiteRound {
+        width: 161px;
+        height: 161px;
+        top: 168px;
+        left: 103px;
+    }
+}
+
 .FFround {
     position: absolute;
     width: 336px;
@@ -23,6 +32,12 @@
     z-index: -1;
 }
 
+@media (max-width: 320px) {
+    .FFround {
+        display: none;
+    }
+}
+
 .FF3round {
     position: absolute;
     width: 276px;
@@ -33,6 +48,12 @@
     filter: blur(100px);
     top: 101px;
     right: -19px;
+}
+
+@media (max-width: 320px) {
+    .FF3round {
+        display: none;
+    }
 }
 
 .roseRound:nth-child(4) {
@@ -48,6 +69,15 @@
     z-index: -1;
 }
 
+@media (max-width: 320px) {
+    .roseRound:nth-child(4) {
+        width: 110px;
+        height: 110px;
+        top: 404px;
+        left: 136px;
+    }
+}
+
 .roseRound:nth-child(5) {
     position: absolute;
     width: 169px;
@@ -61,6 +91,15 @@
     z-index: -1;
 }
 
+@media (max-width: 320px) {
+    .roseRound:nth-child(5) {
+        width: 110px;
+        height: 110px;
+        top: 325px;
+        left: 184px;
+    }
+}
+
 .FF9round {
     position: absolute;
     width: 440px;
@@ -72,4 +111,13 @@
     top: 109px;
     left: 109px;
     z-index: -1;
+}
+
+@media (max-width: 320px) {
+    .FF9round {
+        width: 286px;
+        height: 296px;
+        left: 5px;
+        top: 215px;
+    }
 }

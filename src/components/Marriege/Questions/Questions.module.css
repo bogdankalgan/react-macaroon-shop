@@ -2,6 +2,12 @@
     padding: 81px 135px 69px 135px;
 }
 
+@media (max-width: 320px) {
+    .Questions {
+        display: none;
+    }
+}
+
 .QuestionsItems {
     display: flex;
     justify-content: space-between;

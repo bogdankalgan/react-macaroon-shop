@@ -7,3 +7,19 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 52px;
 }
+
+@media (max-width: 320px) {
+    .OfferItemContainer {
+        padding: 0 15px 43px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 38px 0;
+        justify-content: space-between;
+    }
+
+    .Offer > h2 {
+        width: 279px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}

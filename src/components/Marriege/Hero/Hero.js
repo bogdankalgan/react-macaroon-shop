@@ -31,6 +31,10 @@ function Hero() {
                     Нежные пирожные макаронс с разными вкусами для <br/> украшения вашего свадебного торжества
                 </p>
 
+                <div className={styles.HeroImgMobile}>
+                    <img src="/img/marriegeHero/1.png" alt="hero mobile image" />
+                </div>
+
                 <div className={styles.HeroButtons}>
                     <PopularButton text="Презентация"/>
                     <PopularButton text="Прайс-лист"/>
