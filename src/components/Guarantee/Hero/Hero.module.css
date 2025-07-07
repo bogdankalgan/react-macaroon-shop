@@ -2,8 +2,22 @@
     padding: 22px 285px 41px 285px;
 }
 
+@media (max-width: 320px) {
+    .Hero {
+        padding: 19px 20px 28px 20px;
+    }
+}
+
 .HeroItems {
     display: flex;
     align-items: start;
     gap: 30px;
+}
+
+@media (max-width: 320px) {
+    .HeroItems {
+        flex-wrap: wrap;
+        gap: 25px 8px;
+        justify-content: center;
+    }
 }
