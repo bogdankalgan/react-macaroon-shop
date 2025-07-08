@@ -6,11 +6,38 @@
     justify-content: space-between;
 }
 
+@media (max-width: 320px) {
+    .Payment {
+        padding: 32px 16px 45px 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .PaymentContent {
     margin-right: 119px;
 }
 
+@media (max-width: 320px) {
+    .PaymentContent {
+        order: 2;
+        margin-right: 0;
+    }
+}
+
 .PaymentImg {
+}
+
+@media (max-width: 320px) {
+    .PaymentImg {
+        order: 1;
+        margin-bottom: 22px;
+    }
+
+    .PaymentImg > img {
+        width: 173px;
+        height: 200px;
+    }
 }
 
 .PaymentDivs {
@@ -28,6 +55,12 @@
     height: 20px;
 }
 
+@media (max-width: 320px) {
+    .PaymentDiv {
+        display: none;
+    }
+}
+
 .PaymentTitle {
     color: #292929;
     font-size: 18px;
@@ -40,6 +73,12 @@
     color: #292929;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 320px) {
+    .PaymentDescr {
+        font-size: 14px;
+    }
 }
 
 .PaymentDescr:not(:last-child) {

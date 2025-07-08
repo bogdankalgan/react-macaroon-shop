@@ -10,6 +10,15 @@
     z-index: -1;
 }
 
+@media (max-width: 320px) {
+    .roseRound {
+        width: 112px;
+        height: 112px;
+        top: 243px;
+        left: 35px;
+    }
+}
+
 .yellowRound {
     position: absolute;
     width: 231px;
@@ -21,4 +30,12 @@
     left: 258px;
     top: 116px;
     z-index: -1;
+}
+@media (max-width: 320px) {
+    .yellowRound {
+        width: 121px;
+        height: 121px;
+        top: 259px;
+        left: 173px;
+    }
 }

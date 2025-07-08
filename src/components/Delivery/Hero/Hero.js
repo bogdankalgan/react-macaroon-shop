@@ -18,6 +18,11 @@ function Hero() {
                     Санкт-Петербургу в пределах КАД и <span>самовывоз</span>.
                 </p>
 
+
+                <div className={styles.HeroImgMobile}>
+                    <img src='/img/deliveryHero/1.png' alt="delivery hero page img"/>
+                </div>
+
                 <p className={styles.HeroTitle}>Курьерска доставка:</p>
 
                 <p className={styles.HeroDescr}>Курьеры работают каждый день с 11 до 21 часа. <br/>Доставка макарон

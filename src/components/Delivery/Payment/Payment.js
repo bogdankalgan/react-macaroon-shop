@@ -8,6 +8,7 @@ function Payment() {
                     <div className={styles.PaymentDiv} key={index}></div>
                 ))}
             </div>
+
             <div className={styles.PaymentContent}>
                 <p className={styles.PaymentTitle}>Самовывоз</p>
 
