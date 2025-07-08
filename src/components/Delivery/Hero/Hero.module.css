@@ -5,6 +5,14 @@
     margin-bottom: 81px;
 }
 
+@media (max-width: 320px) {
+    .Hero {
+        padding: 33px 16px 45px 16px;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+}
+
 .Hero p:nth-child(2) {
     margin-bottom: 34px;
 }
@@ -14,8 +22,24 @@
     position: relative;
 }
 
+@media (max-width: 320px) {
+    .HeroImg {
+        display: none;
+    }
+}
+
 .HeroContent {
 }
+
+@media (max-width: 320px) {
+    .HeroContent > h1 {
+        text-align: center;
+    }
+
+    .HeroContent > p:nth-child(2) {
+        text-align: center;
+    }
+ }
 
 .HeroTitle {
     color: #292929;
@@ -38,4 +62,20 @@
 
 .HeroDescr:not(:last-child) {
     margin-bottom: 12px;
+}
+
+
+.HeroImgMobile {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .HeroImgMobile {
+        display: block;
+    }
+
+    .HeroImgMobile > img {
+        width: 276px;
+        height: 200px;
+    }
 }
