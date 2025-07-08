@@ -9,3 +9,17 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
+
+@media (max-width: 320px) {
+    .News > div:last-child {
+        padding: 15px 16px 40px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .News {
+        padding-bottom: 0;
+    }
+}

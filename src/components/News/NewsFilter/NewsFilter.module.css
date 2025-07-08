@@ -1,3 +1,19 @@
 .NewsFilter {
     padding: 0 136px 30px 136px;
 }
+
+@media (max-width: 320px) {
+    .NewsFilter {
+        padding: 0 0 0 16px;
+    }
+
+    .NewsFilter > div {
+        flex-wrap: nowrap;
+        align-items: center;
+        overflow-x: auto;
+    }
+
+    .NewsFilter > div > div {
+        white-space: nowrap;
+    }
+}
