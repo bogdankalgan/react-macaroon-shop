@@ -22,6 +22,12 @@
     font-size: 16px;
 }
 
+@media (max-width: 320px) {
+    .oneNewItemText {
+        font-size: 14px;
+    }
+}
+
 .oneNewItem:not(:last-child) {
     margin-bottom: 5px;
 }

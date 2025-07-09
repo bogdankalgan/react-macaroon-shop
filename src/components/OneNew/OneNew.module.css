@@ -5,3 +5,11 @@
     padding: 50px 135px 90px 135px;
     display: flex;
 }
+
+@media (max-width: 320px) {
+    .OneNewContainer {
+        padding: 17px 16px 40px 16px;
+        flex-direction: column;
+        width: 288px;
+    }
+}

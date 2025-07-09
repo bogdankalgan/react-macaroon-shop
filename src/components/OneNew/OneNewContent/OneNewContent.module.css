@@ -3,6 +3,13 @@
     margin-right: 31px;
 }
 
+@media (max-width: 320px) {
+    .OneNewContent {
+        width: 288px;
+        margin-right: 0;
+    }
+}
+
 .OneNewContentDescr {
     color: #292929;
     font-size: 18px;
