@@ -62,3 +62,10 @@ body.holidays-page div:nth-child(5),
 body.holidays-page div:nth-child(6) {
     display: none;
 }
+
+
+@media (max-width: 768px) {
+    body.choose-taste-page .Footer,  body.choose-extrats-page .Footer {
+        display: none !important;
+    }
+}
