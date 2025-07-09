@@ -5,7 +5,7 @@ import FooterRightItemContainer from "./FooterRightItemContainer";
 
 function Footer() {
     return (
-        <footer className={styles.Footer}>
+        <footer className={`Footer ${styles.Footer}`}>
             <div className={styles.FooterLeft}>
                 <FooterLeftItemContainer/>
 

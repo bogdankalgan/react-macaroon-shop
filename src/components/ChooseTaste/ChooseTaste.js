@@ -71,10 +71,18 @@ const seasonItems = [
 
 function ChooseTaste({count, price, selectedTastes = [], onNext}) {
     const [flavors, setFlavors] = useState({});
+    const isMobile = window.innerWidth <= 320;
 
     const getTotalSelected = () => {
         return Object.values(flavors).reduce((sum, count) => sum + count, 0);
     };
+
+    useEffect(() => {
+        document.body.classList.add('choose-taste-page');
+        return () => {
+            document.body.classList.remove('choose-taste-page');
+        };
+    }, []);
 
     const updateFlavorCount = (id, type, delta) => {
         setFlavors((prev) => {
@@ -123,6 +131,8 @@ function ChooseTaste({count, price, selectedTastes = [], onNext}) {
 
         onNext({count, price, flavors});
     };
+
+
 
     return (
         <div>
@@ -184,7 +194,7 @@ function ChooseTaste({count, price, selectedTastes = [], onNext}) {
 
                     <div onClick={getTotalSelected() === count ? handleNext : null}
                          className={styles.ChooseTastesRegularTastesButtons}>
-                        <PinkButton text="Оформить заказ"/>
+                        <PinkButton text={isMobile ? "Далее" : "Оформить заказ"}/>
                         <Link to={'/create-your-set/choose-count'}>
                             <PopularButton text="Собрать еще набор"/>
                         </Link>

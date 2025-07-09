@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Header from "../Home/Header/Header";
 import Breadcrumbs from "../BreadCrumbs";
 import PinkButton from "../Corporatives/PinkButton";
@@ -29,6 +29,13 @@ function ChooseExtrats({onNext, count, price}) {
         })
     }
 
+
+    useEffect(() => {
+        document.body.classList.add('choose-extrats-page');
+        return () => {
+            document.body.classList.remove('choose-extrats-page');
+        };
+    }, []);
 
     const handleNext = () => {
         const selectedExtras = Object.values(extras).filter(e => e.count > 0)

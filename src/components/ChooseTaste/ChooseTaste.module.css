@@ -10,6 +10,16 @@
     margin-right: 32px;
 }
 
+@media (max-width: 320px) {
+    .ChooseTasteSeason {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-right: 0;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+}
+
 .ChooseTasteSeasonCard {
     width: 237px;
     background: white;
@@ -22,12 +32,26 @@
     min-height: 370px;
 }
 
+@media (max-width: 320px) {
+    .ChooseTasteSeasonCard {
+        width: 114px;
+        padding: 14px 11px 6px 13px;
+        min-height: 215px;
+    }
+}
+
 .ChooseTasteSeasonCardTitle {
     color: #292929;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-bottom: 12px;
+}
+
+@media (max-width: 320px) {
+    .ChooseTasteSeasonCardTitle {
+        font-size: 10px;
+    }
 }
 
 .ChooseTasteSeasonCard > p:nth-child(2) {
@@ -46,10 +70,26 @@
 
 }
 
+@media (max-width: 320px) {
+    .ChooseTasteSeasonCardDescr {
+        width: 100%;
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+}
+
 .ChooseTasteSeasonCard img {
     width: 180px;
     height: 170px;
     margin-bottom: 20px;
+}
+
+@media (max-width: 320px) {
+    .ChooseTasteSeasonCard img {
+        width: 91px;
+        height: 96px;
+        margin: 0 !important;
+    }
 }
 
 .ChooseTasteSeasonCardButtons {
@@ -86,9 +126,22 @@
     background: #EDEDF0;
 }
 
+@media (max-width: 320px) {
+    .ChooseTasteSeasonCardButtons::before {
+        display: none;
+    }
+}
+
 .ChooseTasteTastes {
     display: flex;
     padding: 0 133px 50px 135px;
+}
+
+@media (max-width: 320px) {
+    .ChooseTasteTastes {
+        flex-direction: column;
+        padding: 9px 16px 0 16px;
+    }
 }
 
 .ChooseAvaliableTastes {
@@ -100,6 +153,14 @@
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+}
+
+@media (max-width: 320px) {
+    .ChooseTasteTastesTitle {
+        font-size: 12px;
+        width: 134px;
+        margin-bottom: 3px;
+    }
 }
 
 .ChooseTasteTastesTitle > span {
@@ -119,6 +180,27 @@
     max-height: 475px;
 }
 
+@media (max-width: 320px) {
+    .ChooseTastesRegularTastes {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 4px 16px;
+        padding: 13px 16px 5px 11px;
+        border-top: 1px solid #EDEDF0;
+        background: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 291px;
+        align-items: center;
+    }
+
+    .ChooseTastesRegularTastes > div {
+        margin-bottom: 3px !important;
+    }
+}
+
 .ChooseTastesRegularTastesButtons {
     width: 100%;
     display: flex;
@@ -126,8 +208,27 @@
     gap: 8px;
 }
 
+@media (max-width: 320px) {
+    .ChooseTastesRegularTastesButtons > a > button {
+        display: none;
+    }
+}
+
 .ChooseTastesRegularTastesButtons > button {
     width: 100%;
+}
+
+@media (max-width: 320px) {
+    .ChooseTastesRegularTastesButtons > button {
+        width: 85px;
+        height: 40px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2 / 3;
+        grid-row: 1 / span 2; /* Кнопка занимает высоту двух строк */
+    }
 }
 
 .ChooseTastesRegularTastesButtons > a > button {
@@ -142,6 +243,12 @@
     gap: 12px;
     margin-bottom: 28px;
     position: relative;
+}
+
+@media (max-width: 320px) {
+    .ChooseTastesRegularTastesCardContainer {
+        display: none;
+    }
 }
 
 .ChooseTastesRegularTastesCardContainer::before {
@@ -201,4 +308,11 @@
     font-size: 14px;
     font-family: "Poppins", sans-serif;
     margin-bottom: 16px;
+}
+
+@media (max-width: 320px) {
+    .ChooseTasteCount {
+        font-size: 9px;
+        grid-column: 1 / 2;
+    }
 }
