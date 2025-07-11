@@ -5,6 +5,8 @@ import PinkButton from "../Corporatives/PinkButton";
 import PopularButton from "../Home/Popular/PopularButton";
 import Modal from "./Modal";
 import styles from './Summary.module.css'
+import Header from "../Home/Header/Header";
+import Breadcrumbs from "../BreadCrumbs";
 
 function Summary({count, tastes,}) {
     const navigate = useNavigate();
@@ -108,6 +110,13 @@ function Summary({count, tastes,}) {
 
     return (
         <div className={styles.SummaryContaienr}>
+            <div className={styles.ModalHeaderWrapper}>
+                <Header/>
+            </div>
+
+            <div className={styles.ModalBreadCrumbs}>
+                <Breadcrumbs/>
+            </div>
             {!modal && (
                 <div className={styles.Summary}>
                     <h1>Ваш Выбор: </h1>
