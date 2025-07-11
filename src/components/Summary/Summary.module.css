@@ -1,6 +1,35 @@
+.ModalHeaderWrapper {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .ModalHeaderWrapper {
+        display: flex;
+    }
+}
+
+
+.ModalBreadCrumbs {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .ModalBreadCrumbs {
+        display: flex;
+        align-items: center;
+        padding-left: 69px;
+    }
+}
+
 .Summary {
     background: white;
     padding: 46px 46px 35px 46px;
+}
+
+@media (max-width: 320px) {
+    .Summary {
+        padding: 23px 34px 30px 29px;
+    }
 }
 
 .Summary > h1 {
@@ -13,6 +42,13 @@
     background: rgba(0, 0, 0, .39);
 }
 
+@media (max-width: 320px) {
+    .SummaryContaienr {
+        padding: 0 16px 62px 0;
+        background: #F7F8F9;
+    }
+}
+
 .SummaryTitle {
     color: #292929;
     font-size: 18px;
@@ -20,6 +56,13 @@
     font-family: "Montserrat", sans-serif;
     margin-bottom: 9px;
 }
+
+@media (max-width: 320px) {
+    .SummaryTitle {
+        font-size: 14px;
+    }
+}
+
 
 .SummaryTitle > span {
     color: #e7426a;
@@ -71,6 +114,14 @@
     background: #EDEDF0;
 }
 
+@media (max-width: 320px) {
+    .SummaryTotal::before {
+        width: 285px;
+        left: -10px;
+        top: -4px;
+    }
+}
+
 .SummaryTotal::after {
     content: '';
     position: absolute;
@@ -79,6 +130,14 @@
     width: 570px;
     height: 1px;
     background: #EDEDF0;
+}
+
+@media (max-width: 320px) {
+    .SummaryTotal::after {
+        width: 285px;
+        right: -34px;
+        top: 36px;
+    }
 }
 
 .SummaryTotal > p > span {
@@ -90,6 +149,26 @@
     gap: 10px;
 }
 
+@media (max-width: 320px) {
+    .SummaryBtn {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
 .SummaryBtn > div:nth-child(1) > button {
     color: #4E9DD3;
+}
+
+@media (max-width: 320px) {
+    .SummaryBtn > div:nth-child(1) > button {
+        padding: 12px 30px;
+        font-size: 12px;
+    }
+
+    .SummaryBtn > div:nth-child(2) > button{
+        padding: 12px 30px;
+        font-size: 12px;
+    }
 }
