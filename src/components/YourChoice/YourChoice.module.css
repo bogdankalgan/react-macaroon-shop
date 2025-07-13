@@ -1,6 +1,30 @@
+.HeaderChoiceWrapper {
+    display: none;
+}
+
+.BreadCrumbsChoiceWrapper {
+    display: none;
+}
+
 .YourChoiceContainer {
     padding: 241px 435px 270px 435px;
     background: rgba(0,0,0, .39);
+}
+
+@media (max-width: 320px) {
+    .YourChoiceContainer {
+        padding: 0 16px 154px 0;
+        background: #F7F8F9;
+    }
+
+    .HeaderChoiceWrapper {
+        display: flex;
+    }
+
+    .BreadCrumbsChoiceWrapper {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .YourChoice {
@@ -8,6 +32,13 @@
     padding: 48px 46px 35px 46px;
     border-radius: 5px;
     border: 1px solid #EDEDF0;
+}
+
+@media (max-width: 320px) {
+    .YourChoice {
+        margin-left: 16px;
+        padding: 19px 15px 24px 13px;
+    }
 }
 
 .YourChoiceContent {
@@ -20,6 +51,12 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     margin-bottom: 24px;
+}
+
+@media (max-width: 320px) {
+    .YourChoiceTitle {
+        font-size: 14px;
+    }
 }
 
 .YourChoiceTitle > span {
@@ -59,6 +96,13 @@
     background: #EDEDF0;
 }
 
+@media (max-width: 320px) {
+    .YourChoiceTotal:before {
+        width: 285px;
+        left: -13px;
+    }
+}
+
 .YourChoiceTotal:after {
     content: '';
     position: absolute;
@@ -67,6 +111,13 @@
     background: #EDEDF0;
     bottom: -20px;
     right: -47px;
+}
+
+@media (max-width: 320px) {
+    .YourChoiceTotal:after {
+        width: 285px;
+        right: -14px;
+    }
 }
 
 .YourChoiceTotal > p {
@@ -87,6 +138,13 @@
     align-items: center;
 }
 
+@media (max-width: 320px) {
+    .YourChoiceButtons {
+        flex-direction: column;
+        gap: 9px;
+    }
+}
+
 .YourChoiceButtons > button {
     background: none;
     border: 1px solid #4E9DD3;
@@ -97,6 +155,18 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     transition: all .3s;
+}
+
+@media (max-width: 320px) {
+    .YourChoiceButtons > button {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+
+    .YourChoiceButtons > div > button {
+        padding: 10px 30px;
+        font-size: 13px;
+    }
 }
 
 .YourChoiceButtons > button:hover {

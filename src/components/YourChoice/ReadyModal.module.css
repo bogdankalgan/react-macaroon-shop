@@ -3,11 +3,23 @@
     padding: 286px 435px 374px 435px;
 }
 
+@media (max-width: 320px) {
+    .ReadyModalContainer {
+        padding: 133px 21px 205px 21px;
+    }
+}
+
 .ReadyModal {
     background: white;
     padding: 48px 46px 27px 46px;
     border-radius: 5px;
     border: 1px solid #EDEDF0;
+}
+
+@media (max-width: 320px) {
+    .ReadyModal {
+        padding: 26px 17px 20px 18px;
+    }
 }
 
 .ReadyModalDescr {
@@ -24,6 +36,18 @@
     align-items: center;
 }
 
+@media (max-width: 320px) {
+    .ReadyModalButtons {
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .ReadyModalButtons > div > button {
+        padding: 10px 27px;
+        font-size: 13px;
+    }
+}
+
 .BlueButton {
     background: none;
     border: 1px solid #4E9DD3;
@@ -36,6 +60,13 @@
     transition: all .3s;
 }
 
+@media (max-width: 320px) {
+    .BlueButton {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+}
+
 .BlueButton:hover {
     background: #4E9DD3;
     color: white;
@@ -45,3 +76,4 @@
     background: none;
     color: #4E9DD3;
 }
+

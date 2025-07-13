@@ -3,6 +3,8 @@ import PinkButton from "../Corporatives/PinkButton";
 import {useCart} from "../CartContext";
 import styles from "./YourChoice.module.css";
 import {useNavigate} from "react-router-dom";
+import Header from "../Home/Header/Header";
+import Breadcrumbs from "../BreadCrumbs";
 
 function YourChoice() {
     const { baseCount, basePrice, selectedExtras} = useCreateDesign();
@@ -78,6 +80,13 @@ function YourChoice() {
 
     return (
         <div className={styles.YourChoiceContainer}>
+            <div className={styles.HeaderChoiceWrapper}>
+                <Header/>
+            </div>
+
+            <div className={styles.BreadCrumbsChoiceWrapper}>
+                <Breadcrumbs/>
+            </div>
             <div className={styles.YourChoice}>
                 <h2 className="titleSecond" style={{marginBottom: "19px"}}>Ваш выбор: </h2>
 

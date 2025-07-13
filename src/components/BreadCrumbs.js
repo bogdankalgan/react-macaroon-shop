@@ -25,7 +25,8 @@ function Breadcrumbs() {
         "choose-quantity": "Выбрать количество",
         "choose-img": "Выбрать картинку",
         "choose-more": "Дополнительно",
-        "summary": "Итого"
+        "summary": "Итого",
+        "your-choice": "Ваш выбор"
     };
 
     const pathnames = location.pathname.split("/").filter((x) => x);
