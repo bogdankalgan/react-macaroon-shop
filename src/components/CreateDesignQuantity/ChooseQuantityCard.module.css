@@ -10,10 +10,23 @@
     transition: all .3s;
 }
 
+@media (max-width: 320px) {
+    .ChooseQuantityCard {
+        padding: 8px 7px 16px 7px;
+    }
+}
+
 .ChooseQuantityCardImg {
     background: #EDEDF0;
     width: 244px;
     height: 192px;
+}
+
+@media (max-width: 320px) {
+    .ChooseQuantityCardImg {
+        width: 124px;
+        height: 98px;
+    }
 }
 
 .ChooseQuantityCardTitle {
@@ -23,6 +36,13 @@
     font-family: "Montserrat", sans-serif;
 }
 
+@media (max-width: 320px) {
+    .ChooseQuantityCardTitle {
+        font-size: 10px;
+        width: 122px;
+    }
+}
+
 .ChooseQuantityCardPrice {
     color: #e7426a;
     font-size: 18px;
@@ -30,6 +50,12 @@
     font-weight: 600;
 }
 
+
+@media (max-width: 320px) {
+    .ChooseQuantityCardPrice {
+        font-size: 14px;
+    }
+}
 
 .ChooseQuantityCard:hover {
     border: 1px solid #e7426a;

@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import Header from "../Home/Header/Header";
 import BreadCrumbs from "../BreadCrumbs";
 import Footer from "../Home/Footer/Footer";
@@ -22,6 +23,13 @@ function ChooseMore() {
         );
     }
 
+
+    useEffect(() => {
+        document.body.classList.add('choose-more-design-page');
+        return () => {
+            document.body.classList.remove('choose-more-design-page');
+        };
+    }, []);
 
     return (
         <div>
@@ -53,7 +61,7 @@ function ChooseMore() {
 
 
 
-                    <div style={{textAlign: "center"}} className={styles.ChooseMoreSidebarNext} onClick={handleClick}>
+                    <div className={styles.ChooseMoreSidebarNext} onClick={handleClick}>
                         <PinkButton text="ГОТОВО"  />
                     </div>
                 </div>

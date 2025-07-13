@@ -8,6 +8,13 @@
     gap: 30px;
 }
 
+@media (max-width: 320px) {
+    .ChooseMoreContainer {
+        padding-right: 0;
+        flex-direction: column;
+    }
+}
+
 .ChooseMoreSidebar {
     padding: 27px 12px 16px 13px;
     background: white;
@@ -16,6 +23,16 @@
     border-radius: 5px;
     border: 1px solid #EDEDF0;
 }
+
+/*@media (max-width: 320px) {
+    .ChooseMoreSidebar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 40px;
+        align-items: center;
+        padding: 16px;
+    }
+}*/
 
 .ChooseMoreSidebarTitle {
     font-size: 18px;
@@ -26,6 +43,13 @@
     margin-bottom: 38px;
 }
 
+/*@media (max-width: 320px) {
+    .ChooseMoreSidebarTitle {
+        font-size: 12px;
+        grid-column: 1/-1;
+    }
+}*/
+
 .ChooseMoreSidebarTitle > span {
     color: #e7426a;
 }
@@ -35,6 +59,12 @@
     margin-bottom: 50px;
 }
 
+/*@media (max-width: 320px) {
+    .ChooseMoreSidebarItems {
+        grid-column: 1/-1;
+    }
+}*/
+
 .ChooseMoreSidebarItems::after {
     content: '';
     position: absolute;
@@ -43,7 +73,12 @@
     width: 296px;
     height: 1px;
     background: #EDEDF0;
+}
 
+@media (max-width: 320px) {
+    .ChooseMoreSidebarItems::after {
+        display: none;
+    }
 }
 
 .ChooseMoreSidebarItems::before {
@@ -54,6 +89,12 @@
     width: 296px;
     height: 1px;
     background: #EDEDF0;
+}
+
+@media (max-width: 320px) {
+    .ChooseMoreSidebarItems::before {
+        display: none;
+    }
 }
 
 .ChooseMoreSidebarItem {
@@ -67,6 +108,13 @@
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     margin-right: 10px;
+}
+
+@media (max-width: 320px) {
+    .ChooseMoreSidebarItem > span {
+        font-size: 12px;
+    }
+
 }
 
 .ChooseMoreSidebarItem > span > span {
@@ -88,6 +136,65 @@
     width: 100%;
 }
 
+/*@media (max-width: 320px) {
+    .ChooseMoreSidebarNext {
+        grid-column: 2;
+        align-self: center;
+    }
+}*/
+
 .ChooseMoreSidebarNext > button {
     width: 100%;
+}
+
+/*@media (max-width: 320px) {
+    .ChooseMoreSidebarNext > button {
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 3px;
+    }
+}*/
+
+
+
+@media (max-width: 320px) {
+    .ChooseMoreSidebar {
+        min-width: 288px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        column-gap: 10px;
+        padding: 16px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid #EDEDF0;
+        max-height: 87px;
+        overflow-y: auto;
+    }
+
+    .ChooseMoreSidebarTitle {
+        font-size: 12px;
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+    }
+
+    .ChooseMoreSidebarNext {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        justify-self: end;
+    }
+
+    .ChooseMoreSidebarNext > button {
+        font-size: 13px;
+        padding: 10px 15px;
+        border-radius: 3px;
+    }
+
+    .ChooseMoreSidebarItems {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+    }
 }

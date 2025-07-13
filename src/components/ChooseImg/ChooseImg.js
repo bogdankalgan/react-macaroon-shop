@@ -5,6 +5,7 @@ import Header from "../Home/Header/Header";
 import BreadCrumbs from "../BreadCrumbs";
 import Footer from "../Home/Footer/Footer";
 import styles from './ChooseImg.module.css'
+import {id} from "date-fns/locale"
 
 function ChooseImg() {
     const { amount } = useCreateDesign();
@@ -124,15 +125,39 @@ function ChooseImg() {
         }
     };
 
+    useEffect(() => {
+        document.body.classList.add('choose-img-page');
+        return () => {
+            document.body.classList.remove('choose-img-page');
+        };
+    }, []);
+
+    const handleRemove = (id) => {
+        setSelected(prev => prev.filter(item => item.id !== id));
+    };
+
     return (
         <div>
             <Header/>
             <BreadCrumbs/>
 
-            <div className={styles.ChooseImgContaier}>
+        <div className={styles.ChooseImgContaier}>
             <h1 className="titleFirst">Выберите изображения</h1>
 
             <p className={styles.ChooseImgDescr}>Загрузите собственные изображения или выберите из нашей галереи</p>
+
+            <div className={styles.SelectedImgs}>
+                <p>Выбранные изображения</p>
+
+                <div className={styles.SelectedImgsItemsContainer}>
+                    {selected.map(item => (
+                        <div key={item.id} className={styles.SelectedImgsItem}>
+                            <img src={item.img} alt={item.id} key={item.id}/>
+                            <button onClick={() => handleRemove(item.id)}>x</button>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
             <div className={styles.ChooseImgContent}>
             <div className={styles.ChooseImg}>

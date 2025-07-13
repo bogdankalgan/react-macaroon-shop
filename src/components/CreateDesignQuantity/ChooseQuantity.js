@@ -1,9 +1,17 @@
+import {useEffect} from "react";
 import Header from "../Home/Header/Header";
 import BreadCrumbs from "../BreadCrumbs";
 import Footer from "../Home/Footer/Footer";
 import ChooseQuantityCardsContainer from "./ChooseQuantityCardsContainer";
 
 function ChooseQuantity() {
+    useEffect(() => {
+        document.body.classList.add('choose-quantity-page');
+        return () => {
+            document.body.classList.remove('choose-quantity-page');
+        };
+    }, []);
+
     return (
         <div>
             <Header/>
