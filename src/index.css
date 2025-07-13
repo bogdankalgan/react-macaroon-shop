@@ -65,7 +65,7 @@ body.holidays-page div:nth-child(6) {
 
 
 @media (max-width: 768px) {
-    body.choose-taste-page .Footer,  body.choose-extrats-page .Footer {
+    body.choose-taste-page .Footer,  body.choose-extrats-page .Footer,  body.choose-quantity-page .Footer, body.choose-img-page .Footer, body.choose-more-page .Footer, body.choose-more-design-page .Footer {
         display: none !important;
     }
 }

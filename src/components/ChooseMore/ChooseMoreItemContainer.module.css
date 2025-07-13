@@ -1,6 +1,12 @@
 .ChooseMoreItemContainer {
-    padding: 0 0px 49px 134px;
+    padding: 0 0 49px 134px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+@media (max-width: 320px) {
+    .ChooseMoreItemContainer {
+        padding: 0 16px 0 16px;
+    }
 }

@@ -7,11 +7,26 @@
     max-width: 270px;
 }
 
+@media (max-width: 320px) {
+    .ChooseMoreItem {
+        padding: 8px;
+        max-width: 124px;
+        text-align: center;
+    }
+}
+
 .ChooseMoreItemImg {
     width: 244px;
     height: 192px;
     margin-bottom: 21px;
     background: #EDEDF0;
+}
+
+@media (max-width: 320px) {
+    .ChooseMoreItemImg {
+        width: 124px;
+        height: 98px;
+    }
 }
 
 .ChooseMoreItemText {
@@ -22,11 +37,23 @@
     margin-bottom: 36px;
 }
 
+@media (max-width: 320px) {
+    .ChooseMoreItemText {
+        font-size: 10px;
+    }
+}
+
 .ChooseMoreItemPrice {
     color: #e7426a;
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
+}
+
+@media (max-width: 320px) {
+    .ChooseMoreItemPrice {
+        font-size: 14px;
+    }
 }
 
 
@@ -41,6 +68,12 @@
     display: flex;
     gap: 14px;
     align-items: center;
+}
+
+@media (max-width: 320px) {
+    .ChooseMoreItemCounter {
+        gap: 3px;
+    }
 }
 
 .ChooseMoreItemCounter > button {
