@@ -5,7 +5,6 @@ import Header from "../Home/Header/Header";
 import BreadCrumbs from "../BreadCrumbs";
 import Footer from "../Home/Footer/Footer";
 import styles from './ChooseImg.module.css'
-import {id} from "date-fns/locale"
 
 function ChooseImg() {
     const { amount } = useCreateDesign();
