@@ -10,12 +10,25 @@
     position: relative;
 }
 
+@media (max-width: 320px) {
+    .NotFoundContainer {
+        padding: 110px 29px 93px 29px;
+    }
+}
+
 .NotFound h1 {
     color: #292929;
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     margin-bottom: 51px;
+}
+
+@media (max-width: 320px) {
+    .NotFound h1 {
+        font-size: 14px;
+        margin-bottom: 13px;
+    }
 }
 
 .NotFoundNumber {
@@ -29,6 +42,19 @@
     z-index: -1;
 }
 
+@media (max-width: 320px) {
+    .NotFoundNumber {
+        font-size: 120px;
+        top: 127px;
+        left: 34px;
+    }
+
+    .NotFoundImg {
+        width: 123px;
+        height: 123px;
+    }
+}
+
 .NotFoundButton {
     color: #E7426A;
     text-decoration: none;
@@ -40,6 +66,13 @@
     border: 1px solid #E7426A;
     border-radius: 3px;
     transition: all .3s;
+}
+
+@media (max-width: 320px) {
+    .NotFoundButton {
+        padding: 12px 65px;
+        font-size: 12px;
+    }
 }
 
 .NotFoundButton:hover {
